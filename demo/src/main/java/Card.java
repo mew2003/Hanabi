@@ -1,8 +1,15 @@
-/**
+/*
  * Card.java                18/05/2022
  * Info1
  */
 
+package example;
+
+
+/**
+ * TODO le commentaire
+ *
+ */
 public class Card {
 
     /** Couleur des cartes */
