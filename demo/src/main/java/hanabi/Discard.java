@@ -1,8 +1,13 @@
+/*
+ * Discard.java                18/05/2022
+ * Info1
+ */
+
 package hanabi;
 
 /**
- * Discard.java                18/05/2022
- * Info1
+ * TODO le commentaire
+ *
  */
 public class Discard {
 

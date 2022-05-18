@@ -1,10 +1,14 @@
-package hanabi;
-
-/**
+/*
  * Deck.java                18/05/2022
  * Info1
  */
 
+package hanabi;
+
+/**
+ * TODO le commentaire
+ *
+ */
 public class Deck {
 
     //Nombre de carte max dans le deck
@@ -62,7 +66,7 @@ public class Deck {
                     new Card("white", 3),
                     new Card("white", 4),
                     new Card("white", 4),
-                    new Card("white", 5),
+                    new Card("white", 5)
             };
 
     // Pour éviter l'instanciation inutile
