@@ -3,7 +3,7 @@
  * IUT Rodez, INFO 1, SAE Hanabi
  */
 
-package example;
+package java;
 
 
 /**

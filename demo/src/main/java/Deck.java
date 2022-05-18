@@ -3,7 +3,7 @@
  * Info1
  */
 
-package example;
+package java;
 
 
 /**
@@ -67,7 +67,7 @@ public class Deck {
                     new Card("white", 3),
                     new Card("white", 4),
                     new Card("white", 4),
-                    new Card("white", 5),
+                    new Card("white", 5)
             };
 
     // Pour éviter l'instanciation inutile

@@ -3,7 +3,7 @@
  * Info1
  */
 
-package example;
+package java;
 
 
 /**

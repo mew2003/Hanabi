@@ -2,7 +2,7 @@
  * Discard.java                18/05/2022
  * Info1
  */
-package example;
+package java;
 
 
 /**
