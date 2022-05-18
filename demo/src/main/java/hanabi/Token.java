@@ -1,3 +1,5 @@
+package hanabi;
+
 /**
  * Token.java                18/05/2022
  * Info1

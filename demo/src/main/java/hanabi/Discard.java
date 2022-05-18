@@ -1,3 +1,5 @@
+package hanabi;
+
 /**
  * Discard.java                18/05/2022
  * Info1

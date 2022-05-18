@@ -1,3 +1,5 @@
+package hanabi;
+
 /**
  * Deck.java                18/05/2022
  * Info1
