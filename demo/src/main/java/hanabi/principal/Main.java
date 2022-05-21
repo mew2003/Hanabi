@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) {
 
         int nbPlayers;
-        User[] players;
+        String[] username;
         Scanner sc = new Scanner(System.in);
 
         //TOUTES LES VARIABLES CRÉÉES SONT DES RÉINITIALISATIONS
@@ -19,19 +19,31 @@ public class Main {
         //Crée Users
         System.out.println("Combien y'a t'il de le Userrr ?");
         nbPlayers = sc.nextInt();
-        players = new User[nbPlayers];
+        username = new String[nbPlayers];
         for (int i = 0; i < nbPlayers; i++) {
-            System.out.println("Quel est le nom de l'User " + (i + 1) + " ?");
-            String username = sc.next();
-            players[i] = new User(username);
+            System.out.println("Quel est le nom du " + (i + 1) + "eme User ?");
+            username[i] = sc.next();
         }
-        for (int i = 0; i < nbPlayers; i++) {
-            System.out.println("nom de l'utilisateur " + (i+1) + " : " + players[i].getUsername());
+        User Userlist = new User(username);
+        for (int i = 0; i < Userlist.getUsernames().length; i++) {
+            System.out.println(Userlist.getUsernames()[i]);
         }
 
         //Crée et initialisé un deck
+        Deck deck = new Deck();
 
         //Crée les mains des joueurs et leurs fournir les cartes du deck
+        for (int i = 0; i < Userlist.getUsernames().length; i++) {
+            if (Userlist.getUsernames().length >= 4) {
+                for (int j = 0; j < 4; j++) {
+                    Userlist.getUsernames()[i].setHand(j, deck.getCard());
+                }
+            } else {
+                for (int j = 0; j < 5; j++) {
+                    Userlist.getUsernames()[i].setHand(j, deck.getCard());
+                }
+            }
+        }
 
         //Crée le plateau avec des cartes de valeurs nulles
 

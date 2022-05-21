@@ -5,28 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd5a7cb7-493c-4646-b697-484705ddaa73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/tests/Test/CardTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/tests/Test/DeckTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/tests/Test/DiscardTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/tests/Test/GameBoardTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/tests/Test/HandTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/tests/Test/TokenTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/hanabi/HelloApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/hanabi/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Card.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Deck.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Discard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/principal/GameBoard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Hand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Token.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/hanabi/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
