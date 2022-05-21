@@ -3,7 +3,7 @@
  * Info1
  */
 
-package hanabi;
+package principal;
 
 /**
  * TODO le commentaire
@@ -37,4 +37,5 @@ public class Card {
     public int getValue() {
         return value;
     }
+
 }

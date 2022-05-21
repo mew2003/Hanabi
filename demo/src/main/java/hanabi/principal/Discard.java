@@ -3,7 +3,7 @@
  * Info1
  */
 
-package hanabi;
+package principal;
 
 /**
  * TODO le commentaire
@@ -14,7 +14,7 @@ public class Discard {
     private Card[] discard = new Card[50];
 
     // Pour éviter l'instanciation inutile
-    private Discard() {}
+    public Discard() {}
 
     // Ajoute une carte à la défausse
     public Discard addCard(Card[] card) {

@@ -3,7 +3,7 @@
  * Info1
  */
 
-package hanabi;
+package principal;
 
 /**
  * TODO le commentaire
@@ -70,7 +70,8 @@ public class Deck {
             };
 
     // Pour éviter l'instanciation inutile
-    private Deck() {}
+    public Deck() {}
+
     public Card drawCard(Card card) {
         return card; //stub
     }

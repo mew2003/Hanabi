@@ -3,7 +3,7 @@
  * Info1
  */
 
-package hanabi;
+package principal;
 
 public class GameBoard {
 
@@ -18,10 +18,9 @@ public class GameBoard {
     /**
      * Plateau de jeu où les cartes seront placées quand elles seront jouées
      */
-    private Card[] gameBoard {
+    public GameBoard() {
 
 
-        return this; // gros bouchon
     }
 
 

@@ -3,7 +3,7 @@
  * Info1
  */
 
-package hanabi;
+package principal;
 
 /**
  * TODO le commentaire
