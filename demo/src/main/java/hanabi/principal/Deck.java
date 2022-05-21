@@ -11,9 +11,6 @@ package principal;
  */
 public class Deck {
 
-    //Nombre de carte max dans le deck
-    private final int MAX_CARDS = 50;
-
     //Liste des cartes du jeu
     private Card[] cards =
             {
@@ -72,8 +69,9 @@ public class Deck {
     // Pour éviter l'instanciation inutile
     public Deck() {}
 
-    public Card drawCard(Card card) {
-        return card; //stub
+    // Permet d'obtenir le paquet de cartes
+    public Card[] getCards() {
+        return cards;
     }
 }
 

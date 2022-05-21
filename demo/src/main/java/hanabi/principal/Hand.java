@@ -7,7 +7,6 @@ package principal;
 
 public class Hand {
 
-
     /** Positions des cartes dans la main du joueur */
     private int[] cardPositions;
 
@@ -15,7 +14,7 @@ public class Hand {
      * Main des joueurs dont les cartes sont tirées aléatoirement
      * au début de la partie
      */
-    public Hand() {
+    public Hand(Deck deck) {
 
     }
 
