@@ -1,4 +1,4 @@
-package hanabi.demo;
+package com.example.hanabi;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

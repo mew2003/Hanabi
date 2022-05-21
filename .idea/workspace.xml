@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="dd5a7cb7-493c-4646-b697-484705ddaa73" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Hanabi.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hanabi.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hanabi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/Discard.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/Discard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/demo/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/hanabi/HelloApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/demo/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/hanabi/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Discard.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Discard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/com/example/demo/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/hanabi/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/principal/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/principal/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Discard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/principal/Discard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/principal/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/principal/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/principal/Hand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/principal/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/principal/Token.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29TkDd78rRdYORK7Q4ShUAkcIjA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.hanabi.HelloApplication" />
+      <module name="Hanabi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.hanabi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dd5a7cb7-493c-4646-b697-484705ddaa73" name="Changes" comment="" />
+      <created>1653144347943</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653144347943</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

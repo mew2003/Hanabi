@@ -1,4 +1,4 @@
-package hanabi.demo;
+package com.example.hanabi;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
