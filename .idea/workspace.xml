@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd5a7cb7-493c-4646-b697-484705ddaa73" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Demonstration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlayerHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlayerHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Demonstration.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Demonstration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +43,20 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.test.Main">
+  <component name="RunManager" selected="Application.Demonstration">
+    <configuration name="Demonstration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.Demonstration" />
+      <module name="Hanabi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="test.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Main" />
       <module name="Hanabi" />
@@ -74,6 +87,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Demonstration" />
         <item itemvalue="Application.test.Main" />
         <item itemvalue="JUnit.CardTest" />
       </list>
