@@ -1,35 +1,49 @@
-/*
- * Token.java                18/05/2022
- * Info1
- */
-
 package principal;
 
-/**
- * TODO le commentaire
- *
- */
 public class Token {
 
-    /** Nombre de jetons */
-    private int tokenNumber;
+    /** Nombre de token */
+    public int value;
 
     /**
      * Définition d'un jeton
-     * @param tokenNumber Nombre de jetons
+     * @param value Nombre de token
+     * @throws IllegalArgumentException si le nombre de token est invalide (inférieur à 0 ou supérieur à 8)
      */
-    public Token(int tokenNumber) {
-        this.tokenNumber = tokenNumber;
+    public Token(int value) {
+        if (value < 0 || value > 8) {
+            throw new IllegalArgumentException("Valeur impossible");
+        }
+        this.value = value;
     }
 
-    /** return le nombre de jetons */
-    public int getTokenNumber() {
-        return tokenNumber;
+    /**
+     * Incrémente le nombre de token par 1
+     * @return La nouvelle valeur du token
+     * @throws IllegalArgumentException si le nombre de token est invalide (supérieur à 8)
+     */
+    public int incToken() {
+        ++value;
+        if (value > 8) {
+            throw new IllegalArgumentException("Valeur impossible");
+        }
+        return value;
     }
 
-    /** permet de définir le nombre de jetons */
-    public Token setTokenNumber(int tokenNumber) {
-        this.tokenNumber = tokenNumber;
-        return this;
+    /**
+     * Décrémente le nombre de token par 1
+     * @return La nouvelle valeur du token
+     * @throws IllegalArgumentException si le nombre de token est invalide (inférieur à 0)
+     */
+    public int decToken() {
+        --value;
+        if (value < 0) {
+            throw new IllegalArgumentException("Valeur impossible");
+        }
+        return value;
+    }
+
+    public int getValue() {
+        return value;
     }
 }

@@ -1,23 +1,40 @@
-/*
- * Discard.java                18/05/2022
- * Info1
- */
-
 package principal;
 
-/**
- * TODO le commentaire
- *
- */
+import java.util.Arrays;
+
 public class Discard {
 
-    private Card[] discard = new Card[50];
+    /** Nombre de carte présente dans Hanabi */
+    private final int NBCARD_MAX = 50;
 
-    // Pour éviter l'instanciation inutile
-    public Discard() {}
+    /** Nombre de cartes actuellement présentes dans la défausse */
+    private int nbCard;
 
-    // Ajoute une carte à la défausse
-    public Discard addCard(Card[] card) {
-        return this; //stub
+    /** Liste des cartes de la défausse */
+    private Card[] cardList;
+
+    /**
+     * Définition de Discard
+     */
+    public Discard() {
+        cardList = new Card[NBCARD_MAX];
+        nbCard = 0;
+    }
+
+    /**
+     * Ajoute une carte à la défausse
+     * @param cardList
+     */
+    public void setCardList(Card[] cardList) {
+        this.cardList = cardList;
+    }
+
+    public Card[] getCardList() {
+        return cardList;
+    }
+
+    @Override
+    public String toString() {
+        return "Liste des cartes de la défausse : " + Arrays.toString(cardList);
     }
 }
