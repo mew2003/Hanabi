@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dd5a7cb7-493c-4646-b697-484705ddaa73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlacedCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlacedCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlayerHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlayerHand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Demonstration.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Demonstration.java" afterDir="false" />
     </list>
@@ -27,22 +28,30 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="29TkDd78rRdYORK7Q4ShUAkcIjA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mewen/Documents/GitHub/SAE2.02-2.05&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/mew/Documents/GitHub/Hanabi",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Demonstration">
     <configuration name="Demonstration" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Demonstration" />

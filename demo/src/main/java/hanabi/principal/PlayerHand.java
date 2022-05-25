@@ -58,7 +58,22 @@ public class PlayerHand {
         return null; //Stub
     }
 
-    public Card playACard(int position) {
+    public Card playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
+
+        if (position < 0 || position > hand.length) {
+            throw new IllegalArgumentException("La position de la carte doit être comprise entre 0 et " + hand.length);
+        }
+        boolean isSuccess;
+        isSuccess = placedCard.placeACard(hand[position], blueToken);
+        if (isSuccess) {
+            System.out.println("La carte a bien été posée");
+            drawACard(position, deck);
+        } else {
+            System.out.println("La carte n'a pas été posée");
+            //TODO : complete this method
+            discardACard(position);
+        }
+
         return null; //Stub
     }
 

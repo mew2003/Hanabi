@@ -26,8 +26,22 @@ public class PlacedCard {
      * @param card Une carte dans la main d'un joueur
      * @return
      */
-    public PlacedCard placeACard(Card card) {
-        return this; // Stub
+    public boolean placeACard(Card card, Token token) {
+
+        boolean isSuccess = false;
+
+        for (int i = 0; i < cardList.length; i++) {
+            if (card.getColor() == cardList[i].getColor() && card.getValue() == cardList[i].getValue() + 1) {
+                isSuccess = true;
+                cardList[i] = card;
+                System.out.println("Bravo bg");
+                if (card.getValue() == 5) {
+                    token.incToken();
+                }
+            }
+        }
+
+        return isSuccess;
     }
 
     public Card[] getCardList() {

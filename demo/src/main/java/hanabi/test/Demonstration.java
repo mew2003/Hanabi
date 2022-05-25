@@ -14,6 +14,7 @@ public class Demonstration {
 
         Scanner sc = new Scanner(System.in);
         int nbPlayer;
+        int cardChoice;
         PlayerHand players[];
 
         //Crée et initialisé un deck
@@ -75,6 +76,15 @@ public class Demonstration {
         }
 
         //Joueur 2 joue, il joue la carte -> place la carte et pioche une nouvelle carte
+        System.out.println("Sélectionner la carte à jouer");
+        cardChoice = sc.nextInt();
+        players[0].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
+        for (int i = 0; i < placedCard.getCardList().length; i++) {
+            System.out.println(placedCard.getCardList()[i].toString());
+        }
+        for (int i = 0; i < nbPlayer; i++) {
+            System.out.println(players[i].toString());
+        }
         //Joueur 3 joue, il défausse une carte et pioche une nouvelle carte -> gagne un jeton
         //Joueur 1 joue, il place une carte perdante -> gagne un jeton rouge et reprend une carte
         //Joueur 2 joue, il place une carte perdante -> 2 jetons rouges se sont accumulés
