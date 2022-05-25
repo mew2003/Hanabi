@@ -82,13 +82,14 @@ public class Demonstration {
         //Joueur 2 joue, il joue la carte -> place la carte et pioche une nouvelle carte
         System.out.println("Sélectionner la carte à jouer");
         cardChoice = sc.nextInt();
-        players[0].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
+        players[1].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
         for (int i = 0; i < placedCard.getCardList().length; i++) {
             System.out.println(placedCard.getCardList()[i].toString());
         }
         for (int i = 0; i < nbPlayer; i++) {
             System.out.println(players[i].toString());
         }
+
         //Joueur 3 joue, il défausse une carte et pioche une nouvelle carte -> gagne un jeton
         players[2].discardACard(4,deck, blueToken, discard);
         for (int i = 0; i < discard.getCardList().length; i++) {
@@ -97,15 +98,44 @@ public class Demonstration {
             }
         }
         System.out.println("jeton bleu : " + blueToken.getValue());
+        System.out.println("jeton rouge : " + redToken.getValue());
 
         for (int i = 0; i < nbPlayer; i++) {
             System.out.println(players[i].toString());
         }
+
         //Joueur 1 joue, il place une carte perdante -> gagne un jeton rouge et reprend une carte
+        System.out.println("Sélectionner la carte à jouer");
+        cardChoice = sc.nextInt();
+        players[0].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
+        for (int i = 0; i < nbPlayer; i++) {
+            System.out.println(players[i].toString());
+        }
+        System.out.println("jeton rouge : " + redToken.getValue());
+
         //Joueur 2 joue, il place une carte perdante -> 2 jetons rouges se sont accumulés
+        System.out.println("Sélectionner la carte à jouer");
+        cardChoice = sc.nextInt();
+        players[1].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
+        for (int i = 0; i < nbPlayer; i++) {
+            System.out.println(players[i].toString());
+        }
+        System.out.println("jeton rouge : " + redToken.getValue());
+
         //Joueur 3 joue, il place une carte perdante -> 3 jetons rouges se sont accumulés -> perte de la partie
+        System.out.println("Sélectionner la carte à jouer");
+        cardChoice = sc.nextInt();
+        players[2].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
+        for (int i = 0; i < nbPlayer; i++) {
+            System.out.println(players[i].toString());
+        }
+        System.out.println("jeton rouge : " + redToken.getValue());
 
         //Afficher les scores des joueurs
+        for (int i = 0; i < placedCard.getCardList().length; i++) {
+            System.out.println(placedCard.getCardList()[i].toString());
+        }
+        System.out.println("jeton rouge : " + redToken.getValue());
 
         //Retour menu principal
 

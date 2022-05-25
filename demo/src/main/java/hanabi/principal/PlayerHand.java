@@ -56,10 +56,6 @@ public class PlayerHand {
         return null; //Stub
     }
 
-    public Card discardACard(int position) {
-        return null; //Stub
-    }
-
     public Card playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
 
         if (position < 0 || position > hand.length) {
@@ -73,7 +69,7 @@ public class PlayerHand {
         } else {
             System.out.println("La carte n'a pas été posée");
             //TODO : complete this method
-            discardACard(position);
+            discardACard(position, deck, redToken, discard);
         }
 
         return null; //Stub
