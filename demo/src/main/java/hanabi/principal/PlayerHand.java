@@ -48,7 +48,9 @@ public class PlayerHand {
 
     public Card drawACard(int position, Deck deck) {
         if (position < 0 || position > hand.length) {
-            throw new IllegalArgumentException("La position de la carte doit être comprise entre 0 et " + hand.length);
+            throw new IllegalArgumentException("La position de la carte doit "
+                                               + "être comprise entre 0 et "
+                                               + hand.length);
         }
         hand[position] = deck.getCards();
         return null; //Stub
@@ -103,6 +105,32 @@ public class PlayerHand {
         }
 
         return hintList;
+    }
+
+    /**
+     * Défausse d'une carte et pioche d'une nouvelle carte à la place
+     * @param position  la position de la carte à défausser
+     * @param deck  la pioche dans laquelle repiocher une carte
+     * @param token  le jeton qu'il faudra incrémenter (bleu s'il se défausse
+     *               volontairement, rouge s'il se défausse à cause d'une erreur)
+     * @param discard  la défausse dans laquelle la carte sera placée
+     * @return  la nouvelle main du joueur
+     */
+    public Card[] discardACard(int position, Deck deck, Token token, Discard discard) {
+
+
+        if (token.getValue() < 8) {
+            token.incToken();
+        }
+        for (int i = 0; i < discard.getCardList().length; i++ ) {
+            if (discard.getCardList()[i] == null) {
+                discard.getCardList()[i] = hand[position];
+                break;
+            }
+        }
+        drawACard(position, deck);
+
+        return null;
     }
 
     @Override
