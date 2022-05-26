@@ -22,7 +22,7 @@ public class Main {
         int position;
         int selectedPlayer;
         String textChoice;
-        String[][] log;
+        String[] log;
 
         /* Menu */
         while (!validChoice) {
@@ -106,14 +106,14 @@ public class Main {
 
         /* Écrans de jeu */
         actualPlayer = 0;
-        log = new String[nbPlayer - 1][];
+        log = new String[nbPlayer - 1];
         gameOver = false;
         while (!gameOver) {
             System.out.println("Au tour de " + players[actualPlayer].getName());
             System.out.println("Log : ");
             for (int i = 0; i < log.length; i++) {
-                for (int j = 0; j < log[i].length; j++) {
-                    System.out.println();
+                if (log[i] != null) {
+                    System.out.println("Pour le joueur " + log[i]);
                 }
             }
             validChoice = false;
@@ -123,6 +123,7 @@ public class Main {
                         + "\n2. Donner un indice"
                         + "\n3. Se défausser");
                 choice = sc.nextInt();
+                // TODO Voir les cartes des autres joueurs
                 switch (choice) {
                     case 1:
                         System.out.println("Sélectionner la carte à jouer (1 à " + players[actualPlayer].getHand().length + "):");
@@ -149,12 +150,16 @@ public class Main {
                                 validChoice = true;
                                 System.out.println("Saisissez la couleur :");
                                 textChoice = sc.next();
-                                log[0] = players[actualPlayer].giveAHint(players[selectedPlayer], blueToken, textChoice);
+                                System.arraycopy(log, 1, log, 0, log.length - 1);
+                                log[log.length - 1] = players[selectedPlayer].getName() + ", Cartes en position : "
+                                                      + players[actualPlayer].giveAHint(players[selectedPlayer], blueToken, textChoice);
                             } else if (choice == 2) {
                                 validChoice = true;
                                 System.out.println("Saisissez la valeur :");
                                 choice = sc.nextInt();
-                                log[0] = players[actualPlayer].giveAHint(players[selectedPlayer], blueToken, choice);
+                                System.arraycopy(log, 1, log, 0, log.length - 1);
+                                log[log.length - 1] = players[selectedPlayer].getName() + ", Cartes en position : "
+                                                      + players[actualPlayer].giveAHint(players[selectedPlayer], blueToken, choice);
                             } else {
                                 System.out.println("Sélection incorrecte");
                             }
@@ -189,6 +194,6 @@ public class Main {
         }
 
         /* Écrans de score */
-
+        // TODO Completer l'écran de score
     }
 }
