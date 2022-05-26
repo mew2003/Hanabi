@@ -34,7 +34,6 @@ public class PlacedCard {
             if (card.getColor() == cardList[i].getColor() && card.getValue() == cardList[i].getValue() + 1) {
                 isSuccess = true;
                 cardList[i] = card;
-                System.out.println("Bravo bg");
                 if (card.getValue() == 5) {
                     token.incToken();
                 }

@@ -75,6 +75,11 @@ public class PlayerHand {
 
     public String[] giveAHint(PlayerHand user, Token token, String color) {
 
+
+        if (!color.equals("red") && !color.equals("blue") && !color.equals("pink") && !color.equals("yellow") && !color.equals("white")) {
+            throw new IllegalArgumentException("La couleur doit être red / blue / pink / yellow / white");
+        }
+
         String[] hintList = new String[user.hand.length];
 
         token.decToken();
@@ -88,6 +93,10 @@ public class PlayerHand {
     }
 
     public String[] giveAHint(PlayerHand user, Token token, int value) {
+
+        if (value < 0 || value > 5) {
+            throw new IllegalArgumentException("La valeur doit être comprise entre 0 et 5");
+        }
 
         String[] hintList = new String[user.hand.length];
 
