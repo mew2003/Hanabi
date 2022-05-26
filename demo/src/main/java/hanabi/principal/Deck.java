@@ -14,7 +14,7 @@ import java.util.Random;
 public class Deck {
 
     /** Nombre de cartes restantes dans le deck */
-    private int nombreDeCartes = 50;
+    private int nbCards = 50;
 
     //Liste des cartes du jeu
     private Card[] cards =
@@ -77,11 +77,15 @@ public class Deck {
     // Permet d'obtenir le paquet de cartes
     public Card getCards() {
         Random random = new Random();
-        int result = random.nextInt(nombreDeCartes);
+        int result = random.nextInt(nbCards);
         Card selectedCard = cards[result];
-        cards[result] = cards[nombreDeCartes - 1];
-        nombreDeCartes--;
+        cards[result] = cards[nbCards - 1];
+        nbCards--;
         return selectedCard;
+    }
+
+    public int getNbCards() {
+        return nbCards;
     }
 }
 
