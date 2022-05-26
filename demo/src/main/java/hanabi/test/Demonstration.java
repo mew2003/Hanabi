@@ -62,11 +62,11 @@ public class Demonstration {
 
         //Joueur 1 joue, donne un indice à joueur 2 -> perte de jeton
         System.out.println("Joueur 1 joue et donne un indice à joueur 2");
-        Card[] cardHint = players[0].giveAHint(players[1], blueToken, "red");
+        String[] cardHint = players[0].giveAHint(players[1], blueToken, "red");
         System.out.println("Le joueur 1 a donné un indice de couleur rouge à joueur 2");
         for (int i = 0; i < cardHint.length; i++) {
             if (cardHint[i] != null) {
-                System.out.println("Carte en position " + (i+1) + " : " + cardHint[i].getColor());
+                System.out.println("Carte en position " + cardHint[i]);
             }
         }
         System.out.println("jeton bleu : " + blueToken.getValue());
@@ -74,7 +74,7 @@ public class Demonstration {
         cardHint = players[0].giveAHint(players[1], blueToken, 3);
         for (int i = 0; i < cardHint.length; i++) {
             if (cardHint[i] != null) {
-                System.out.println("Carte en position " + (i+1) + " : " + cardHint[i].getValue());
+                System.out.println("Carte en position " + cardHint[i]);
             }
         }
         System.out.println("jeton bleu : " + blueToken.getValue());

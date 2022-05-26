@@ -1,7 +1,5 @@
 package principal;
 
-import java.util.Arrays;
-
 public class PlayerHand {
 
     private String name;
@@ -75,28 +73,28 @@ public class PlayerHand {
         return null; //Stub
     }
 
-    public Card[] giveAHint(PlayerHand user, Token token, String color) {
+    public String[] giveAHint(PlayerHand user, Token token, String color) {
 
-        Card[] hintList = new Card[user.hand.length];
+        String[] hintList = new String[user.hand.length];
 
         token.decToken();
         for (int i = 0; i < user.hand.length; i++) {
             if (user.hand[i].getColor().equals(color)) {
-                hintList[i] = user.hand[i];
+                hintList[i] = (i+1) + " : " + user.hand[i].getColor();
             }
         }
 
         return hintList;
     }
 
-    public Card[] giveAHint(PlayerHand user, Token token, int value) {
+    public String[] giveAHint(PlayerHand user, Token token, int value) {
 
-        Card[] hintList = new Card[user.hand.length];
+        String[] hintList = new String[user.hand.length];
 
         token.decToken();
         for (int i = 0; i < user.hand.length; i++) {
             if (user.hand[i].getValue() == value) {
-                hintList[i] = user.hand[i];
+                hintList[i] = (i+1) + " : " + user.hand[i].getValue();
             }
         }
 
