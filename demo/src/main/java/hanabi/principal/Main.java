@@ -22,7 +22,7 @@ public class Main {
         int position;
         int selectedPlayer;
         String textChoice;
-        Card[][] log;
+        String[][] log;
 
         /* Menu */
         while (!validChoice) {
@@ -106,7 +106,7 @@ public class Main {
 
         /* Écrans de jeu */
         actualPlayer = 0;
-        log = new Card[nbPlayer - 1][];
+        log = new String[nbPlayer - 1][];
         gameOver = false;
         while (!gameOver) {
             System.out.println("Au tour de " + players[actualPlayer].getName());
