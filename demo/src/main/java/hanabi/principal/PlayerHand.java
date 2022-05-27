@@ -85,8 +85,12 @@ public class PlayerHand {
         token.decToken();
         for (int i = 0; i < user.hand.length; i++) {
             if (user.hand[i].getColor().equals(color)) {
-                hintList += "\n" + (i+1) + " : " + user.hand[i].getColor();
+                hintList += "\nCarte en position " + (i+1) + " : " + user.hand[i].getColor();
             }
+        }
+
+        if (hintList.isBlank()) {
+            hintList = "\nAucune carte de couleur " + color;
         }
 
         return hintList;
@@ -103,8 +107,12 @@ public class PlayerHand {
         token.decToken();
         for (int i = 0; i < user.hand.length; i++) {
             if (user.hand[i].getValue() == value) {
-                hintList += "\n" + (i+1) + " : " + user.hand[i].getValue();
+                hintList += "\nCarte en position " + (i+1) + " : " + user.hand[i].getValue();
             }
+        }
+
+        if (hintList.isBlank()) {
+            hintList = "\nAucune carte de valeur " + value;
         }
 
         return hintList;
