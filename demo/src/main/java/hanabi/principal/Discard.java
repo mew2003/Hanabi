@@ -1,32 +1,17 @@
 package principal;
 
-import java.util.Arrays;
-
 public class Discard {
 
-    /** Nombre de carte présente dans Hanabi */
-    private final int NBCARD_MAX = 50;
-
-    /** Nombre de cartes actuellement présentes dans la défausse */
-    private int nbCard;
-
     /** Liste des cartes de la défausse */
-    private Card[] cardList;
+    private final Card[] cardList;
 
     /**
      * Définition de Discard
      */
     public Discard() {
-        cardList = new Card[NBCARD_MAX];
-        nbCard = 0;
-    }
-
-    /**
-     * Ajoute une carte à la défausse
-     * @param cardList
-     */
-    public void setCardList(Card[] cardList) {
-        this.cardList = cardList;
+        /* Nombre de cartes présente dans Hanabi */
+        final int NB_CARD_MAX = 50;
+        cardList = new Card[NB_CARD_MAX];
     }
 
     public Card[] getCardList() {
@@ -35,6 +20,10 @@ public class Discard {
 
     @Override
     public String toString() {
-        return "Liste des cartes de la défausse : " + Arrays.toString(cardList);
+        StringBuilder discard = new StringBuilder();
+        for (int i = 0; cardList[i] != null; i++) {
+            discard.append(cardList[i].toString()).append(", ");
+        }
+        return discard.toString();
     }
 }

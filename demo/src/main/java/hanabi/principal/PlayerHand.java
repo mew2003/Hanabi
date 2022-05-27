@@ -2,9 +2,9 @@ package principal;
 
 public class PlayerHand {
 
-    private String name;
+    private final String name;
 
-    private Card[] hand;
+    private final Card[] hand;
 
     /**
      * Définition d'une main de joueur,
@@ -51,7 +51,7 @@ public class PlayerHand {
                                                + hand.length);
         }
         hand[position] = deck.getCards();
-        return null; //Stub
+        return null;
     }
 
     public Card playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
@@ -66,11 +66,10 @@ public class PlayerHand {
             drawACard(position, deck);
         } else {
             System.out.println("La carte n'a pas été posée");
-            //TODO : complete this method
             discardACard(position, deck, redToken, discard);
         }
 
-        return null; //Stub
+        return null;
     }
 
     public String giveAHint(PlayerHand user, Token token, String color) {
@@ -80,20 +79,20 @@ public class PlayerHand {
             throw new IllegalArgumentException("La couleur doit être red / blue / pink / yellow / white");
         }
 
-        String hintList = "";
+        StringBuilder hintList = new StringBuilder();
 
         token.decToken();
         for (int i = 0; i < user.hand.length; i++) {
             if (user.hand[i].getColor().equals(color)) {
-                hintList += "\nCarte en position " + (i+1) + " : " + user.hand[i].getColor();
+                hintList.append("\nCarte en position ").append(i + 1).append(" : ").append(user.hand[i].getColor());
             }
         }
 
-        if (hintList.isBlank()) {
-            hintList = "\nAucune carte de couleur " + color;
+        if (hintList.toString().isBlank()) {
+            hintList = new StringBuilder("\nAucune carte de couleur " + color);
         }
 
-        return hintList;
+        return hintList.toString();
     }
 
     public String giveAHint(PlayerHand user, Token token, int value) {
@@ -102,20 +101,20 @@ public class PlayerHand {
             throw new IllegalArgumentException("La valeur doit être comprise entre 0 et 5");
         }
 
-        String hintList = "";
+        StringBuilder hintList = new StringBuilder();
 
         token.decToken();
         for (int i = 0; i < user.hand.length; i++) {
             if (user.hand[i].getValue() == value) {
-                hintList += "\nCarte en position " + (i+1) + " : " + user.hand[i].getValue();
+                hintList.append("\nCarte en position ").append(i + 1).append(" : ").append(user.hand[i].getValue());
             }
         }
 
-        if (hintList.isBlank()) {
-            hintList = "\nAucune carte de valeur " + value;
+        if (hintList.toString().isBlank()) {
+            hintList = new StringBuilder("\nAucune carte de valeur " + value);
         }
 
-        return hintList;
+        return hintList.toString();
     }
 
     /**
@@ -146,11 +145,11 @@ public class PlayerHand {
 
     @Override
     public String toString() {
-       String handString;
-       handString = "Le joueur " + name + " a la main ";
-       for (int i = 0; i < hand.length; i++) {
-           handString += hand[i].toString() + " ";
-       }
-       return handString;
+       StringBuilder handString;
+       handString = new StringBuilder("Le joueur " + name + " a la main ");
+        for (Card card : hand) {
+            handString.append(card.toString()).append(" ");
+        }
+       return handString.toString();
     }
 }

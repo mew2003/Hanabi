@@ -1,11 +1,11 @@
 package principal;
 
-import java.util.Arrays;
+import java.util.Objects;
 
 public class PlacedCard {
 
     /** Liste des cartes centrales du plateau de jeu */
-    private Card[] cardList;
+    private final Card[] cardList;
 
     /**
      * Définition de PlacedCard
@@ -26,14 +26,14 @@ public class PlacedCard {
      * Place une carte sur le plateau de jeu si pour sa couleur la valeur
      * est la même que celle de la carte placée +1.
      * @param card Une carte dans la main d'un joueur
-     * @return
+     * @return true si la carte a été placée, false sinon
      */
     public boolean placeACard(Card card, Token token) {
 
         boolean isSuccess = false;
 
         for (int i = 0; i < cardList.length; i++) {
-            if (card.getColor() == cardList[i].getColor() && card.getValue() == cardList[i].getValue() + 1) {
+            if (Objects.equals(card.getColor(), cardList[i].getColor()) && card.getValue() == cardList[i].getValue() + 1) {
                 isSuccess = true;
                 cardList[i] = card;
                 if (card.getValue() == 5) {
@@ -51,10 +51,10 @@ public class PlacedCard {
 
     @Override
     public String toString() {
-        String placedCard = "";
-        for (int i = 0; i < cardList.length; i++) {
-            placedCard += cardList[i].toString() + " ";
+        StringBuilder placedCard = new StringBuilder();
+        for (Card card : cardList) {
+            placedCard.append(card.toString()).append(" ");
         }
-        return placedCard;
+        return placedCard.toString();
     }
 }

@@ -17,7 +17,7 @@ public class Deck {
     private int nbCards = 50;
 
     //Liste des cartes du jeu
-    private Card[] cards =
+    private final Card[] cards =
             {
                     new Card("red", 1),
                     new Card("red", 1),

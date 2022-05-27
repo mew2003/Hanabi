@@ -8,7 +8,7 @@ public class Token {
     /**
      * Définition d'un jeton
      * @param value Nombre de token
-     * @throws IllegalArgumentException si le nombre de token est invalide (inférieur à 0 ou supérieur à 8)
+     * @throws IllegalArgumentException si le nombre de tokens est invalide (inférieur à 0 ou supérieur à 8)
      */
     public Token(int value) {
         if (value < 0 || value > 8) {
@@ -18,9 +18,9 @@ public class Token {
     }
 
     /**
-     * Incrémente le nombre de token par 1
+     * Incrémente le nombre de tokens par 1
      * @return La nouvelle valeur du token
-     * @throws IllegalArgumentException si le nombre de token est invalide (supérieur à 8)
+     * @throws IllegalArgumentException si le nombre de tokens est invalide (supérieur à 8)
      */
     public int incToken() {
         ++value;
@@ -31,9 +31,9 @@ public class Token {
     }
 
     /**
-     * Décrémente le nombre de token par 1
+     * Décrémente le nombre de tokens par 1
      * @return La nouvelle valeur du token
-     * @throws IllegalArgumentException si le nombre de token est invalide (inférieur à 0)
+     * @throws IllegalArgumentException si le nombre de tokens est invalide (inférieur à 0)
      */
     public int decToken() {
         --value;

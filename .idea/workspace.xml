@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="dd5a7cb7-493c-4646-b697-484705ddaa73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Discard.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Discard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlacedCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlacedCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlayerHand.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/PlayerHand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/principal/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Demonstration.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/hanabi/test/Demonstration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
