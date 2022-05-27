@@ -63,7 +63,9 @@ public class PlayerHand {
         isSuccess = placedCard.placeACard(hand[position], blueToken);
         if (isSuccess) {
             System.out.println("La carte a bien été posée");
-            drawACard(position, deck);
+            if (deck.getNbCards() != 0) {
+                drawACard(position, deck);
+            }
         } else {
             System.out.println("La carte n'a pas été posée");
             discardACard(position, deck, redToken, discard);
@@ -138,7 +140,10 @@ public class PlayerHand {
                 break;
             }
         }
-        drawACard(position, deck);
+        if (deck.getNbCards() != 0) {
+            drawACard(position, deck);
+        }
+
 
         return null;
     }
