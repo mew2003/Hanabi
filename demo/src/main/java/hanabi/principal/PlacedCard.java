@@ -1,5 +1,7 @@
 package principal;
 
+import java.util.Arrays;
+
 public class PlacedCard {
 
     /** Liste des cartes centrales du plateau de jeu */
@@ -45,5 +47,14 @@ public class PlacedCard {
 
     public Card[] getCardList() {
         return cardList;
+    }
+
+    @Override
+    public String toString() {
+        String placedCard = "";
+        for (int i = 0; i < cardList.length; i++) {
+            placedCard += cardList[i].toString() + " ";
+        }
+        return placedCard;
     }
 }

@@ -23,6 +23,7 @@ public class Main {
         int selectedPlayer;
         String textChoice;
         String[] log;
+        int score;
 
         /* Menu */
         while (!validChoice) {
@@ -109,21 +110,39 @@ public class Main {
         log = new String[nbPlayer - 1];
         gameOver = false;
         while (!gameOver) {
+            System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
             System.out.println("Au tour de " + players[actualPlayer].getName());
+            System.out.println();
             System.out.println("Log : ");
             for (int i = 0; i < log.length; i++) {
                 if (log[i] != null) {
                     System.out.println("Pour le joueur " + log[i]);
                 }
             }
+            System.out.println();
+            System.out.println("Jeton bleu : " + blueToken.getValue() + " | Jeton rouge : " + redToken.getValue());
+            System.out.println();
+            System.out.println("Affichage du plateau de jeu :");
+            System.out.println(placedCard.toString());
+            System.out.println();
+            System.out.println("Cartes des autres joueurs :");
+            for (int i = 0; i < nbPlayer; i++) {
+                if (i != actualPlayer) {
+                    System.out.println(players[i].toString());
+                }
+            }
+            System.out.println();
             validChoice = false;
             while (!validChoice) {
                 System.out.println("Sélectionner une option :"
-                        + "\n1. Jouer une carte"
-                        + "\n2. Donner un indice"
-                        + "\n3. Se défausser");
+                        + "\n1. Jouer une carte");
+                if (blueToken.getValue() > 0) {
+                    System.out.println("2. Donner un indice");
+                }
+                if (blueToken.getValue() != 8) {
+                    System.out.println("3. Se défausser");
+                }
                 choice = sc.nextInt();
-                // TODO Voir les cartes des autres joueurs
                 switch (choice) {
                     case 1:
                         System.out.println("Sélectionner la carte à jouer (1 à " + players[actualPlayer].getHand().length + "):");
@@ -194,6 +213,32 @@ public class Main {
         }
 
         /* Écrans de score */
-        // TODO Completer l'écran de score
+        score = 0;
+        System.out.println("Fin de la partie");
+        System.out.println("Affichage du score :");
+        for (int i = 0; i < 5; i++) {
+            score += placedCard.getCardList()[i].getValue();
+        }
+        System.out.println("\nTotal du score : " + score);
+        switch (score) {
+            case 0, 1, 2, 3, 4, 5:
+                System.out.println("\"Sur un cerisier mort, on ne trouve pas de fleurs.\" (枯れた桜には花がありません。)");
+                break;
+            case 6, 7, 8, 9, 10:
+                System.out.println("\"Ceux que l'on ne dit pas sont les fleurs du silence\" (言わぬが花)");
+                break;
+            case 11, 12, 13, 14, 15:
+                System.out.println("\"On ne peut admirer en même temps la lune, la neige et les fleurs.\" (月、雪、花を同時に見ることはできません。)");
+                break;
+            case 16, 17, 18, 19, 20:
+                System.out.println("\"Même la pensée d'une fourmi peut toucher le ciel.\" (蟻の思いも天に昇る)");
+                break;
+            case 21, 22, 23, 24:
+                System.out.println("\"La fleur d'hier est le rêve d'aujourd'hui\" (昨日の花は今日の夢)");
+                break;
+            case 25:
+                System.out.println("\"Il y a les êtres humains, et il y a vous\" (人類とあなた)");
+                break;
+        }
     }
 }
