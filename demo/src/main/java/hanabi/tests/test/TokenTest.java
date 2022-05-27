@@ -1,19 +1,24 @@
 package test;
 
 import org.junit.jupiter.api.Test;
-import principal.Deck;
+import principal.Token;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DeckTest extends Deck {
+class TokenTest extends Token {
 
     @Test
-    void getCardsTest() {
+    void testIncToken() {
         fail("Not yet implemented");
     }
 
     @Test
-    void getNbCardsTest() {
+    void testDecToken() {
+        fail("Not yet implemented");
+    }
+
+    @Test
+    void testGetValue() {
         fail("Not yet implemented");
     }
 }
