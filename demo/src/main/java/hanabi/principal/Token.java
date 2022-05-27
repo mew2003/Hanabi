@@ -6,6 +6,13 @@ public class Token {
     public int value;
 
     /**
+     * Constructeur qui initialise les opérandes à O
+     */
+    public Token() {
+        this.value = 0;
+    }
+
+    /**
      * Définition d'un jeton
      * @param value Nombre de token
      * @throws IllegalArgumentException si le nombre de tokens est invalide (inférieur à 0 ou supérieur à 8)

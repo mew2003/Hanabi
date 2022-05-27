@@ -18,6 +18,14 @@ public class Card {
     private final int value;
 
     /**
+     * Constructeur qui initialise les opérandes à O
+     */
+    public Card() {
+        this.color = "red";
+        this.value = 0;
+    }
+
+    /**
      * Définition d'une carte avec couleur et numéro
      * @param color Couleur de la carte
      * @param value Numéro de la carte

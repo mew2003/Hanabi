@@ -7,6 +7,14 @@ public class PlayerHand {
     private final Card[] hand;
 
     /**
+     * Constructeur qui initialise les opérandes à O
+     */
+    public PlayerHand() {
+        this.name = "";
+        this.hand = new Card[5];
+    }
+
+    /**
      * Définition d'une main de joueur,
      * Un joueur possède un nom et une main de cartes
      * La main du joueur est de 5 cartes si le nombre de joueurs total est inférieur à 4
@@ -143,7 +151,6 @@ public class PlayerHand {
         if (deck.getNbCards() != 0) {
             drawACard(position, deck);
         }
-
 
         return null;
     }

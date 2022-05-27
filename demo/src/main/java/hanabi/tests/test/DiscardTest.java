@@ -1,19 +1,19 @@
 package test;
 
 import org.junit.jupiter.api.Test;
-import principal.Deck;
+import principal.Discard;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DeckTest extends Deck {
+class DiscardTest extends Discard {
 
     @Test
-    void getCardsTest() {
+    void testGetCardList() {
         fail("Not yet implemented");
     }
 
     @Test
-    void getNbCardsTest() {
+    void testToString() {
         fail("Not yet implemented");
     }
 }
