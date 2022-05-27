@@ -24,6 +24,7 @@ public class Main {
         String textChoice;
         String[] log;
         int score;
+        int lastTurn = 0;
 
         /* Menu */
         while (!validChoice) {
@@ -205,7 +206,10 @@ public class Main {
 
             // Vérifier si le jeu est terminé
             if (deck.getNbCards() == 0) {
-                // TODO Implémenter cette méthode
+                lastTurn++;
+                if (lastTurn == nbPlayer + 1) {
+                    gameOver = true;
+                }
             }
             if (redToken.getValue() == 3) {
                 gameOver = true;
