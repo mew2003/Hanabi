@@ -7,8 +7,9 @@ package principal;
 
 import java.util.Random;
 
-/**
- * TODO le commentaire
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author 
  *
  */
 public class Deck {
@@ -71,10 +72,13 @@ public class Deck {
                     new Card("white", 5)
             };
 
-    // Pour Ã©viter l'instanciation inutile
+    /** Pour éviter l'instanciation inutile */
     public Deck() {}
 
-    // Permet d'obtenir le paquet de cartes
+    /** 
+     * Permet d'obtenir une carte piocher aléatoirement dans le paquet de cartes
+     * @return  la carte obtenue
+     */
     public Card getCards() {
         Random random = new Random();
         int result = random.nextInt(nbCards);
@@ -84,6 +88,7 @@ public class Deck {
         return selectedCard;
     }
 
+    /** @return le nombre de cartes */
     public int getNbCards() {
         return nbCards;
     }

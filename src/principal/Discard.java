@@ -1,5 +1,15 @@
+/*
+ * Discard.java                18/05/2022
+ * Info1
+ */
+
 package principal;
 
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author 
+ *
+ */
 public class Discard {
 
     /** Liste des cartes de la dÃ©fausse */
@@ -14,6 +24,7 @@ public class Discard {
         cardList = new Card[NB_CARD_MAX];
     }
 
+    /** @return la liste des cartes présentes dans la défausse */
     public Card[] getCardList() {
         return cardList;
     }

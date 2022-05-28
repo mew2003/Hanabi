@@ -1,7 +1,17 @@
+/*
+ * PlacedCard.java                18/05/2022
+ * Info1
+ */
+
 package principal;
 
 import java.util.Objects;
 
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author 
+ *
+ */
 public class PlacedCard {
 
     /** Liste des cartes centrales du plateau de jeu */
@@ -26,6 +36,7 @@ public class PlacedCard {
      * Place une carte sur le plateau de jeu si pour sa couleur la valeur
      * est la même que celle de la carte placée +1.
      * @param card Une carte dans la main d'un joueur
+     * @param token Le jeton bleu 
      * @return true si la carte a été placée, false sinon
      */
     public boolean placeACard(Card card, Token token) {
@@ -45,6 +56,7 @@ public class PlacedCard {
         return isSuccess;
     }
 
+    /** @return La liste de carte placées */
     public Card[] getCardList() {
         return cardList;
     }

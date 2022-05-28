@@ -5,8 +5,9 @@
 
 package principal;
 
-/**
- * TODO le commentaire
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author 
  *
  */
 public class Card {
@@ -14,14 +15,14 @@ public class Card {
     /** Couleur des cartes */
     private final String color;
 
-    /** NumÃ©ro des cartes  */
+    /** Numéro des cartes  */
     private final int value;
 
     /**
-     * DÃ©finition d'une carte avec couleur et numÃ©ro
+     * DÃ©finition d'une carte avec couleur et numéro
      * @param color Couleur de la carte
-     * @param value NumÃ©ro de la carte
-     * @throws IllegalArgumentException si la couleur ou le numÃ©ro de la carte
+     * @param value Numéro de la carte
+     * @throws IllegalArgumentException si la couleur ou le numéro de la carte
      */
     public Card(String color, int value) {
         boolean isCorrect = false;
@@ -58,12 +59,12 @@ public class Card {
         this.value = value;
     }
 
-    /** return la couleur de la carte */
+    /** @return la couleur de la carte */
     public String getColor() {
         return color;
     }
 
-    /** return le numÃ©ro de la carte */
+    /** @return le numéro de la carte */
     public int getValue() {
         return value;
     }

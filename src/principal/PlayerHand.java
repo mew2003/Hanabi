@@ -1,5 +1,15 @@
+/*
+ * PlayerHand.java                18/05/2022
+ * Info1
+ */
+
 package principal;
 
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author 
+ *
+ */
 public class PlayerHand {
 
     private final String name;
@@ -11,8 +21,9 @@ public class PlayerHand {
      * Un joueur possÃ¨de un nom et une main de cartes
      * La main du joueur est de 5 cartes si le nombre de joueurs total est infÃ©rieur Ã  4
      * Sinon, la main du joueur est de 4 cartes.
-     * @param name Nom du joueur
-     * @param nbPlayer Nombre de joueurs total
+     * @param name   Nom du joueur
+     * @param nbPlayer   Nombre de joueurs total
+     * @param deck   La pioche qui sert à initialisé la main du joueur
      * @throws IllegalArgumentException si le nombre de joueurs est invalide (infÃ©rieur Ã  2 ou supÃ©rieur Ã  5)
      */
     public PlayerHand(String name, int nbPlayer, Deck deck) {
@@ -36,14 +47,23 @@ public class PlayerHand {
         this.name = name;
     }
 
+    /** @return Le nom du joueur */
     public String getName() {
         return name;
     }
 
+    /** @return La main du joueur */
     public Card[] getHand() {
         return hand;
     }
 
+    /** 
+     * Choisit une carte aléatoirement dans la pioche et la place dans 
+     * la main d'un joueur
+     * @param position  La position à laquelle placer la carte
+     * @param deck  La pioche dans laquelle est pioché la carte
+     * @return rien
+     */
     public Card drawACard(int position, Deck deck) {
         if (position < 0 || position > hand.length) {
             throw new IllegalArgumentException("La position de la carte doit "
@@ -54,6 +74,16 @@ public class PlayerHand {
         return null;
     }
 
+    /** 
+     * TODO Commenter le rôle (SRP) de cette méthode
+     * @param position
+     * @param deck
+     * @param redToken
+     * @param blueToken
+     * @param placedCard
+     * @param discard
+     * @return rien
+     */
     public Card playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
 
         if (position < 0 || position > hand.length) {
@@ -74,6 +104,12 @@ public class PlayerHand {
         return null;
     }
 
+    /** TODO Commenter le rôle (SRP) de cette méthode
+     * @param user
+     * @param token
+     * @param color
+     * @return rien
+     */
     public String giveAHint(PlayerHand user, Token token, String color) {
 
 
@@ -97,6 +133,12 @@ public class PlayerHand {
         return hintList.toString();
     }
 
+    /** TODO Commenter le rôle (SRP) de cette méthode
+     * @param user
+     * @param token
+     * @param value
+     * @return rien
+     */
     public String giveAHint(PlayerHand user, Token token, int value) {
 
         if (value < 0 || value > 5) {
@@ -120,12 +162,12 @@ public class PlayerHand {
     }
 
     /**
-     * DÃ©fausse d'une carte et pioche d'une nouvelle carte Ã  la place
-     * @param position  la position de la carte Ã  dÃ©fausser
+     * Défausse d'une carte et pioche d'une nouvelle carte Ã  la place
+     * @param position  la position de la carte à défausser
      * @param deck  la pioche dans laquelle repiocher une carte
-     * @param token  le jeton qu'il faudra incrÃ©menter (bleu s'il se dÃ©fausse
-     *               volontairement, rouge s'il se dÃ©fausse Ã  cause d'une erreur)
-     * @param discard  la dÃ©fausse dans laquelle la carte sera placÃ©e
+     * @param token  le jeton qu'il faudra incrémenter (bleu s'il se dÃ©fausse
+     *               volontairement, rouge s'il se défausse à cause d'une erreur)
+     * @param discard  la défausse dans laquelle la carte sera placée
      * @return  la nouvelle main du joueur
      */
     public Card[] discardACard(int position, Deck deck, Token token, Discard discard) {

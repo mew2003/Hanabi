@@ -6,7 +6,17 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 
 
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author
+ *
+ */
 public class Main extends Application {
+    
+	/**
+	 * TODO Commenter le rôle (SRP) de cette méthode
+	 * @param primaryStage
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -20,6 +30,10 @@ public class Main extends Application {
 		}
 	}
 	
+	/** 
+	 * TODO Commenter le rôle (SRP) de cette méthode
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

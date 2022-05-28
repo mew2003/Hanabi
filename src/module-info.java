@@ -1,3 +1,7 @@
+/**
+ * @author nous
+ *
+ */
 module Hanabi {
 	requires javafx.controls;
 	requires org.junit.jupiter.api;

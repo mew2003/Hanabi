@@ -1,9 +1,23 @@
+/*
+ * Main.java                18/05/2022
+ * Info1
+ */
+
 package principal;
 
 import java.util.Scanner;
 
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author 
+ *
+ */
 public class Main {
 
+    /** 
+     * TODO Commenter le rôle (SRP) de cette méthode
+     * @param args
+     */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -28,7 +42,7 @@ public class Main {
 
         /* Menu */
         while (!validChoice) {
-            System.out.println("SÃ©lectionner une option :"
+            System.out.println("Sélectionnez une option :"
                     + "\n1. JOUER");
             choice = sc.nextInt();
             if (choice == 1) validChoice = true;
@@ -38,9 +52,9 @@ public class Main {
         validChoice = false;
         while (!validChoice) {
             System.out.println("""
-                    SÃ©lectionner une option :
+                    Sélectionnez une option :
                     1. Menu principal
-                    2. RÃ¨gles
+                    2. Règles
                     3. 2 joueurs
                     4. 3 joueurs
                     5. 4 joueurs
@@ -48,14 +62,14 @@ public class Main {
             choice = sc.nextInt();
             switch (choice) {
                 case 1 -> {
-                    /* TODO ImplÃ©menter cette mÃ©thode */
+                    /* TODO Implémenter cette méthode */
                     System.out.println("Retour au menu principal");
                     validChoice = true;
                 }
                 case 2 -> {
-                    /* TODO ImplÃ©menter cette mÃ©thode */
+                    /* TODO Implémenter cette méthode */
                     /* TODO envoyer vers Menu 3*/
-                    System.out.println("RÃ¨gles du jeu");
+                    System.out.println("Règles du jeu");
                     validChoice = true;
                 }
                 case 3 -> {
@@ -74,15 +88,15 @@ public class Main {
                     nbPlayer = 5;
                     validChoice = true;
                 }
-                default -> System.out.println("SÃ©lection incorrecte");
+                default -> System.out.println("Sélection incorrecte");
             }
         }
 
-        /* CrÃ©ation des objets permettant le bon fonctionnement du jeu */
-        // CrÃ©er un deck
+        /* Création des objets permettant le bon fonctionnement du jeu */
+        // Créer un deck
         deck = new Deck();
 
-        // CrÃ©ation des joueurs
+        // Création des joueurs
         players = new PlayerHand[nbPlayer];
         System.out.println("Veuillez saisir le noms des joueurs");
         for (int i = 0; i < nbPlayer; i++) {
@@ -95,17 +109,17 @@ public class Main {
             System.out.println((i+1) + ". " + players[i].getName());
         }
 
-        // CrÃ©ation du plateau de jeu
+        // Création du plateau de jeu
         placedCard = new PlacedCard();
 
-        // CrÃ©ation des jetons
+        // Création des jetons
         redToken = new Token(0);
         blueToken = new Token(8);
 
-        // CrÃ©ation de la dÃ©fausse
+        // Création de la défausse
         discard = new Discard();
 
-        /* Ã‰crans de jeu */
+        /* écrans de jeu */
         actualPlayer = 0;
         log = new String[nbPlayer - 1];
         gameOver = false;
@@ -120,9 +134,10 @@ public class Main {
                 }
             }
             System.out.println();
-            System.out.println("Affichage de la dÃ©fausse : " + discard);
+            System.out.println("Affichage de la défausse : " + discard);
             System.out.println();
-            System.out.println("Jeton bleu : " + blueToken.getValue() + " | Jeton rouge : " + redToken.getValue());
+            System.out.println("Jeton bleu : " + blueToken.getValue() 
+                               + " | Jeton rouge : " + redToken.getValue());
             System.out.println();
             System.out.println("Affichage du plateau de jeu :");
             System.out.println(placedCard);
@@ -136,25 +151,25 @@ public class Main {
             System.out.println();
             validChoice = false;
             while (!validChoice) {
-                System.out.println("SÃ©lectionner une option :"
+                System.out.println("Sélectionnez une option :"
                         + "\n1. Jouer une carte");
                 if (blueToken.getValue() > 0) {
                     System.out.println("2. Donner un indice");
                 }
                 if (blueToken.getValue() != 8) {
-                    System.out.println("3. Se dÃ©fausser");
+                    System.out.println("3. Se défausser");
                 }
                 choice = sc.nextInt();
                 switch (choice) {
                     case 1 -> {
-                        System.out.println("SÃ©lectionner la carte Ã  jouer (1 Ã  " + players[actualPlayer].getHand().length + "):");
+                        System.out.println("Sélectionner la carte à jouer (1 à " + players[actualPlayer].getHand().length + "):");
                         position = sc.nextInt() - 1;
-                        System.out.println("Vous avez jouÃ© la carte " + players[actualPlayer].getHand()[position].toString());
+                        System.out.println("Vous avez joué la carte " + players[actualPlayer].getHand()[position].toString());
                         players[actualPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
                         validChoice = true;
                     }
                     case 2 -> {
-                        System.out.println("SÃ©lectionner le joueur Ã  qui vous souhaitez donner un indice :");
+                        System.out.println("Sélectionnez le joueur à qui vous souhaitez donner un indice :");
                         for (int i = 0; i < nbPlayer; i++) {
                             if (i != actualPlayer) {
                                 System.out.println((i + 1) + ". " + players[i].getName());
@@ -163,7 +178,7 @@ public class Main {
                         selectedPlayer = sc.nextInt() - 1;
                         while (!validChoice) {
                             System.out.println("""
-                                    SÃ©lectionner l'indice Ã  donner :
+                                    Sélectionnez l'indice à donner :
                                     1. Couleur
                                     2. Valeur""");
                             choice = sc.nextInt();
@@ -182,18 +197,18 @@ public class Main {
                                 log[log.length - 1] = players[selectedPlayer].getName() + ", Cartes en position : "
                                         + players[actualPlayer].giveAHint(players[selectedPlayer], blueToken, choice);
                             } else {
-                                System.out.println("SÃ©lection incorrecte");
+                                System.out.println("Sélection incorrecte");
                             }
                         }
                     }
                     case 3 -> {
-                        System.out.println("SÃ©lectionner la carte Ã  dÃ©fausser (1 Ã  " + players[actualPlayer].getHand().length + "):");
+                        System.out.println("Sélectionnez la carte à défausser (1 à " + players[actualPlayer].getHand().length + "):");
                         position = sc.nextInt() - 1;
-                        System.out.println("Vous avez dÃ©faussÃ© la carte " + players[actualPlayer].getHand()[position].toString());
+                        System.out.println("Vous avez défaussé la carte " + players[actualPlayer].getHand()[position].toString());
                         players[actualPlayer].discardACard(position, deck, blueToken, discard);
                         validChoice = true;
                     }
-                    default -> System.out.println("SÃ©lection incorrecte");
+                    default -> System.out.println("Sélection incorrecte");
                 }
             }
             System.out.println("Fin du tour de " + players[actualPlayer].getName());
@@ -203,7 +218,7 @@ public class Main {
                 actualPlayer++;
             }
 
-            // VÃ©rifier si le jeu est terminÃ©
+            // Vérifier si le jeu est terminé
             if (deck.getNbCards() == 0) {
                 lastTurn++;
                 if (lastTurn == nbPlayer + 1) {
@@ -215,7 +230,7 @@ public class Main {
             }
         }
 
-        /* Ã‰crans de score */
+        /* écrans de score */
         score = 0;
         System.out.println("Fin de la partie");
         System.out.println("Affichage du score :");
@@ -225,15 +240,15 @@ public class Main {
         System.out.println("\nTotal du score : " + score);
         switch (score) {
             case 0, 1, 2, 3, 4, 5 ->
-                    System.out.println("\"Sur un cerisier mort, on ne trouve pas de fleurs.\" (æž¯ã‚Œã�Ÿæ¡œã�«ã�¯èŠ±ã�Œã�‚ã‚Šã�¾ã�›ã‚“ã€‚)");
+                    System.out.println("\"Sur un cerisier mort, on ne trouve pas de fleurs.\" (枯れた桜には花がありません。)");
             case 6, 7, 8, 9, 10 ->
-                    System.out.println("\"Ceux que l'on ne dit pas sont les fleurs du silence\" (è¨€ã‚�ã�¬ã�ŒèŠ±)");
+                    System.out.println("\"Ceux que l'on ne dit pas sont les fleurs du silence\" (言わぬが花)");
             case 11, 12, 13, 14, 15 ->
-                    System.out.println("\"On ne peut admirer en mÃªme temps la lune, la neige et les fleurs.\" (æœˆã€�é›ªã€�èŠ±ã‚’å�Œæ™‚ã�«è¦‹ã‚‹ã�“ã�¨ã�¯ã�§ã��ã�¾ã�›ã‚“ã€‚)");
+                    System.out.println("\"On ne peut admirer en même temps la lune, la neige et les fleurs.\" (月、雪、花同時に見れいません)");
             case 16, 17, 18, 19, 20 ->
-                    System.out.println("\"MÃªme la pensÃ©e d'une fourmi peut toucher le ciel.\" (èŸ»ã�®æ€�ã�„ã‚‚å¤©ã�«æ˜‡ã‚‹)");
-            case 21, 22, 23, 24 -> System.out.println("\"La fleur d'hier est le rÃªve d'aujourd'hui\" (æ˜¨æ—¥ã�®èŠ±ã�¯ä»Šæ—¥ã�®å¤¢)");
-            case 25 -> System.out.println("\"Il y a les Ãªtres humains, et il y a vous\" (äººé¡žã�¨ã�‚ã�ªã�Ÿ)");
+                    System.out.println("\"Même la pensée d'une fourmi peut toucher le ciel.\" (蟻の思いも天に昇る)");
+            case 21, 22, 23, 24 -> System.out.println("\"La fleur d'hier est le rêve d'aujourd'hui\" (昨日の花は今日の夢)");
+            case 25 -> System.out.println("\"Il y a les êtres humains, et il y a vous\" (人間とあなたがいます)");
         }
         sc.close();
     }

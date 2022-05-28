@@ -8,8 +8,17 @@ import principal.*;
 
 import java.util.Scanner;
 
+/** 
+ * TODO Commenter la responsabilité de cette class
+ * @author
+ *
+ */
 public class Demonstration {
 
+    /** 
+     * TODO Commenter le rôle (SRP) de cette méthode
+     * @param args 
+     */
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -17,13 +26,13 @@ public class Demonstration {
         int cardChoice;
         PlayerHand[] players;
 
-        //CrÃ©e et initialisÃ© un deck
-        System.out.println("CrÃ©ation du deck");
+        //Crée et initialise un deck
+        System.out.println("Création du deck");
         Deck deck = new Deck();
-        System.out.println("Le deck a bien Ã©tÃ© crÃ©e");
+        System.out.println("Le deck a bien été créé");
 
-        //CrÃ©e User
-        System.out.println("CrÃ©ation des joueurs");
+        //Crée User
+        System.out.println("Création des joueurs");
         System.out.println("Entrez le nombre de joueurs");
         nbPlayer = sc.nextInt();
         players = new PlayerHand[nbPlayer];
@@ -38,13 +47,13 @@ public class Demonstration {
             System.out.println(players[i].toString());
         }
 
-        //CrÃ©e le plateau avec des cartes de valeurs nulles
+        //Crée le plateau avec des cartes de valeurs nulles
         PlacedCard placedCard = new PlacedCard();
         for (int i = 0; i < placedCard.getCardList().length; i++) {
             System.out.println(placedCard.getCardList()[i].toString());
         }
 
-        //CrÃ©e les jetons (initialisation Ã  8 et 0)
+        //Crée les jetons (initialisation à 8 et 0)
         Token redToken = new Token(0);
         Token blueToken = new Token(8);
         System.out.println("Le jeton rouge a Ã©tÃ© initialisÃ© avec la valeur "
@@ -52,7 +61,7 @@ public class Demonstration {
                            + " et le jeton bleu a Ã©tÃ© initialisÃ© avec la valeur "
                            + blueToken.getValue());
 
-        //CrÃ©e la dÃ©fausse
+        //Crée la défausse
         Discard discard = new Discard();
         System.out.println(discard);
 
@@ -60,17 +69,17 @@ public class Demonstration {
          * Lancement de la partie
          * ----------------------------------- */
 
-        //Joueur 1 joue, donne un indice Ã  joueur 2 -> perte de jeton
-/*        System.out.println("Joueur 1 joue et donne un indice Ã  joueur 2");
+        //Joueur 1 joue, donne un indice à joueur 2 -> perte de jeton
+/*        System.out.println("Joueur 1 joue et donne un indice à joueur 2");
         String[] cardHint = players[0].giveAHint(players[1], blueToken, "red");
-        System.out.println("Le joueur 1 a donnÃ© un indice de couleur rouge Ã  joueur 2");
+        System.out.println("Le joueur 1 a donné un indice de couleur rouge à joueur 2");
         for (int i = 0; i < cardHint.length; i++) {
             if (cardHint[i] != null) {
                 System.out.println("Carte en position " + cardHint[i]);
             }
         }
         System.out.println("jeton bleu : " + blueToken.getValue());
-        System.out.println("Le joueur 1 a donnÃ© un indice de valeur 3 Ã  joueur 2");
+        System.out.println("Le joueur 1 a donné un indice de valeur 3 à joueur 2");
         cardHint = players[0].giveAHint(players[1], blueToken, 3);
         for (int i = 0; i < cardHint.length; i++) {
             if (cardHint[i] != null) {
@@ -80,7 +89,7 @@ public class Demonstration {
         System.out.println("jeton bleu : " + blueToken.getValue());
 */
         //Joueur 2 joue, il joue la carte -> place la carte et pioche une nouvelle carte
-        System.out.println("SÃ©lectionner la carte Ã  jouer");
+        System.out.println("Sélectionnez la carte à jouer");
         cardChoice = sc.nextInt();
         players[1].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
         for (int i = 0; i < placedCard.getCardList().length; i++) {
@@ -90,11 +99,11 @@ public class Demonstration {
             System.out.println(players[i].toString());
         }
 
-        //Joueur 3 joue, il dÃ©fausse une carte et pioche une nouvelle carte â†’ gagne un jeton
+        //Joueur 3 joue, il défausse une carte et pioche une nouvelle carte -> gagne un jeton
         players[2].discardACard(4,deck, blueToken, discard);
         for (int i = 0; i < discard.getCardList().length; i++) {
             if (discard.getCardList()[i] != null) {
-                System.out.println("Carte(s) dans la dÃ©fausse : " + discard.getCardList()[i]);
+                System.out.println("Carte(s) dans la défausse : " + discard.getCardList()[i]);
             }
         }
         System.out.println("jeton bleu : " + blueToken.getValue());
@@ -104,8 +113,8 @@ public class Demonstration {
             System.out.println(players[i].toString());
         }
 
-        //Joueur 1 joue, il place une carte perdante â†’ gagne un jeton rouge et reprend une carte
-        System.out.println("SÃ©lectionner la carte Ã  jouer");
+        //Joueur 1 joue, il place une carte perdante -> gagne un jeton rouge et reprend une carte
+        System.out.println("Sélectionnez la carte à jouer");
         cardChoice = sc.nextInt();
         players[0].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
         for (int i = 0; i < nbPlayer; i++) {
@@ -113,8 +122,8 @@ public class Demonstration {
         }
         System.out.println("jeton rouge : " + redToken.getValue());
 
-        //Joueur 2 joue, il place une carte perdante â†’ 2 jetons rouges se sont accumulÃ©s
-        System.out.println("SÃ©lectionner la carte Ã  jouer");
+        //Joueur 2 joue, il place une carte perdante -> 2 jetons rouges se sont accumulés
+        System.out.println("Sélectionneé la carte à jouer");
         cardChoice = sc.nextInt();
         players[1].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
         for (int i = 0; i < nbPlayer; i++) {
@@ -122,8 +131,8 @@ public class Demonstration {
         }
         System.out.println("jeton rouge : " + redToken.getValue());
 
-        //Joueur 3 joue, il place une carte perdante â†’ 3 jetons rouges se sont accumulÃ©s â†’ perte de la partie
-        System.out.println("SÃ©lectionner la carte Ã  jouer");
+        //Joueur 3 joue, il place une carte perdante -> 3 jetons rouges se sont accumulés -> perte de la partie
+        System.out.println("Sélectionnez la carte à jouer");
         cardChoice = sc.nextInt();
         players[2].playACard(cardChoice, deck, redToken, blueToken, placedCard, discard);
         for (int i = 0; i < nbPlayer; i++) {
