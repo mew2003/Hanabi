@@ -1,0 +1,61 @@
+@font-face {
+    font-family: Quintessential;
+    src: url("fonts/Quintessential-Regular.ttf");
+}
+
+
+.mainButton {
+	
+	
+	
+	-fx-text-alignement: center;
+	-fx-alignement: center;
+	-fx-pref-width: 400px;
+	-fx-pref-height: 130px;
+	-fx-min-width: 400px;
+	-fx-min-height: 130px;
+	-fx-font-color: #FFFFFF;
+	-fx-font-weight: 400;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(images/buttonColor.jpg);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	-fx-opacity: 50%;
+
+	
+}
+
+.textButton {
+	-fx-text-fill: #FFFFFF;
+	-fx-font-family: Quintessential;
+	-fx-font-size: 96px;
+	-fx-line-height: 147px;
+	-fx-color: #FFFFFF;
+}
+
+.mainButton :hover {
+	
+	-fx-width: 400px;
+	-fx-height: 130px;
+	-fx-font-family: Quintessential;
+	-fx-font-weight: 400;
+	-fx-font-size: 80px;
+	-fx-line-height: 147px;
+	-fx-border-radius: 15px;
+	-fx-background-image: url(images/background.jpg);
+	-fx-opacity: 100%;
+
+}
+
+.pane {
+	-fx-display: flex;
+	-fx-flex-direction: row;
+	-fx-align-items: center;
+    -fx-background-image: url(images/Video.jpg);
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-width: 1920px;
+    -fx-height: 1080px;
+    
+}
