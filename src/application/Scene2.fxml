@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080" prefWidth="1920" style="-fx-pref-height: 1080; -fx-pref-width: 1920;" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Text fill="WHITE" layoutX="861.0" layoutY="554.0" onMouseClicked="#onHelloButtonClick" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="2.0" styleClass="textButton" text="JOUER" textAlignment="CENTER" wrappingWidth="300.13671875" />
+      <Button fx:id="test" alignment="CENTER" layoutX="811.0" layoutY="454.0" mnemonicParsing="false" onAction="#onHelloButtonClick" opacity="0.0" styleClass="mainButton" textAlignment="JUSTIFY" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</Pane>
