@@ -38,8 +38,14 @@ public class PlacedCard {
      * @param card Une carte dans la main d'un joueur
      * @param token Le jeton bleu 
      * @return true si la carte a Ã©tÃ© placÃ©e, false sinon
+     * @throws IllegalArgumentException si la valeur de la carte est incorrect 
+     *                                  (inférieur à 0 ou supérieur à 5)
      */
     public boolean placeACard(Card card, Token token) {
+    	
+    	if (card.getValue() < 0 || card.getValue() > 5) {
+    		throw new IllegalArgumentException("La valeur " + card.getValue() + " de la carte est incorrect.");
+    	}
 
         boolean isSuccess = false;
 

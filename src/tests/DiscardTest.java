@@ -3,22 +3,27 @@ package tests;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import principal.Discard;
 
 class DiscardTest {
 
 	@Test
-	void testDiscard() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	void testGetCardList() {
-		fail("Not yet implemented");
+
+		Discard discard = new Discard();
+		
+		assertEquals(50, discard.getCardList().length);
+		
+		
 	}
 
 	@Test
 	void testToString() {
-		fail("Not yet implemented");
+		
+		Discard discard = new Discard();
+		
+		assertEquals("", discard.toString());
+		
 	}
 
 }
