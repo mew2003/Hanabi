@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" onKeyPressed="#pressed" prefHeight="1080" prefWidth="1920" style="-fx-pref-height: 1080; -fx-pref-width: 1920;" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Circle fill="DODGERBLUE" layoutX="60.0" layoutY="60.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#ff1f1f" layoutX="60.0" layoutY="160.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label alignment="TOP_LEFT" layoutX="120.0" layoutY="12.0" prefHeight="77.0" prefWidth="40.0" text="8" textAlignment="CENTER">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_LEFT" layoutX="120.0" layoutY="116.0" prefHeight="77.0" prefWidth="40.0" text="0" textAlignment="CENTER">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <Button layoutX="74.0" layoutY="747.0" mnemonicParsing="false" styleClass="defausse" />
+      <Button layoutX="1714.0" layoutY="40.0" mnemonicParsing="false" prefHeight="571.0" prefWidth="360.0" styleClass="pioche" />
+      <Pane layoutX="614.0" layoutY="770.0" prefHeight="261.57" prefWidth="689.47">
+         <children>
+            <Button layoutX="23.18" layoutY="40.0" mnemonicParsing="false" rotate="336.82" styleClass="mainPlayerCard" />
+            <Button layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="mainPlayerCard" />
+            <Button layoutX="273.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="mainPlayerCard" />
+            <Button layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="mainPlayerCard" />
+         </children>
+      </Pane>
+      <Pane layoutX="614.0" layoutY="40.0" prefHeight="261.57" prefWidth="689.47" rotate="180.0">
+         <children>
+            <Button layoutX="23.18" layoutY="40.0" mnemonicParsing="false" rotate="336.82" styleClass="otherPlayerCard" />
+            <Button layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="otherPlayerCard" />
+            <Button layoutX="273.0" mnemonicParsing="false" styleClass="otherPlayerCard" />
+            <Button layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="otherPlayerCard" />
+            <Button layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="otherPlayerCard" />
+         </children>
+      </Pane>
+      <Pane layoutX="514.0" layoutY="443.0" prefHeight="200.0" prefWidth="882.0">
+         <children>
+            <Button mnemonicParsing="false" styleClass="placedCard" />
+            <Button layoutX="183.0" mnemonicParsing="false" styleClass="placedCard" />
+            <Button layoutX="366.0" mnemonicParsing="false" styleClass="placedCard" />
+            <Button layoutX="549.0" mnemonicParsing="false" styleClass="placedCard" />
+            <Button layoutX="732.0" mnemonicParsing="false" styleClass="placedCard" />
+         </children>
+      </Pane>
+      <Pane fx:id="escapeMenu" layoutX="610.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" styleClass="escapeMenu" visible="false">
+         <children>
+            <Button layoutX="214.0" layoutY="41.0" mnemonicParsing="false" onAction="#returnGame" onMouseClicked="#returnGame" text="Reprendre">
+               <styleClass>
+                  <String fx:value="menuOption" />
+                  <String fx:value="textOptionButton" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="214.0" layoutY="151.0" mnemonicParsing="false" text="Règles">
+               <styleClass>
+                  <String fx:value="menuOption" />
+                  <String fx:value="textOptionButton" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="214.0" layoutY="261.0" mnemonicParsing="false" onAction="#switchToMenu" text="Menu">
+               <styleClass>
+                  <String fx:value="menuOption" />
+                  <String fx:value="textOptionButton" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+   <effect>
+      <InnerShadow color="#092387ed" height="174.0" offsetX="9.0" radius="96.0" width="212.0" />
+   </effect>
+</Pane>

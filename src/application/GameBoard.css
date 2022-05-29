@@ -1,0 +1,105 @@
+@font-face {
+    font-family: Quintessential;
+    src: url("../../resources/font/Quintessential-Regular.ttf");
+}
+
+.pane {
+    -fx-background: #0F34B9;
+}
+
+.defausse {
+	
+	-fx-pref-width: 150px;
+	-fx-pref-height: 265px;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/Defausse.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	
+}
+
+.pioche {
+	
+	-fx-pref-width: 163px;
+	-fx-pref-height: 200px;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/Pioche.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	
+}
+
+.mainPlayerCard {
+	
+	-fx-pref-width: 150px;
+	-fx-pref-height: 200px;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/DosCarte.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	
+}
+
+
+.otherPlayerCard {
+	
+	-fx-pref-width: 150px;
+	-fx-pref-height: 200px;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/DosCarte.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	
+}
+
+.placedCard {
+	
+	-fx-pref-width: 150px;
+	-fx-pref-height: 200px;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/DosCarte.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	
+}
+
+.escapeMenu {
+	
+	-fx-pref-width: 700px;
+	-fx-pref-height: 393.56px;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background: #000000;
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: cover;
+	
+}
+
+.menuOption {
+	-fx-pref-width: 273px;
+	-fx-pref-height: 85px;
+	-fx-font-weight: 400;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/buttonColor.jpg);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: stretch;
+	-fx-opacity: 50%;
+}
+
+.menuOption:hover {
+	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
+	-fx-opacity: 100%;
+}
+
+.textOptionButton {
+	-fx-text-fill: #FFFFFF;
+	-fx-font-family: Quintessential;
+	-fx-font-size: 40px;
+	-fx-color: #FFFFFF;
+}
