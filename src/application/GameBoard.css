@@ -134,3 +134,20 @@
     -fx-font-size: 28px;
     -fx-color: #000000;	
 }
+
+.okButton {
+	-fx-pref-width: 250px;
+	-fx-pref-height: 60px;
+	-fx-font-weight: 400;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/buttonColor.jpg);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: stretch;
+	-fx-opacity: 50%;
+}
+
+.okButton:hover {
+	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
+	-fx-opacity: 100%;
+}

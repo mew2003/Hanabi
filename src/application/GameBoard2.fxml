@@ -121,10 +121,14 @@
                   <Font size="64.0" />
                </font>
             </Label>
-            <Button layoutX="180.0" layoutY="255.0" mnemonicParsing="false" onAction="#returnGame" prefHeight="62.0" prefWidth="340.0" text="OK">
+            <Button layoutX="224.0" layoutY="220.0" mnemonicParsing="false" onAction="#returnGame" prefHeight="62.0" prefWidth="340.0" text="OK">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+               <styleClass>
+                  <String fx:value="submitButtonFont" />
+                  <String fx:value="okButton" />
+               </styleClass></Button>
          </children>
       </Pane>
    </children>
