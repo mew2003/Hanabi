@@ -103,12 +103,28 @@
                </font>
             </Label>
             <TextField fx:id="player1" layoutX="233.0" layoutY="138.0" prefHeight="40.0" prefWidth="327.0" />
-            <TextField fx:id="player2" layoutX="236.0" layoutY="206.0" prefHeight="40.0" prefWidth="327.0" />
+            <TextField fx:id="player2" layoutX="233.0" layoutY="206.0" prefHeight="40.0" prefWidth="327.0" />
             <Button layoutX="510.0" layoutY="300.0" mnemonicParsing="false" onAction="#enteredNames" prefHeight="80.0" prefWidth="217.0" text="Valider" textFill="WHITE">
                <styleClass>
                   <String fx:value="submitButton" />
                   <String fx:value="submitButtonFont" />
-               </styleClass></Button>
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </Pane>
+      <Pane fx:id="playerTurn" layoutX="610.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" styleClass="escapeMenu" visible="false">
+         <children>
+            <Label fx:id="labelPlayerTurn" alignment="TOP_LEFT" layoutX="83.0" layoutY="74.0" prefHeight="80.0" prefWidth="535.0" styleClass="textPlayer" textAlignment="CENTER">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Button layoutX="180.0" layoutY="255.0" mnemonicParsing="false" onAction="#returnGame" prefHeight="62.0" prefWidth="340.0" text="OK">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
    </children>
