@@ -97,3 +97,9 @@
 	-fx-background-size: stretch;
 	-fx-opacity: 100%;
 }
+
+.RulesFonts {
+	-fx-font-family: Quintessential;
+	-fx-font-size: 28px;
+	-fx-color: #FFFFFF;
+}
