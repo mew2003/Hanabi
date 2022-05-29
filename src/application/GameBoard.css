@@ -123,7 +123,7 @@
 	-fx-opacity: 50%;
 }
 
-.submitButton: hover {
+.submitButton:hover {
 	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
 	-fx-opacity: 100%;
 }
