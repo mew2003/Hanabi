@@ -4,34 +4,26 @@
 }
 
 .pane {
-	-fx-display: flex;
-	-fx-flex-direction: row;
-	-fx-align-items: center;
     -fx-background-image: url(../../resources/img/mainBackground.jpg);
     -fx-background-repeat: no-repeat;
     -fx-background-position: center center;
-    -fx-width: 1920px;
-    -fx-height: 1080px;
     
 }
 
 .mainButton {
 	
-	-fx-text-alignement: center;
-	-fx-alignement: center;
 	-fx-pref-width: 400px;
 	-fx-pref-height: 130px;
 	-fx-min-width: 400px;
 	-fx-min-height: 130px;
-	-fx-font-color: #FFFFFF;
 	-fx-font-weight: 400;
 	-fx-border-radius: 15px;
 	-fx-background-radius: 15px;
 	-fx-background-image: url(../../resources/img/buttonColor.jpg);
 	-fx-background-repeat: no-repeat;
-	-fx-background-size: stretch;
+	-fx-background-size: cover;
 	-fx-opacity: 50%;
-
+	
 	
 }
 
@@ -46,19 +38,15 @@
 	-fx-text-fill: #FFFFFF;
 	-fx-font-family: Quintessential;
 	-fx-font-size: 96px;
-	-fx-line-height: 147px;
 	-fx-color: #FFFFFF;
 }
 
 
 .optionButton {
-	-fx-text-alignement: center;
-	-fx-alignement: center;
 	-fx-pref-width: 273px;
 	-fx-pref-height: 85px;
 	-fx-min-width: 273px;
 	-fx-min-height: 85px;
-	-fx-font-color: #FFFFFF;
 	-fx-font-weight: 400;
 	-fx-border-radius: 15px;
 	-fx-background-radius: 15px;
@@ -66,12 +54,12 @@
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: stretch;
 	-fx-opacity: 100%;
+	
 }
 
 .textOptionButton {
 	-fx-text-fill: #FFFFFF;
 	-fx-font-family: Quintessential;
 	-fx-font-size: 40px;
-	-fx-line-height: 147px;
 	-fx-color: #FFFFFF;
 }
