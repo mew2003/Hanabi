@@ -110,3 +110,27 @@
     -fx-font-size: 40px;
     -fx-color: #000000;
 }
+
+.submitButton {
+	-fx-pref-width: 163px;
+	-fx-pref-height: 56px;
+	-fx-font-weight: 400;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/buttonColor.jpg);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: stretch;
+	-fx-opacity: 50%;
+}
+
+.submitButton: hover {
+	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
+	-fx-opacity: 100%;
+}
+
+.submitButtonFont {
+    -fx-color: #FFFFFF;
+    -fx-font-family: Quintessential;
+    -fx-font-size: 28px;
+    -fx-color: #000000;	
+}
