@@ -13,7 +13,12 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import principal.Card;
 import principal.Deck;
+import principal.Discard;
+import principal.PlacedCard;
+import principal.PlayerHand;
+import principal.Token;
 
 public class Controller {
 	
@@ -27,7 +32,11 @@ public class Controller {
     private TextField player2;
     
 	private Deck deck;
-	private boolean playerNamesEntered = false;
+	private PlayerHand[] players;
+	private PlacedCard placedCard;
+	private Token redToken;
+	private Token blueToken;
+	private Discard discard;
 
     public void initialize() {
     	
@@ -68,20 +77,11 @@ public class Controller {
     } 
     
     @FXML
-    protected void switchToGameBoard2(ActionEvent e) throws IOException {
+    protected void switchToGameBoard2(ActionEvent e) throws IOException, InterruptedException {
     	root = FXMLLoader.load(getClass().getResource("GameBoard2.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("GameBoard.css").toExternalForm());
-		
-		/* Création des outils nécessaire au bon déroulement d'une partie */
-		//Création du deck
-		deck = new Deck();
-		
-		//Création des joueurs
-		while (!playerNamesEntered) {}
-		System.out.println("gg bg t'a écrit les noms");
-		
 		stage.setScene(scene);
 		stage.show();
 		
@@ -104,11 +104,136 @@ public class Controller {
     }
     
     @FXML
-    protected void enteredNames(ActionEvent e) throws IOException {
-    	
+    protected void enteredNames(ActionEvent e) throws IOException, InterruptedException {
     	if (!player1.getText().isBlank() && !player2.getText().isBlank()) {
+    		partyConstruct();
     		playerName.setVisible(false);
-    		playerNamesEntered = true;
+    	}
+    }
+    
+    private void partyConstruct() {
+    	
+    	/* Création des outils nécessaire au bon déroulement d'une partie */
+		//Création du deck
+		deck = new Deck();
+		players = new PlayerHand[2];
+
+		//Création des joueurs
+        players[0] = new PlayerHand(player1.getText(), 2, deck);
+        players[1] = new PlayerHand(player2.getText(), 2, deck);
+        
+        //Création du plateau de jeu
+        placedCard = new PlacedCard();
+        
+        // Création des jetons
+        redToken = new Token(0);
+        blueToken = new Token(8);
+        
+        // Création de la défausse
+        discard = new Discard();
+        
+        
+    	
+    }
+    
+    private void setCardTheme(Card card, int position) {
+    	
+    	switch(card.getColor()) {
+    		case "red" : {
+    			switch(card.getValue()) {
+    			    case 1 : {
+    			    	
+    			    }
+    			    case 2 : {
+    			    	
+    			    }
+    			    case 3 : {
+    			    	
+    			    }
+    			    case 4 : {
+    			    	
+    			    }
+    			    case 5 : {
+    			    	
+    			    }
+    			}
+    		}
+    		case "yellow" : {
+    			switch(card.getValue()) {
+			    	case 1 : {
+			    	
+			    	}
+			    	case 2 : {
+			    	
+			    	}
+			    	case 3 : {
+			    	
+			    	}
+			    	case 4 : {
+			    	
+			    	}
+			    	case 5 : {
+			    	
+			    	}
+    			}
+    		}
+    		case "blue" : {
+    			switch(card.getValue()) {
+			    	case 1 : {
+			    	
+			    	}
+			    	case 2 : {
+			    	
+			    	}
+			    	case 3 : {
+			    	
+			    	}
+			    	case 4 : {
+			    	
+			    	}
+			    	case 5 : {
+			    	
+			    	}
+    			}
+    		}
+    		case "pink" : {
+    			switch(card.getValue()) {
+			    	case 1 : {
+			    	
+			    	}
+			    	case 2 : {
+			    	
+			    	}
+			    	case 3 : {
+			    	
+			    	}
+			    	case 4 : {
+			    	
+			    	}
+			    	case 5 : {
+			    	
+			    	}
+    			}
+    		}
+    		case "white" : {
+    			switch(card.getValue()) {
+			    	case 1 : {
+			    	
+			    	}
+			    	case 2 : {
+			    	
+			    	}
+			    	case 3 : {
+			    	
+			    	}
+			    	case 4 : {
+			    	
+			    	}
+			    	case 5 : {
+			    	
+			    	}
+    			}
+    		}
     	}
     	
     }
