@@ -107,6 +107,16 @@
             <Button layoutX="574.0" layoutY="317.0" mnemonicParsing="false" onAction="#enteredNames" text="Button" />
          </children>
       </Pane>
+      <Pane fx:id="playerTurn" layoutX="610.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" styleClass="escapeMenu" visible="false">
+         <children>
+            <Label fx:id="labelPlayerTurn" alignment="TOP_LEFT" layoutX="83.0" layoutY="74.0" prefHeight="80.0" prefWidth="535.0" styleClass="textPlayer" textAlignment="CENTER">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Button layoutX="180.0" layoutY="255.0" mnemonicParsing="false" onAction="#returnGame" prefHeight="62.0" prefWidth="340.0" text="OK" />
+         </children>
+      </Pane>
    </children>
    <effect>
       <InnerShadow color="#092387ed" height="174.0" offsetX="9.0" radius="96.0" width="212.0" />

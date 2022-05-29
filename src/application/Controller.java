@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -30,6 +31,10 @@ public class Controller {
     private TextField player1;
     @FXML
     private TextField player2;
+    @FXML
+    private Pane playerTurn;
+    @FXML
+    private Label labelPlayerTurn;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -101,10 +106,11 @@ public class Controller {
     @FXML
     protected void returnGame(ActionEvent e) throws IOException {
     	escapeMenu.setVisible(false);
+    	playerTurn.setVisible(false);
     }
     
     @FXML
-    protected void enteredNames(ActionEvent e) throws IOException, InterruptedException {
+    protected void enteredNames(ActionEvent e) throws IOException {
     	if (!player1.getText().isBlank() && !player2.getText().isBlank()) {
     		partyConstruct();
     		playerName.setVisible(false);
@@ -132,7 +138,8 @@ public class Controller {
         // Création de la défausse
         discard = new Discard();
         
-        
+        labelPlayerTurn.setText("Au tour de " + player1.getText());
+        playerTurn.setVisible(true);
     	
     }
     
