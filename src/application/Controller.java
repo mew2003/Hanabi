@@ -68,7 +68,7 @@ public class Controller {
     } 
     
     @FXML
-    protected void switchToGameBoard2(ActionEvent e) throws IOException, InterruptedException {
+    protected void switchToGameBoard2(ActionEvent e) throws IOException, {
     	root = FXMLLoader.load(getClass().getResource("GameBoard2.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
