@@ -85,6 +85,28 @@
             </Button>
          </children>
       </Pane>
+      <Pane fx:id="playerName" layoutX="610.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" styleClass="escapeMenu">
+         <children>
+            <Label alignment="TOP_LEFT" layoutX="138.0" layoutY="36.0" prefHeight="75.0" prefWidth="423.0" styleClass="textPlayer" text="Saisissez le nom des joueurs" textAlignment="CENTER">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="42.0" layoutY="120.0" prefHeight="75.0" prefWidth="137.0" styleClass="textPlayer" text="Joueur 1" textAlignment="CENTER">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_LEFT" layoutX="40.0" layoutY="197.0" prefHeight="75.0" prefWidth="137.0" styleClass="textPlayer" text="Joueur 2" textAlignment="CENTER">
+               <font>
+                  <Font size="64.0" />
+               </font>
+            </Label>
+            <TextField fx:id="player1" layoutX="233.0" layoutY="138.0" prefHeight="40.0" prefWidth="327.0" />
+            <TextField fx:id="player2" layoutX="236.0" layoutY="206.0" prefHeight="40.0" prefWidth="327.0" />
+            <Button layoutX="574.0" layoutY="317.0" mnemonicParsing="false" onAction="#enteredNames" text="Button" />
+         </children>
+      </Pane>
    </children>
    <effect>
       <InnerShadow color="#092387ed" height="174.0" offsetX="9.0" radius="96.0" width="212.0" />

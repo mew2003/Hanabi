@@ -8,15 +8,26 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import principal.Deck;
 
 public class Controller {
 	
 	@FXML
     private Pane escapeMenu;
+    @FXML
+    private Pane playerName;
+    @FXML
+    private TextField player1;
+    @FXML
+    private TextField player2;
+    
+	private Deck deck;
+	private boolean playerNamesEntered = false;
 
     public void initialize() {
     	
@@ -57,13 +68,23 @@ public class Controller {
     } 
     
     @FXML
-    protected void switchToGameBoard2(ActionEvent e) throws IOException {
+    protected void switchToGameBoard2(ActionEvent e) throws IOException, InterruptedException {
     	root = FXMLLoader.load(getClass().getResource("GameBoard2.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("GameBoard.css").toExternalForm());
+		
+		/* Création des outils nécessaire au bon déroulement d'une partie */
+		//Création du deck
+		deck = new Deck();
+		
+		//Création des joueurs
+		while (!playerNamesEntered) {wait(1000);}
+		System.out.println("gg bg t'a écrit les noms");
+		
 		stage.setScene(scene);
 		stage.show();
+		
     }
     
     @FXML
@@ -79,8 +100,17 @@ public class Controller {
     
     @FXML
     protected void returnGame(ActionEvent e) throws IOException {
-    	System.out.println("test");
     	escapeMenu.setVisible(false);
+    }
+    
+    @FXML
+    protected void enteredNames(ActionEvent e) throws IOException {
+    	
+    	if (!player1.getText().isBlank() && !player2.getText().isBlank()) {
+    		playerName.setVisible(false);
+    		playerNamesEntered = true;
+    	}
+    	
     }
     
 
