@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080" prefWidth="1920" style="-fx-pref-height: 1080; -fx-pref-width: 1920;" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <Button alignment="CENTER" layoutX="835.0" layoutY="354.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="2 JOUEURS">
+         <styleClass>
+            <String fx:value="PlayersButton" />
+            <String fx:value="PlayersButtonText" />
+         </styleClass>
+      </Button>
+      <Button alignment="CENTER" layoutX="835.0" layoutY="447.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="3 JOUEURS">
+         <styleClass>
+            <String fx:value="PlayersButton" />
+            <String fx:value="PlayersButtonText" />
+         </styleClass>
+      </Button>
+      <Button alignment="CENTER" layoutX="835.0" layoutY="540.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="4 JOUEURS">
+         <styleClass>
+            <String fx:value="PlayersButton" />
+            <String fx:value="PlayersButtonText" />
+         </styleClass>
+      </Button>
+      <Button alignment="CENTER" layoutX="835.0" layoutY="633.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="5 JOUEURS">
+         <styleClass>
+            <String fx:value="PlayersButton" />
+            <String fx:value="PlayersButtonText" />
+         </styleClass>
+      </Button>
+      <Button alignment="CENTER" layoutX="78.0" layoutY="955.0" mnemonicParsing="false" onAction="#switchToHanabi" prefHeight="85.0" prefWidth="273.0" text="Retour">
+         <styleClass>
+            <String fx:value="optionButton" />
+            <String fx:value="textOptionButton" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button alignment="CENTER" layoutX="1568.0" layoutY="955.0" mnemonicParsing="false" onAction="#switchToRules" prefHeight="85.0" prefWidth="273.0" text="Règles">
+         <styleClass>
+            <String fx:value="optionButton" />
+            <String fx:value="textOptionButton" />
+         </styleClass>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
+</Pane>

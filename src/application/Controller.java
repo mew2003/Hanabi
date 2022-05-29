@@ -20,10 +20,30 @@ public class Controller {
     public Stage stage;
 	public Scene scene;
 	public Parent root;
+	
+    @FXML
+    protected void switchToHanabi(ActionEvent e) throws IOException {
+    	root = FXMLLoader.load(getClass().getResource("Hanabi.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		stage.setScene(scene);
+		stage.show();
+    } 
     
     @FXML
-    protected void onHelloButtonClick(ActionEvent e) throws IOException {
-    	root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+    protected void switchToMenu(ActionEvent e) throws IOException {
+    	root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		stage.setScene(scene);
+		stage.show();
+    } 
+    
+    @FXML
+    protected void switchToRules(ActionEvent e) throws IOException {
+    	root = FXMLLoader.load(getClass().getResource("Rules.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

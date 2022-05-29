@@ -53,8 +53,12 @@
 	-fx-background-image: url(../../resources/img/buttonColor.jpg);
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: stretch;
+	-fx-opacity: 50%;
+}
+
+.optionButton:hover {
+	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
 	-fx-opacity: 100%;
-	
 }
 
 .textOptionButton {
@@ -62,4 +66,34 @@
 	-fx-font-family: Quintessential;
 	-fx-font-size: 40px;
 	-fx-color: #FFFFFF;
+}
+
+.PlayersButton {
+	-fx-pref-width: 250px;
+	-fx-pref-height: 60px;
+	-fx-font-weight: 400;
+	-fx-background-image: url(../../resources/img/buttonColor.jpg);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: stretch;
+	-fx-opacity: 50%;
+}
+
+.PlayersButton:hover {
+	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
+	-fx-opacity: 100%;
+}
+
+.PlayersButtonText {
+	-fx-text-fill: #FFFFFF;
+	-fx-font-family: Quintessential;
+	-fx-font-size: 25px;
+	-fx-color: #FFFFFF;
+}
+
+.RulesBackground {
+	-fx-font-weight: 400;
+	-fx-background-image: url(../../resources/img/buttonColor.jpg);
+	-fx-background-repeat: no-repeat;
+	-fx-background-size: stretch;
+	-fx-opacity: 100%;
 }
