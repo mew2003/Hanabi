@@ -8,10 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import principal.Card;
@@ -35,6 +39,26 @@ public class Controller {
     private Pane playerTurn;
     @FXML
     private Label labelPlayerTurn;
+    @FXML
+    private Button card10;
+    @FXML
+    private Button card11;
+    @FXML
+    private Button card12;
+    @FXML
+    private Button card13;
+    @FXML
+    private Button card14;
+    @FXML
+    private Button card20;
+    @FXML
+    private Button card21;
+    @FXML
+    private Button card22;
+    @FXML
+    private Button card23;
+    @FXML
+    private Button card24;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -42,9 +66,11 @@ public class Controller {
 	private Token redToken;
 	private Token blueToken;
 	private Discard discard;
+	private Button[] listeCardPlayer1;
+	private Button[] listeCardPlayer2;
 
     public void initialize() {
-    	
+
     }
     
     public Stage stage;
@@ -117,7 +143,11 @@ public class Controller {
     	}
     }
     
-    private void partyConstruct() {
+    @FXML
+    private void partyConstruct() throws IOException {
+    	
+    	listeCardPlayer1 = new Button[] {card10, card11, card12, card13, card14}; 
+    	listeCardPlayer2 = new Button[] {card20, card21, card22, card23, card24}; 
     	
     	/* Création des outils nécessaire au bon déroulement d'une partie */
 		//Création du deck
@@ -140,109 +170,118 @@ public class Controller {
         
         labelPlayerTurn.setText("Au tour de " + player1.getText());
         playerTurn.setVisible(true);
-    	
+        
+        for (int i = 0; i < 5; i++) {
+        	setCardTheme(players[1].getHand()[i], listeCardPlayer2[i]);
+        }
+        
     }
     
-    private void setCardTheme(Card card, int position) {
+    private void setCardTheme(Card card, Button button) {
+    	
+    	Image img = null;
     	
     	switch(card.getColor()) {
-    		case "red" : {
+    		case "red" -> {
     			switch(card.getValue()) {
-    			    case 1 : {
-    			    	
+    			    case 1 -> {
+    			    	img = new Image("file:../../resources/img/Cartes/red1.png");
     			    }
-    			    case 2 : {
-    			    	
+    			    case 2 -> {
+    			    	img = new Image("file:../../resources/img/Cartes/red2.png");
     			    }
-    			    case 3 : {
-    			    	
+    			    case 3 -> {
+    			    	img = new Image("file:../../resources/img/Cartes/red3.png");
     			    }
-    			    case 4 : {
-    			    	
+    			    case 4 -> {
+    			    	img = new Image("file:../../resources/img/Cartes/red4.png");
     			    }
-    			    case 5 : {
-    			    	
+    			    case 5 -> {
+    			    	img = new Image("file:../../resources/img/Cartes/red5.png");
     			    }
     			}
     		}
-    		case "yellow" : {
+    		case "yellow" -> {
     			switch(card.getValue()) {
-			    	case 1 : {
-			    	
+			    	case 1 -> {
+			    		img = new Image("file:../../resources/img/Cartes/yellow1.png");
 			    	}
-			    	case 2 : {
-			    	
+			    	case 2 -> {
+			    		img = new Image("file:../../resources/img/Cartes/yellow2.png");
 			    	}
-			    	case 3 : {
-			    	
+			    	case 3 -> {
+			    		img = new Image("file:../../resources/img/Cartes/yellow3.png");
 			    	}
-			    	case 4 : {
-			    	
+			    	case 4 -> {
+			    		img = new Image("file:../../resources/img/Cartes/yellow4.png");
 			    	}
-			    	case 5 : {
-			    	
+			    	case 5 -> {
+			    		img = new Image("file:../../resources/img/Cartes/yellow5.png");
 			    	}
     			}
     		}
-    		case "blue" : {
+    		case "blue" -> {
     			switch(card.getValue()) {
-			    	case 1 : {
-			    	
+			    	case 1 -> {
+			    		img = new Image("file:../../resources/img/Cartes/blue1.png");
 			    	}
-			    	case 2 : {
-			    	
+			    	case 2 -> {
+			    		img = new Image("file:../../resources/img/Cartes/blue2.png");
 			    	}
-			    	case 3 : {
-			    	
+			    	case 3 -> {
+			    		img = new Image("file:../../resources/img/Cartes/blue3.png");
 			    	}
-			    	case 4 : {
-			    	
+			    	case 4 -> {
+			    		img = new Image("file:../../resources/img/Cartes/blue4.png");
 			    	}
-			    	case 5 : {
-			    	
+			    	case 5 -> {
+			    		img = new Image("file:../../resources/img/Cartes/blue5.png");
 			    	}
     			}
     		}
-    		case "pink" : {
+    		case "pink" -> {
     			switch(card.getValue()) {
-			    	case 1 : {
-			    	
+			    	case 1 -> {
+			    		img = new Image("file:../../resources/img/Cartes/pink1.png");
 			    	}
-			    	case 2 : {
-			    	
+			    	case 2 -> {
+			    		img = new Image("file:../../resources/img/Cartes/pink2.png");
 			    	}
-			    	case 3 : {
-			    	
+			    	case 3 -> {
+			    		img = new Image("file:../../resources/img/Cartes/pink3.png");
 			    	}
-			    	case 4 : {
-			    	
+			    	case 4 -> {
+			    		img = new Image("file:../../resources/img/Cartes/pink4.png");
 			    	}
-			    	case 5 : {
-			    	
+			    	case 5 -> {
+			    		img = new Image("file:../../resources/img/Cartes/pink5.png");
 			    	}
     			}
     		}
-    		case "white" : {
+    		case "white" -> {
     			switch(card.getValue()) {
-			    	case 1 : {
-			    	
+			    	case 1 -> {
+			    		img = new Image("file:../../resources/img/Cartes/white1.png");
 			    	}
-			    	case 2 : {
-			    	
+			    	case 2 -> {
+			    		img = new Image("file:../../resources/img/Cartes/white2.png");
 			    	}
-			    	case 3 : {
-			    	
+			    	case 3 -> {
+			    		img = new Image("file:../../resources/img/Cartes/white3.png");
 			    	}
-			    	case 4 : {
-			    	
+			    	case 4 -> {
+			    		img = new Image("file:../../resources/img/Cartes/white4.png");
 			    	}
-			    	case 5 : {
-			    	
+			    	case 5 -> {
+			    		img = new Image("file:../../resources/img/Cartes/white5.png");
 			    	}
     			}
     		}
     	}
     	
+    	BackgroundImage backgroundImage = new BackgroundImage(img, null, null, null, null);
+    	Background background = new Background(backgroundImage);
+    	button.setBackground(background);
     }
     
 

@@ -29,20 +29,20 @@
       <Button layoutX="1714.0" layoutY="40.0" mnemonicParsing="false" prefHeight="571.0" prefWidth="360.0" styleClass="pioche" />
       <Pane layoutX="614.0" layoutY="770.0" prefHeight="261.57" prefWidth="689.47">
          <children>
-            <Button layoutX="23.18" layoutY="40.0" mnemonicParsing="false" rotate="336.82" styleClass="mainPlayerCard" />
-            <Button layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="mainPlayerCard" />
-            <Button layoutX="273.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="mainPlayerCard" />
-            <Button layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="mainPlayerCard" />
+            <Button fx:id="card10" layoutX="23.18" layoutY="40.0" mnemonicParsing="false" rotate="336.82" styleClass="mainPlayerCard" />
+            <Button fx:id="card11" layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="mainPlayerCard" />
+            <Button fx:id="card12" layoutX="273.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="card13" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="mainPlayerCard" />
+            <Button fx:id="card14" layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="mainPlayerCard" />
          </children>
       </Pane>
       <Pane layoutX="614.0" layoutY="40.0" prefHeight="261.57" prefWidth="689.47" rotate="180.0">
          <children>
-            <Button layoutX="23.18" layoutY="40.0" mnemonicParsing="false" rotate="336.82" styleClass="otherPlayerCard" />
-            <Button layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="otherPlayerCard" />
-            <Button layoutX="273.0" mnemonicParsing="false" styleClass="otherPlayerCard" />
-            <Button layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="otherPlayerCard" />
-            <Button layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="otherPlayerCard" />
+            <Button fx:id="card24" layoutX="23.18" layoutY="40.0" mnemonicParsing="false" rotate="336.82" styleClass="otherPlayerCard" />
+            <Button fx:id="card23" layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="otherPlayerCard" />
+            <Button fx:id="card22" layoutX="273.0" mnemonicParsing="false" styleClass="otherPlayerCard" />
+            <Button fx:id="card21" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="otherPlayerCard" />
+            <Button fx:id="card20" layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="otherPlayerCard" />
          </children>
       </Pane>
       <Pane layoutX="514.0" layoutY="443.0" prefHeight="200.0" prefWidth="882.0">
