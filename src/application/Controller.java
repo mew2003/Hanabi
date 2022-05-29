@@ -68,7 +68,7 @@ public class Controller {
     } 
     
     @FXML
-    protected void switchToGameBoard2(ActionEvent e) throws IOException, {
+    protected void switchToGameBoard2(ActionEvent e) throws IOException {
     	root = FXMLLoader.load(getClass().getResource("GameBoard2.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
@@ -79,7 +79,7 @@ public class Controller {
 		deck = new Deck();
 		
 		//Création des joueurs
-		while (!playerNamesEntered) {wait(1000);}
+		while (!playerNamesEntered) {}
 		System.out.println("gg bg t'a écrit les noms");
 		
 		stage.setScene(scene);
