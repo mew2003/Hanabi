@@ -20,6 +20,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import principal.Card;
 import principal.Deck;
@@ -62,6 +64,16 @@ public class Controller {
     private Button card23;
     @FXML
     private Button card24;
+    @FXML
+    private Circle button1;
+    @FXML
+    private Circle button2;
+    @FXML
+    private Circle button3;
+    @FXML
+    private Circle button4;
+    @FXML
+    private Circle button5;
     @FXML
     private Label player1Name;
     @FXML
@@ -107,6 +119,14 @@ public class Controller {
 			"-fx-background-image: url(file:../../resources/img/Cartes/white4.png)",
 			"-fx-background-image: url(file:../../resources/img/Cartes/white5.png)",
 	};
+	private Image[] imageButtonList = {
+			new Image("file:../../resources/img/Button/Button1.png"),
+			new Image("file:../../resources/img/Button/Button2.png"),
+			new Image("file:../../resources/img/Button/Button3.png"),
+			new Image("file:../../resources/img/Button/Button4.png"),
+			new Image("file:../../resources/img/Button/Button5.png")
+	};
+	
 	private int CurrentPlayer;
 
     public void initialize() {
@@ -170,8 +190,11 @@ public class Controller {
     
     @FXML
     protected void returnGame(ActionEvent e) throws IOException {
+    	if (playerTurn.isVisible()) {
+    		playerTurn.setVisible(false);
+    	}
     	escapeMenu.setVisible(false);
-    	playerTurn.setVisible(false);
+
     }
     
     @FXML
@@ -190,23 +213,29 @@ public class Controller {
     			{card20, card21, card22, card23, card24},
     	};
     	
-    	/* Création des outils nécessaire au bon déroulement d'une partie */
-		//Création du deck
+    	button1.setFill(new ImagePattern(imageButtonList[0]));
+    	button2.setFill(new ImagePattern(imageButtonList[1]));
+    	button3.setFill(new ImagePattern(imageButtonList[2]));
+    	button4.setFill(new ImagePattern(imageButtonList[3]));
+    	button5.setFill(new ImagePattern(imageButtonList[4]));
+    	
+    	/* Crï¿½ation des outils nï¿½cessaire au bon dï¿½roulement d'une partie */
+		//Crï¿½ation du deck
 		deck = new Deck();
 		players = new PlayerHand[2];
 
-		//Création des joueurs
+		//Crï¿½ation des joueurs
         players[0] = new PlayerHand(player1.getText(), 2, deck);
         players[1] = new PlayerHand(player2.getText(), 2, deck);
         
-        //Création du plateau de jeu
+        //Crï¿½ation du plateau de jeu
         placedCard = new PlacedCard();
         
-        // Création des jetons
+        // Crï¿½ation des jetons
         redToken = new Token(0);
         blueToken = new Token(8);
         
-        // Création de la défausse
+        // Crï¿½ation de la dï¿½fausse
         discard = new Discard();
         
         CurrentPlayer = 0;
@@ -235,7 +264,7 @@ public class Controller {
         }
     	
     	//System.out.println("Log : "); TODO
-    	// TODO Permettre de check la défausse
+    	// TODO Permettre de check la dï¿½fausse
     	
     	selectedPlayOption();
     	

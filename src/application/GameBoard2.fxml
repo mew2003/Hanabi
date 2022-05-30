@@ -131,24 +131,48 @@
                </styleClass></Button>
          </children>
       </Pane>
-      <Label fx:id="player1Name" alignment="CENTER" layoutX="826.0" layoutY="1005.0" prefHeight="53.0" prefWidth="266.0" textAlignment="CENTER">
+      <Label fx:id="player1Name" alignment="CENTER" layoutX="826.0" layoutY="1005.0" prefHeight="53.0" prefWidth="266.0" styleClass="playerNameFont" textAlignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="player2Name" alignment="CENTER" layoutX="822.0" layoutY="14.0" prefHeight="53.0" prefWidth="266.0" textAlignment="CENTER">
+      <Label fx:id="player2Name" alignment="CENTER" layoutX="822.0" layoutY="14.0" prefHeight="53.0" prefWidth="266.0" styleClass="playerNameFont" textAlignment="CENTER">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Pane fx:id="playOption" layoutX="1523.0" layoutY="410.0" prefHeight="670.0" prefWidth="397.0" style="-fx-background-color: #D8D6D6;" visible="false">
+      <Pane fx:id="playOption" layoutX="1523.0" layoutY="410.0" prefHeight="670.0" prefWidth="397.0" style="-fx-background-color: #D8D6D6;" styleClass="playerNameFont" visible="false">
          <children>
-            <Button layoutX="59.0" layoutY="71.0" mnemonicParsing="false" onAction="#optionPlay" prefHeight="110.0" prefWidth="280.0" text="Jouer une carte" />
-            <Button layoutX="59.0" layoutY="280.0" mnemonicParsing="false" onAction="#optionDraw" prefHeight="110.0" prefWidth="280.0" text="Piocher une carte" />
-            <Button layoutX="59.0" layoutY="489.0" mnemonicParsing="false" onAction="#optionHint" prefHeight="110.0" prefWidth="280.0" text="Donner un indice" />
+            <Button layoutX="40.0" layoutY="71.0" mnemonicParsing="false" onAction="#optionPlay" opacity="0.0" prefHeight="110.0" prefWidth="280.0" style="-fx-text-fill: #000000;" text="Jouer une carte">
+               <styleClass>
+                  <String fx:value="playOptionButton" />
+                  <String fx:value="playOptionButtonFont" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="40.0" layoutY="280.0" mnemonicParsing="false" onAction="#optionDraw" prefHeight="110.0" prefWidth="280.0" style="-fx-text-fill: #000000;" text="Piocher une carte">
+               <styleClass>
+                  <String fx:value="playOptionButton" />
+                  <String fx:value="playOptionButtonFont" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="40.0" layoutY="489.0" mnemonicParsing="false" onAction="#optionHint" prefHeight="110.0" prefWidth="280.0" style="-fx-text-fill: #000000;" text="Donner un indice">
+               <styleClass>
+                  <String fx:value="playOptionButton" />
+                  <String fx:value="playOptionButtonFont" />
+               </styleClass>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
-      <Button fx:id="returnButton" layoutX="1870.0" layoutY="1010.0" mnemonicParsing="false" onAction="#selectedPlayOption" prefHeight="50.0" prefWidth="50.0" visible="false" />
+      <Button fx:id="returnButton" layoutX="1870.0" layoutY="1010.0" mnemonicParsing="false" onAction="#selectedPlayOption" prefHeight="50.0" prefWidth="50.0" styleClass="returnArrow" visible="false">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Pane fx:id="playOptionHint" layoutX="1523.0" layoutY="410.0" prefHeight="670.0" prefWidth="397.0" style="-fx-background-color: #D8D6D6;" visible="false">
          <children>
             <Label layoutX="50.0" layoutY="48.0" style="-fx-text-fill: #000000;" text="Choisir une couleur">
@@ -161,17 +185,50 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Circle fill="#a00000" layoutX="140.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#344ab9" layoutX="275.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#ffe70d" layoutX="75.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="210.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="#f28daf" layoutX="335.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="75.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="210.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="335.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="140.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Circle fill="WHITE" layoutX="275.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
-            <Button fx:id="returnButton1" layoutX="347.0" layoutY="600.0" mnemonicParsing="false" onAction="#selectedPlayOption" prefHeight="50.0" prefWidth="50.0" />
+            <Circle fill="#a00000" layoutX="140.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fill="#344ab9" layoutX="275.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fill="#ffe70d" layoutX="75.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fill="WHITE" layoutX="210.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fill="#f28daf" layoutX="335.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fx:id="button1" fill="WHITE" layoutX="75.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fx:id="button2" fill="WHITE" layoutX="210.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fx:id="button3" fill="WHITE" layoutX="335.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fx:id="button4" fill="WHITE" layoutX="140.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Circle fx:id="button5" fill="WHITE" layoutX="275.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Circle>
+            <Button fx:id="returnButton1" layoutX="347.0" layoutY="600.0" mnemonicParsing="false" onAction="#selectedPlayOption" prefHeight="50.0" prefWidth="50.0" styleClass="returnArrow">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
    </children>

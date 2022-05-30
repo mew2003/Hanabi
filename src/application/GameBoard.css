@@ -151,3 +151,64 @@
 	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
 	-fx-opacity: 100%;
 }
+
+.playerNameFont {
+    	-fx-font-family: Quintessential;
+    	-fx-font-size: 36px;
+    	-fx-color: #000000;	
+}
+
+.playOptionButton {
+    	-fx-pref-width: 323px;
+    	-fx-pref-height: 77px;
+    	-fx-font-weight: 400;
+	-fx-border-radius: 15px;
+	-fx-background-radius: 15px;
+    	-fx-background-image: url(../../resources/img/buttonColor.jpg);
+    	-fx-background-repeat: no-repeat;
+    	-fx-background-size: stretch;
+	-fx-opacity: 50%;
+}
+
+.playOptionButton:hover {
+	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
+	-fx-opacity: 100%;
+}
+
+.playOptionButtonFont {
+    	-fx-font-family: Quintessential;
+    	-fx-font-size: 36px;
+    	-fx-color: #000000;	
+}
+
+.returnArrow {
+	-fx-background-color: transparent; 
+	-fx-background-image: url(../../resources/img/returnArrow.png);
+	-fx-background-size: cover;
+
+}
+
+.button1 {
+	-fx-background-image: url(../../resources/img/Button/Button1.png);
+	-fx-background-size: cover;
+}
+
+.button2 {
+	-fx-background-image: url(../../resources/img/Button/Button2.png);
+	-fx-background-size: cover;
+}
+
+.button3 {
+	-fx-background-image: url(../../resources/img/Button/Button3.png);
+	-fx-background-size: cover;
+}
+
+.button4 {
+	-fx-background-image: url(../../resources/img/Button/Button4.png);
+	-fx-background-size: cover;
+}
+
+.button5 {
+	-fx-background-image: url(../../resources/img/Button/Button5.png);
+	-fx-background-size: cover;
+}
