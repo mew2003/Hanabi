@@ -66,6 +66,12 @@ public class Controller {
     private Label player1Name;
     @FXML
     private Label player2Name;
+    @FXML
+    private Pane playOption;
+    @FXML
+    private Button returnButton;
+    @FXML
+    private Pane playOptionHint;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -231,9 +237,44 @@ public class Controller {
     	//System.out.println("Log : "); TODO
     	// TODO Permettre de check la défausse
     	
-    	
+    	selectedPlayOption();
     	
     }
+    
+    @FXML
+    private void selectedPlayOption() {
+    	
+    	playOptionHint.setVisible(false);
+    	returnButton.setVisible(false);
+    	playOption.setVisible(true);
+    	
+    }
+    
+    @FXML
+    protected void optionPlay(ActionEvent e) throws IOException {
+    	
+    	playOption.setVisible(false);
+    	returnButton.setVisible(true);
+    	
+    }
+    
+    @FXML
+    protected void optionDraw(ActionEvent e) throws IOException {
+    	
+    	playOption.setVisible(false);
+    	returnButton.setVisible(true);
+    	
+    }
+    
+    @FXML
+    protected void optionHint(ActionEvent e) throws IOException {
+    	
+    	playOption.setVisible(false);
+    	playOptionHint.setVisible(true);
+    	
+    }
+    
+    
     
     private void setCardTheme(Card card, Button button) {
     	

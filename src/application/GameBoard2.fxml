@@ -116,7 +116,7 @@
       </Pane>
       <Pane fx:id="playerTurn" layoutX="610.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" styleClass="escapeMenu" visible="false">
          <children>
-            <Label fx:id="labelPlayerTurn" alignment="TOP_LEFT" layoutX="83.0" layoutY="74.0" prefHeight="80.0" prefWidth="535.0" styleClass="textPlayer" textAlignment="CENTER">
+            <Label fx:id="labelPlayerTurn" alignment="CENTER" layoutX="83.0" layoutY="74.0" prefHeight="80.0" prefWidth="535.0" styleClass="textPlayer" textAlignment="CENTER">
                <font>
                   <Font size="64.0" />
                </font>
@@ -141,6 +141,39 @@
             <Font size="36.0" />
          </font>
       </Label>
+      <Pane fx:id="playOption" layoutX="1523.0" layoutY="410.0" prefHeight="670.0" prefWidth="397.0" style="-fx-background-color: #D8D6D6;" visible="false">
+         <children>
+            <Button layoutX="59.0" layoutY="71.0" mnemonicParsing="false" onAction="#optionPlay" prefHeight="110.0" prefWidth="280.0" text="Jouer une carte" />
+            <Button layoutX="59.0" layoutY="280.0" mnemonicParsing="false" onAction="#optionDraw" prefHeight="110.0" prefWidth="280.0" text="Piocher une carte" />
+            <Button layoutX="59.0" layoutY="489.0" mnemonicParsing="false" onAction="#optionHint" prefHeight="110.0" prefWidth="280.0" text="Donner un indice" />
+         </children>
+      </Pane>
+      <Button fx:id="returnButton" layoutX="1870.0" layoutY="1010.0" mnemonicParsing="false" onAction="#selectedPlayOption" prefHeight="50.0" prefWidth="50.0" visible="false" />
+      <Pane fx:id="playOptionHint" layoutX="1523.0" layoutY="410.0" prefHeight="670.0" prefWidth="397.0" style="-fx-background-color: #D8D6D6;" visible="false">
+         <children>
+            <Label layoutX="50.0" layoutY="48.0" style="-fx-text-fill: #000000;" text="Choisir une couleur">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="352.0" style="-fx-text-fill: #000000;" text="Choisir une valeur">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Circle fill="#a00000" layoutX="140.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#344ab9" layoutX="275.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#ffe70d" layoutX="75.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="210.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="#f28daf" layoutX="335.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="75.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="210.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="335.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="140.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Circle fill="WHITE" layoutX="275.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE" />
+            <Button fx:id="returnButton1" layoutX="347.0" layoutY="600.0" mnemonicParsing="false" onAction="#selectedPlayOption" prefHeight="50.0" prefWidth="50.0" />
+         </children>
+      </Pane>
    </children>
    <effect>
       <InnerShadow color="#092387ed" height="174.0" offsetX="9.0" radius="96.0" width="212.0" />
