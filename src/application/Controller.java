@@ -1,7 +1,10 @@
 package application;
 
 import java.io.IOException;
+import java.time.Duration;
 
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -59,6 +62,10 @@ public class Controller {
     private Button card23;
     @FXML
     private Button card24;
+    @FXML
+    private Label player1Name;
+    @FXML
+    private Label player2Name;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -66,8 +73,7 @@ public class Controller {
 	private Token redToken;
 	private Token blueToken;
 	private Discard discard;
-	private Button[] listeCardPlayer1;
-	private Button[] listeCardPlayer2;
+	private Button[][] listeCardPlayers;
 	private String[] imageList = {
 			"-fx-background-image: url(file:../../resources/img/Cartes/red1.png)",
 			"-fx-background-image: url(file:../../resources/img/Cartes/red2.png)",
@@ -95,6 +101,7 @@ public class Controller {
 			"-fx-background-image: url(file:../../resources/img/Cartes/white4.png)",
 			"-fx-background-image: url(file:../../resources/img/Cartes/white5.png)",
 	};
+	private int CurrentPlayer;
 
     public void initialize() {
 
@@ -172,8 +179,10 @@ public class Controller {
     @FXML
     private void partyConstruct() throws IOException {
     	
-    	listeCardPlayer1 = new Button[] {card10, card11, card12, card13, card14}; 
-    	listeCardPlayer2 = new Button[] {card20, card21, card22, card23, card24}; 
+    	listeCardPlayers = new Button[][] {
+    			{card10, card11, card12, card13, card14},
+    			{card20, card21, card22, card23, card24},
+    	};
     	
     	/* Création des outils nécessaire au bon déroulement d'une partie */
 		//Création du deck
@@ -194,14 +203,36 @@ public class Controller {
         // Création de la défausse
         discard = new Discard();
         
-        labelPlayerTurn.setText("Au tour de " + player1.getText());
+        CurrentPlayer = 0;
+        player1Name.setText(players[0].getName());
+        player2Name.setText(players[1].getName());
+        
+        whoPlay();
+        
+    }
+    
+    private void whoPlay() {
+    	labelPlayerTurn.setText("Au tour de " + players[CurrentPlayer].getName());
         playerTurn.setVisible(true);
         
-        for (int i = 0; i < 5; i++) {
-        	this.card20.setStyle("-fx-background-image: url(file:../../resources/img/Cartes/blue2.png)");
-        	setCardTheme(players[1].getHand()[i], listeCardPlayer2[i]);
+    }
+    
+    @FXML
+    protected void whoPlayOk(ActionEvent e) throws IOException {
+    	playerTurn.setVisible(false);
+    	for (int i = 0; i < 5; i++) {
+        	for (int j = 0; j < players.length; j++) {
+        		if (j != CurrentPlayer) {
+        			setCardTheme(players[j].getHand()[i], listeCardPlayers[j][i]);
+        		}
+        	}
         }
-        
+    	
+    	//System.out.println("Log : "); TODO
+    	// TODO Permettre de check la défausse
+    	
+    	
+    	
     }
     
     private void setCardTheme(Card card, Button button) {
