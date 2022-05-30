@@ -37,6 +37,7 @@
 	-fx-pref-height: 200px;
 	-fx-border-radius: 15px;
 	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/DosCarte.png);
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: cover;
 	
@@ -49,6 +50,7 @@
 	-fx-pref-height: 200px;
 	-fx-border-radius: 15px;
 	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/DosCarte.png);
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: cover;
 	
@@ -60,6 +62,7 @@
 	-fx-pref-height: 200px;
 	-fx-border-radius: 15px;
 	-fx-background-radius: 15px;
+	-fx-background-image: url(../../resources/img/DosCarte.png);
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: cover;
 	

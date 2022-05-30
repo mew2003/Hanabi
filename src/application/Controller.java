@@ -59,16 +59,6 @@ public class Controller {
     private Button card23;
     @FXML
     private Button card24;
-    @FXML
-    private Button cardPlaced0;
-    @FXML
-    private Button cardPlaced1;
-    @FXML
-    private Button cardPlaced2;
-    @FXML
-    private Button cardPlaced3;
-    @FXML
-    private Button cardPlaced4;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -76,11 +66,11 @@ public class Controller {
 	private Token redToken;
 	private Token blueToken;
 	private Discard discard;
-	private Button[] listCardPlayer1;
-	private Button[] listCardPlayer2;
-	private Button[] listPlacedCard;
+	private Button[] listeCardPlayer1;
+	private Button[] listeCardPlayer2;
 
     public void initialize() {
+
     }
     
     public Stage stage;
@@ -156,49 +146,34 @@ public class Controller {
     @FXML
     private void partyConstruct() throws IOException {
     	
-    	listCardPlayer1 = new Button[] {card10, card11, card12, card13, card14}; 
-    	listCardPlayer2 = new Button[] {card20, card21, card22, card23, card24}; 
-    	listPlacedCard = new Button[] {cardPlaced0, cardPlaced1, cardPlaced2, cardPlaced3, cardPlaced4};  
+    	listeCardPlayer1 = new Button[] {card10, card11, card12, card13, card14}; 
+    	listeCardPlayer2 = new Button[] {card20, card21, card22, card23, card24}; 
     	
-    	Image img = new Image("file:../../resources/img/DosCarte.png");
-    	BackgroundImage backgroundImage = new BackgroundImage(img, null, null, null, null);
-    	Background background = new Background(backgroundImage);
-    	for (int i = 0 ; i < listPlacedCard.length ; i++) {
-    		listCardPlayer1[i].setBackground(background);
-    		listCardPlayer2[i].setBackground(background);
-    		listPlacedCard[i].setBackground(background);
-        	System.out.println("wow trop jolie");
-    	}
-    	
-    	
-    	
-    	/* Crï¿½ation des outils nï¿½cessaire au bon dï¿½roulement d'une partie */
-		//Crï¿½ation du deck
+    	/* Création des outils nécessaire au bon déroulement d'une partie */
+		//Création du deck
 		deck = new Deck();
 		players = new PlayerHand[2];
 
-		//Crï¿½ation des joueurs
+		//Création des joueurs
         players[0] = new PlayerHand(player1.getText(), 2, deck);
         players[1] = new PlayerHand(player2.getText(), 2, deck);
         
-        //Crï¿½ation du plateau de jeu
+        //Création du plateau de jeu
         placedCard = new PlacedCard();
         
-        // Crï¿½ation des jetons
+        // Création des jetons
         redToken = new Token(0);
         blueToken = new Token(8);
         
-        // Crï¿½ation de la dï¿½fausse
+        // Création de la défausse
         discard = new Discard();
         
         labelPlayerTurn.setText("Au tour de " + player1.getText());
         playerTurn.setVisible(true);
         
         for (int i = 0; i < 5; i++) {
-        	setCardTheme(players[1].getHand()[i], listCardPlayer2[i]);
+        	setCardTheme(players[1].getHand()[i], listeCardPlayer2[i]);
         }
-        
-        System.out.println("wowowowowowo");
         
     }
     
