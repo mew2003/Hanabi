@@ -199,6 +199,16 @@ public class Controller {
     
     @FXML
     protected void enteredNames(ActionEvent e) throws IOException {
+    	card10.setDisable(true);
+    	card11.setDisable(true);
+    	card12.setDisable(true);
+    	card13.setDisable(true);
+    	card14.setDisable(true);
+    	card20.setDisable(true);
+    	card21.setDisable(true);
+    	card22.setDisable(true);
+    	card23.setDisable(true);
+    	card24.setDisable(true);
     	if (!player1.getText().isBlank() && !player2.getText().isBlank()) {
     		partyConstruct();
     		playerName.setVisible(false);
@@ -272,7 +282,16 @@ public class Controller {
     
     @FXML
     private void selectedPlayOption() {
-    	
+    	card10.setDisable(true);
+    	card11.setDisable(true);
+    	card12.setDisable(true);
+    	card13.setDisable(true);
+    	card14.setDisable(true);
+    	card20.setDisable(true);
+    	card21.setDisable(true);
+    	card22.setDisable(true);
+    	card23.setDisable(true);
+    	card24.setDisable(true);
     	playOptionHint.setVisible(false);
     	returnButton.setVisible(false);
     	playOption.setVisible(true);
@@ -281,15 +300,24 @@ public class Controller {
     
     @FXML
     protected void optionPlay(ActionEvent e) throws IOException {
-    	
+    	card10.setDisable(false);
+    	card11.setDisable(false);
+    	card12.setDisable(false);
+    	card13.setDisable(false);
+    	card14.setDisable(false);
     	playOption.setVisible(false);
     	returnButton.setVisible(true);
+    	
     	
     }
     
     @FXML
     protected void optionDraw(ActionEvent e) throws IOException {
-    	
+    	card10.setDisable(false);
+    	card11.setDisable(false);
+    	card12.setDisable(false);
+    	card13.setDisable(false);
+    	card14.setDisable(false);
     	playOption.setVisible(false);
     	returnButton.setVisible(true);
     	
@@ -297,12 +325,20 @@ public class Controller {
     
     @FXML
     protected void optionHint(ActionEvent e) throws IOException {
-    	
+    	card20.setDisable(false);
+    	card21.setDisable(false);
+    	card22.setDisable(false);
+    	card23.setDisable(false);
+    	card24.setDisable(false);
     	playOption.setVisible(false);
     	playOptionHint.setVisible(true);
     	
     }
     
+    @FXML
+    protected void card10Pressed(ActionEvent e) throws IOException {
+    	System.out.println("etsts");
+    }
     
     
     private void setCardTheme(Card card, Button button) {
