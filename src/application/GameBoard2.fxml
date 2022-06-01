@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.String?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -10,7 +17,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" onKeyPressed="#pressed" prefHeight="1080" prefWidth="1920" style="-fx-pref-height: 1080; -fx-pref-width: 1920;" styleClass="pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+<Pane maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" onKeyPressed="#pressed" prefHeight="1080" prefWidth="1920" style="-fx-pref-height: 1080; -fx-pref-width: 1920;" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
    <children>
       <Circle fill="DODGERBLUE" layoutX="60.0" layoutY="60.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#ff1f1f" layoutX="60.0" layoutY="160.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
@@ -29,10 +36,10 @@
       <Pane layoutX="614.0" layoutY="770.0" prefHeight="261.57" prefWidth="689.47">
          <children>
             <Button fx:id="card10" layoutX="23.18" layoutY="40.0" mnemonicParsing="false" onAction="#card10Pressed" rotate="336.82" styleClass="mainPlayerCard" />
-            <Button fx:id="card11" layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="mainPlayerCard" />
-            <Button fx:id="card12" layoutX="273.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="card13" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="mainPlayerCard" />
-            <Button fx:id="card14" layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="mainPlayerCard" />
+            <Button fx:id="card11" layoutX="140.0" layoutY="8.0" mnemonicParsing="false" onAction="#card11Pressed" rotate="352.86" styleClass="mainPlayerCard" />
+            <Button fx:id="card12" layoutX="273.0" mnemonicParsing="false" onAction="#card12Pressed" styleClass="mainPlayerCard" />
+            <Button fx:id="card13" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" onAction="#card13Pressed" rotate="7.14" styleClass="mainPlayerCard" />
+            <Button fx:id="card14" layoutX="520.0" layoutY="40.0" mnemonicParsing="false" onAction="#card14Pressed" rotate="23.18" styleClass="mainPlayerCard" />
          </children>
       </Pane>
       <Pane layoutX="614.0" layoutY="40.0" prefHeight="261.57" prefWidth="689.47" rotate="180.0">

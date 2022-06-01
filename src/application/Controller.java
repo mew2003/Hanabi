@@ -126,8 +126,8 @@ public class Controller {
 			new Image("file:../../resources/img/Button/Button4.png"),
 			new Image("file:../../resources/img/Button/Button5.png")
 	};
-	
 	private int CurrentPlayer;
+	private boolean playOrDiscard; // true = play, false = discard
 
     public void initialize() {
 
@@ -199,16 +199,14 @@ public class Controller {
     
     @FXML
     protected void enteredNames(ActionEvent e) throws IOException {
-    	card10.setDisable(true);
-    	card11.setDisable(true);
-    	card12.setDisable(true);
-    	card13.setDisable(true);
-    	card14.setDisable(true);
-    	card20.setDisable(true);
-    	card21.setDisable(true);
-    	card22.setDisable(true);
-    	card23.setDisable(true);
-    	card24.setDisable(true);
+    	listeCardPlayers = new Button[][] {
+			{card10, card11, card12, card13, card14},
+			{card20, card21, card22, card23, card24},
+    	};
+    	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
+    		listeCardPlayers[0][i].setDisable(true);
+    		listeCardPlayers[1][i].setDisable(true);
+    	}
     	if (!player1.getText().isBlank() && !player2.getText().isBlank()) {
     		partyConstruct();
     		playerName.setVisible(false);
@@ -218,10 +216,7 @@ public class Controller {
     @FXML
     private void partyConstruct() throws IOException {
     	
-    	listeCardPlayers = new Button[][] {
-    			{card10, card11, card12, card13, card14},
-    			{card20, card21, card22, card23, card24},
-    	};
+
     	
     	button1.setFill(new ImagePattern(imageButtonList[0]));
     	button2.setFill(new ImagePattern(imageButtonList[1]));
@@ -282,16 +277,10 @@ public class Controller {
     
     @FXML
     private void selectedPlayOption() {
-    	card10.setDisable(true);
-    	card11.setDisable(true);
-    	card12.setDisable(true);
-    	card13.setDisable(true);
-    	card14.setDisable(true);
-    	card20.setDisable(true);
-    	card21.setDisable(true);
-    	card22.setDisable(true);
-    	card23.setDisable(true);
-    	card24.setDisable(true);
+    	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
+    		listeCardPlayers[0][i].setDisable(true);
+    		listeCardPlayers[1][i].setDisable(true);
+    	}
     	playOptionHint.setVisible(false);
     	returnButton.setVisible(false);
     	playOption.setVisible(true);
@@ -300,44 +289,53 @@ public class Controller {
     
     @FXML
     protected void optionPlay(ActionEvent e) throws IOException {
-    	card10.setDisable(false);
-    	card11.setDisable(false);
-    	card12.setDisable(false);
-    	card13.setDisable(false);
-    	card14.setDisable(false);
+    	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
+    		listeCardPlayers[0][i].setDisable(false);
+    	}
     	playOption.setVisible(false);
     	returnButton.setVisible(true);
-    	
+    	playOrDiscard = true;
     	
     }
     
     @FXML
     protected void optionDraw(ActionEvent e) throws IOException {
-    	card10.setDisable(false);
-    	card11.setDisable(false);
-    	card12.setDisable(false);
-    	card13.setDisable(false);
-    	card14.setDisable(false);
+    	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
+    		listeCardPlayers[0][i].setDisable(false);
+    	}
     	playOption.setVisible(false);
     	returnButton.setVisible(true);
-    	
+    	playOrDiscard = false;
     }
     
     @FXML
     protected void optionHint(ActionEvent e) throws IOException {
-    	card20.setDisable(false);
-    	card21.setDisable(false);
-    	card22.setDisable(false);
-    	card23.setDisable(false);
-    	card24.setDisable(false);
+    	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
+    		listeCardPlayers[1][i].setDisable(false);
+    	}
     	playOption.setVisible(false);
     	playOptionHint.setVisible(true);
     	
     }
     
     @FXML
-    protected void card10Pressed(ActionEvent e) throws IOException {
-    	System.out.println("etsts");
+    protected void card10Pressed(ActionEvent e) throws IOException { playAndDiscard(0); }
+    @FXML
+    protected void card11Pressed(ActionEvent e) throws IOException { playAndDiscard(1); }
+    @FXML
+    protected void card12Pressed(ActionEvent e) throws IOException { playAndDiscard(2); }
+    @FXML
+    protected void card13Pressed(ActionEvent e) throws IOException { playAndDiscard(3); }
+    @FXML
+    protected void card14Pressed(ActionEvent e) throws IOException { playAndDiscard(4); }
+    
+    private void playAndDiscard(int position) {
+    	System.out.println("Vous avez joué la carte en position " + position);
+//    	if (playOrDiscard) {
+//    		
+//    	} else {
+//    		
+//    	}
     }
     
     
