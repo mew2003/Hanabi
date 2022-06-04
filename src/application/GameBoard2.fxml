@@ -21,12 +21,12 @@
    <children>
       <Circle fill="DODGERBLUE" layoutX="60.0" layoutY="60.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fill="#ff1f1f" layoutX="60.0" layoutY="160.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label alignment="TOP_LEFT" layoutX="120.0" layoutY="12.0" prefHeight="77.0" prefWidth="40.0" text="8" textAlignment="CENTER">
+      <Label fx:id="numberBlueToken" alignment="TOP_LEFT" layoutX="120.0" layoutY="12.0" prefHeight="77.0" prefWidth="40.0" text="8" textAlignment="CENTER">
          <font>
             <Font size="64.0" />
          </font>
       </Label>
-      <Label alignment="TOP_LEFT" layoutX="120.0" layoutY="116.0" prefHeight="77.0" prefWidth="40.0" text="0" textAlignment="CENTER">
+      <Label fx:id="numberRedToken" alignment="TOP_LEFT" layoutX="120.0" layoutY="116.0" prefHeight="77.0" prefWidth="40.0" text="0" textAlignment="CENTER">
          <font>
             <Font size="64.0" />
          </font>
@@ -44,11 +44,11 @@
       </Pane>
       <Pane layoutX="614.0" layoutY="40.0" prefHeight="261.57" prefWidth="689.47" rotate="180.0">
          <children>
-            <Button fx:id="card24" layoutX="23.18" layoutY="40.0" mnemonicParsing="false" rotate="336.82" styleClass="otherPlayerCard" />
-            <Button fx:id="card23" layoutX="140.0" layoutY="8.0" mnemonicParsing="false" rotate="352.86" styleClass="otherPlayerCard" />
-            <Button fx:id="card22" layoutX="273.0" mnemonicParsing="false" styleClass="otherPlayerCard" />
-            <Button fx:id="card21" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" rotate="7.14" styleClass="otherPlayerCard" />
-            <Button fx:id="card20" layoutX="520.0" layoutY="40.0" mnemonicParsing="false" rotate="23.18" styleClass="otherPlayerCard" />
+            <Button fx:id="card24" layoutX="23.18" layoutY="40.0" mnemonicParsing="false" onAction="#card24Pressed" rotate="336.82" styleClass="otherPlayerCard" />
+            <Button fx:id="card23" layoutX="140.0" layoutY="8.0" mnemonicParsing="false" onAction="#card23Pressed" rotate="352.86" styleClass="otherPlayerCard" />
+            <Button fx:id="card22" layoutX="273.0" mnemonicParsing="false" onAction="#card22Pressed" styleClass="otherPlayerCard" />
+            <Button fx:id="card21" layoutX="405.0" layoutY="8.0" mnemonicParsing="false" onAction="#card21Pressed" rotate="7.14" styleClass="otherPlayerCard" />
+            <Button fx:id="card20" layoutX="520.0" layoutY="40.0" mnemonicParsing="false" onAction="#card20Pressed" rotate="23.18" styleClass="otherPlayerCard" />
          </children>
       </Pane>
       <Pane layoutX="514.0" layoutY="443.0" prefHeight="200.0" prefWidth="882.0">

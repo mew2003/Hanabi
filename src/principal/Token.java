@@ -57,4 +57,9 @@ public class Token {
     public int getValue() {
         return value;
     }
+
+	@Override
+	public String toString() {
+		return "" + value;
+	}
 }

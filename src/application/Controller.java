@@ -84,6 +84,10 @@ public class Controller {
     private Button returnButton;
     @FXML
     private Pane playOptionHint;
+    @FXML
+    private Label numberBlueToken;
+    @FXML
+    private Label numberRedToken;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -128,6 +132,7 @@ public class Controller {
 	};
 	private int CurrentPlayer;
 	private boolean playOrDiscard; // true = play, false = discard
+	private boolean playCardSuccess; //true if the player play a valid card, else otherwise
 
     public void initialize() {
 
@@ -290,7 +295,7 @@ public class Controller {
     @FXML
     protected void optionPlay(ActionEvent e) throws IOException {
     	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
-    		listeCardPlayers[0][i].setDisable(false);
+    		listeCardPlayers[CurrentPlayer][i].setDisable(false);
     	}
     	playOption.setVisible(false);
     	returnButton.setVisible(true);
@@ -301,7 +306,7 @@ public class Controller {
     @FXML
     protected void optionDraw(ActionEvent e) throws IOException {
     	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
-    		listeCardPlayers[0][i].setDisable(false);
+    		listeCardPlayers[CurrentPlayer][i].setDisable(false);
     	}
     	playOption.setVisible(false);
     	returnButton.setVisible(true);
@@ -310,8 +315,12 @@ public class Controller {
     
     @FXML
     protected void optionHint(ActionEvent e) throws IOException {
-    	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
-    		listeCardPlayers[1][i].setDisable(false);
+    	for (int i = 0; i < players.length; i++) {
+    		if (i != CurrentPlayer) {
+    			for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
+    	    		listeCardPlayers[i][j].setDisable(false);
+    	    	}
+    		}
     	}
     	playOption.setVisible(false);
     	playOptionHint.setVisible(true);
@@ -328,16 +337,48 @@ public class Controller {
     protected void card13Pressed(ActionEvent e) throws IOException { playAndDiscard(3); }
     @FXML
     protected void card14Pressed(ActionEvent e) throws IOException { playAndDiscard(4); }
+    @FXML
+    protected void card20Pressed(ActionEvent e) throws IOException { playAndDiscard(0); }
+    @FXML
+    protected void card21Pressed(ActionEvent e) throws IOException { playAndDiscard(1); }
+    @FXML
+    protected void card22Pressed(ActionEvent e) throws IOException { playAndDiscard(2); }
+    @FXML
+    protected void card23Pressed(ActionEvent e) throws IOException { playAndDiscard(3); }
+    @FXML
+    protected void card24Pressed(ActionEvent e) throws IOException { playAndDiscard(4); }
     
     private void playAndDiscard(int position) {
-    	System.out.println("Vous avez joué la carte en position " + position);
-//    	if (playOrDiscard) {
-//    		
-//    	} else {
-//    		
-//    	}
+    	if (playOrDiscard) {
+    		System.out.println("Vous avez joué la carte en position " + position);
+    		playCardSuccess = players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
+    		endTurn();
+    	} else {
+    		System.out.println("Vous avez défausser la carte en position " + position);
+    	}
     }
     
+    private void endTurn() {
+    	Card[] temp = placedCard.getCardList();
+    	//TODO Actualiser l'affichage des tokens, des placed card et de la défausse
+    	numberBlueToken.setText(blueToken.toString());
+    	numberRedToken.setText(redToken.toString());
+//    	for (int i = 0; i < temp.length; i++) {
+//    		
+//    	}
+    	
+    	for (int i = 0; i < players.length; i++) {
+    		for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
+        		listeCardPlayers[i][j].setDisable(true);
+        		listeCardPlayers[i][j].setStyle("-fx-background-image: url(file:../../resources/img/DosCarte.png)");
+    		}
+    	}
+    	CurrentPlayer++;
+    	if (CurrentPlayer == players.length) {
+    		CurrentPlayer = 0;
+    	}
+    	whoPlay();
+    }
     
     private void setCardTheme(Card card, Button button) {
     	

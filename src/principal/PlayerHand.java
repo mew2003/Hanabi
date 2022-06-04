@@ -84,24 +84,21 @@ public class PlayerHand {
      * @param discard
      * @return rien
      */
-    public Card playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
-
+    public boolean playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
         if (position < 0 || position > hand.length) {
             throw new IllegalArgumentException("La position de la carte doit être comprise entre 0 et " + hand.length);
         }
         boolean isSuccess;
         isSuccess = placedCard.placeACard(hand[position], blueToken);
         if (isSuccess) {
-            System.out.println("La carte a bien été posée");
             if (deck.getNbCards() != 0) {
                 drawACard(position, deck);
             }
         } else {
-            System.out.println("La carte n'a pas été posée");
             discardACard(position, deck, redToken, discard);
         }
 
-        return null;
+        return isSuccess;
     }
 
     /** TODO Commenter le rôle (SRP) de cette méthode
