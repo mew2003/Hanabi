@@ -53,11 +53,11 @@
       </Pane>
       <Pane layoutX="514.0" layoutY="443.0" prefHeight="200.0" prefWidth="882.0">
          <children>
-            <Button mnemonicParsing="false" styleClass="placedCard" />
-            <Button layoutX="183.0" mnemonicParsing="false" styleClass="placedCard" />
-            <Button layoutX="366.0" mnemonicParsing="false" styleClass="placedCard" />
-            <Button layoutX="549.0" mnemonicParsing="false" styleClass="placedCard" />
-            <Button layoutX="732.0" mnemonicParsing="false" styleClass="placedCard" />
+            <Button fx:id="placedCard1" mnemonicParsing="false" styleClass="placedCard" />
+            <Button fx:id="placedCard2" layoutX="183.0" mnemonicParsing="false" styleClass="placedCard" />
+            <Button fx:id="placedCard3" layoutX="366.0" mnemonicParsing="false" styleClass="placedCard" />
+            <Button fx:id="placedCard4" layoutX="549.0" mnemonicParsing="false" styleClass="placedCard" />
+            <Button fx:id="placedCard5" layoutX="732.0" mnemonicParsing="false" styleClass="placedCard" />
          </children>
       </Pane>
       <Pane fx:id="escapeMenu" layoutX="610.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #000000;" styleClass="escapeMenu" visible="false">
@@ -191,43 +191,43 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Circle fill="#a00000" layoutX="140.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hintRed" fill="#a00000" layoutX="140.0" layoutY="155.0" onMouseClicked="#hintRedPressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fill="#344ab9" layoutX="275.0" layoutY="155.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hintBlue" fill="#344ab9" layoutX="275.0" layoutY="155.0" onMouseClicked="#hintBluePressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fill="#ffe70d" layoutX="75.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hintYellow" fill="#ffe70d" layoutX="75.0" layoutY="256.0" onMouseClicked="#hintYellowPressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fill="WHITE" layoutX="210.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hintWhite" fill="WHITE" layoutX="210.0" layoutY="256.0" onMouseClicked="#hintWhitePressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fill="#f28daf" layoutX="335.0" layoutY="256.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hintPink" fill="#f28daf" layoutX="335.0" layoutY="256.0" onMouseClicked="#hintPinkPressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fx:id="button1" fill="WHITE" layoutX="75.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hint1" fill="WHITE" layoutX="75.0" layoutY="465.0" onMouseClicked="#hint1Pressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fx:id="button2" fill="WHITE" layoutX="210.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hint2" fill="WHITE" layoutX="210.0" layoutY="465.0" onMouseClicked="#hint2Pressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fx:id="button3" fill="WHITE" layoutX="335.0" layoutY="465.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hint3" fill="WHITE" layoutX="335.0" layoutY="465.0" onMouseClicked="#hint3Pressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fx:id="button4" fill="WHITE" layoutX="140.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hint4" fill="WHITE" layoutX="140.0" layoutY="566.0" onMouseClicked="#hint4Pressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>
-            <Circle fx:id="button5" fill="WHITE" layoutX="275.0" layoutY="566.0" radius="25.0" stroke="BLACK" strokeType="INSIDE">
+            <Circle fx:id="hint5" fill="WHITE" layoutX="275.0" layoutY="566.0" onMouseClicked="#hint5Pressed" radius="25.0" stroke="BLACK" strokeType="INSIDE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Circle>

@@ -1,10 +1,7 @@
 package application;
 
 import java.io.IOException;
-import java.time.Duration;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.BackgroundImage;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Circle;
@@ -65,15 +61,25 @@ public class Controller {
     @FXML
     private Button card24;
     @FXML
-    private Circle button1;
+    private Circle hintRed;
     @FXML
-    private Circle button2;
+    private Circle hintBlue;
     @FXML
-    private Circle button3;
+    private Circle hintYellow;
     @FXML
-    private Circle button4;
+    private Circle hintWhite;
     @FXML
-    private Circle button5;
+    private Circle hintPink;
+    @FXML
+    private Circle hint1;
+    @FXML
+    private Circle hint2;
+    @FXML
+    private Circle hint3;
+    @FXML
+    private Circle hint4;
+    @FXML
+    private Circle hint5;
     @FXML
     private Label player1Name;
     @FXML
@@ -88,6 +94,16 @@ public class Controller {
     private Label numberBlueToken;
     @FXML
     private Label numberRedToken;
+    @FXML
+    private Button placedCard1;
+    @FXML
+    private Button placedCard2;
+    @FXML
+    private Button placedCard3;
+    @FXML
+    private Button placedCard4;
+    @FXML
+    private Button placedCard5;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -132,7 +148,7 @@ public class Controller {
 	};
 	private int CurrentPlayer;
 	private boolean playOrDiscard; // true = play, false = discard
-	private boolean playCardSuccess; //true if the player play a valid card, else otherwise
+	private Button[] placedCardList;
 
     public void initialize() {
 
@@ -208,6 +224,9 @@ public class Controller {
 			{card10, card11, card12, card13, card14},
 			{card20, card21, card22, card23, card24},
     	};
+    	placedCardList = new Button[] {
+    			placedCard1, placedCard2, placedCard3, placedCard4, placedCard5
+    	};
     	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
     		listeCardPlayers[0][i].setDisable(true);
     		listeCardPlayers[1][i].setDisable(true);
@@ -221,13 +240,11 @@ public class Controller {
     @FXML
     private void partyConstruct() throws IOException {
     	
-
-    	
-    	button1.setFill(new ImagePattern(imageButtonList[0]));
-    	button2.setFill(new ImagePattern(imageButtonList[1]));
-    	button3.setFill(new ImagePattern(imageButtonList[2]));
-    	button4.setFill(new ImagePattern(imageButtonList[3]));
-    	button5.setFill(new ImagePattern(imageButtonList[4]));
+    	hint1.setFill(new ImagePattern(imageButtonList[0]));
+    	hint2.setFill(new ImagePattern(imageButtonList[1]));
+    	hint3.setFill(new ImagePattern(imageButtonList[2]));
+    	hint4.setFill(new ImagePattern(imageButtonList[3]));
+    	hint5.setFill(new ImagePattern(imageButtonList[4]));
     	
     	/* Crï¿½ation des outils nï¿½cessaire au bon dï¿½roulement d'une partie */
 		//Crï¿½ation du deck
@@ -350,12 +367,41 @@ public class Controller {
     
     private void playAndDiscard(int position) {
     	if (playOrDiscard) {
-    		System.out.println("Vous avez joué la carte en position " + position);
-    		playCardSuccess = players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
+    		players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
     		endTurn();
     	} else {
     		System.out.println("Vous avez défausser la carte en position " + position);
+    		players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
+    		endTurn();
     	}
+    }
+    
+    @FXML
+    protected void hintRedPressed(MouseEvent e) throws IOException { giveHint("red"); }
+    @FXML
+    protected void hintBluePressed(MouseEvent e) throws IOException { giveHint("blue"); }
+    @FXML
+    protected void hintYellowPressed(MouseEvent e) throws IOException { giveHint("yellow"); }
+    @FXML
+    protected void hintWhitePressed(MouseEvent e) throws IOException { giveHint("white"); }
+    @FXML
+    protected void hintPinkPressed(MouseEvent e) throws IOException { giveHint("pink"); }
+    @FXML
+    protected void hint1Pressed(MouseEvent e) throws IOException { giveHint(1); }
+    @FXML
+    protected void hint2Pressed(MouseEvent e) throws IOException { giveHint(2); }
+    @FXML
+    protected void hint3Pressed(MouseEvent e) throws IOException { giveHint(3); }
+    @FXML
+    protected void hint4Pressed(MouseEvent e) throws IOException { giveHint(4); }
+    @FXML
+    protected void hint5Pressed(MouseEvent e) throws IOException { giveHint(5); }
+    
+    private void giveHint(String colorHint) {
+    	System.out.println(colorHint);
+    }
+    private void giveHint(int valueHint) {
+    	System.out.println(valueHint);
     }
     
     private void endTurn() {
@@ -363,9 +409,9 @@ public class Controller {
     	//TODO Actualiser l'affichage des tokens, des placed card et de la défausse
     	numberBlueToken.setText(blueToken.toString());
     	numberRedToken.setText(redToken.toString());
-//    	for (int i = 0; i < temp.length; i++) {
-//    		
-//    	}
+    	for (int i = 0; i < temp.length; i++) {
+    		setCardTheme(temp[i], placedCardList[i]);
+    	}
     	
     	for (int i = 0; i < players.length; i++) {
     		for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
@@ -378,6 +424,8 @@ public class Controller {
     		CurrentPlayer = 0;
     	}
     	whoPlay();
+    	
+    	//TODO faire les conditions de fin de partie
     }
     
     private void setCardTheme(Card card, Button button) {
