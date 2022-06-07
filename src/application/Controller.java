@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
@@ -104,6 +105,14 @@ public class Controller {
     private Button placedCard4;
     @FXML
     private Button placedCard5;
+    @FXML
+    private Pane playerHinted;
+    @FXML
+    private Button labelHintedPlayer1;
+    @FXML
+    private Pane logs;
+    @FXML
+    private TextArea logsMessage;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -149,6 +158,8 @@ public class Controller {
 	private int CurrentPlayer;
 	private boolean playOrDiscard; // true = play, false = discard
 	private Button[] placedCardList;
+	private int playerHintSelect;
+	private String[] log;
 
     public void initialize() {
 
@@ -265,6 +276,9 @@ public class Controller {
         // Crï¿½ation de la dï¿½fausse
         discard = new Discard();
         
+        // Création des logs
+        log = new String[players.length];
+        
         CurrentPlayer = 0;
         player1Name.setText(players[0].getName());
         player2Name.setText(players[1].getName());
@@ -276,12 +290,19 @@ public class Controller {
     private void whoPlay() {
     	labelPlayerTurn.setText("Au tour de " + players[CurrentPlayer].getName());
         playerTurn.setVisible(true);
-        
+    }
+    
+    @FXML
+    private void closeLogs(ActionEvent e) throws IOException {
+    	logs.setVisible(false);
+    	//TODO Corriger bug (affiche de selectedPlayOption, alors que le joueurs n'a pas encore clique
+    	//sur fermé les logs 
     }
     
     @FXML
     protected void whoPlayOk(ActionEvent e) throws IOException {
     	playerTurn.setVisible(false);
+    	logs.setVisible(true);
     	for (int i = 0; i < 5; i++) {
         	for (int j = 0; j < players.length; j++) {
         		if (j != CurrentPlayer) {
@@ -291,7 +312,7 @@ public class Controller {
         }
     	
     	//System.out.println("Log : "); TODO
-    	// TODO Permettre de check la dï¿½fausse
+    	// TODO Créer la défausse
     	
     	selectedPlayOption();
     	
@@ -304,6 +325,7 @@ public class Controller {
     		listeCardPlayers[1][i].setDisable(true);
     	}
     	playOptionHint.setVisible(false);
+    	playerHinted.setVisible(false);
     	returnButton.setVisible(false);
     	playOption.setVisible(true);
     	
@@ -332,6 +354,21 @@ public class Controller {
     
     @FXML
     protected void optionHint(ActionEvent e) throws IOException {
+    	playOption.setVisible(false);
+    	playerHinted.setVisible(true);
+    	for (int i = 0; i < players.length; i++) {
+    		if (i != CurrentPlayer) {
+    			//TODO Refaire cette partie pour pouvoir l'adapter pour des parties avec plus de joueurs
+    			labelHintedPlayer1.setText(players[i].getName());
+    			playerHintSelect = i;
+    			break;
+    		}
+    	}
+    }
+    
+    @FXML
+    protected void giveHint1(ActionEvent e) throws IOException {
+    	playerHinted.setVisible(false);
     	for (int i = 0; i < players.length; i++) {
     		if (i != CurrentPlayer) {
     			for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
@@ -339,7 +376,6 @@ public class Controller {
     	    	}
     		}
     	}
-    	playOption.setVisible(false);
     	playOptionHint.setVisible(true);
     	
     }
@@ -398,15 +434,24 @@ public class Controller {
     protected void hint5Pressed(MouseEvent e) throws IOException { giveHint(5); }
     
     private void giveHint(String colorHint) {
-    	System.out.println(colorHint);
+    	playOptionHint.setVisible(false);
+    	System.arraycopy(log, 1, log, 0, log.length - 1);
+        log[log.length - 1] = players[playerHintSelect].getName() + ", Cartes en position : "
+                + players[CurrentPlayer].giveAHint(players[playerHintSelect], blueToken, colorHint);
+    	endTurn();
     }
     private void giveHint(int valueHint) {
-    	System.out.println(valueHint);
+    	playOptionHint.setVisible(false);
+    	System.arraycopy(log, 1, log, 0, log.length - 1);
+        log[log.length - 1] = players[playerHintSelect].getName() + ", Cartes en position : "
+                + players[CurrentPlayer].giveAHint(players[playerHintSelect], blueToken, valueHint);
+    	endTurn();
     }
     
     private void endTurn() {
     	Card[] temp = placedCard.getCardList();
-    	//TODO Actualiser l'affichage des tokens, des placed card et de la défausse
+    	logsMessage.setText(log[1]);
+    	//TODO Actualiser l'affichage de la défausse
     	numberBlueToken.setText(blueToken.toString());
     	numberRedToken.setText(redToken.toString());
     	for (int i = 0; i < temp.length; i++) {
@@ -423,9 +468,9 @@ public class Controller {
     	if (CurrentPlayer == players.length) {
     		CurrentPlayer = 0;
     	}
-    	whoPlay();
     	
     	//TODO faire les conditions de fin de partie
+    	whoPlay();
     }
     
     private void setCardTheme(Card card, Button button) {
