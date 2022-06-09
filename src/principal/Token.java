@@ -6,19 +6,21 @@
 package principal;
 
 /** 
- * TODO Commenter la responsabilité de cette class
- * @author 
+ * CrÃ©er un jeton contenant une valeur
+ * Sa valeur peut Ãªtre incrÃ©mentÃ© ou dÃ©crÃ©mentÃ© 
+ * @author SÃ©bastien, Mewen, Maxime
  *
  */
 public class Token {
 
     /** Nombre de token */
-    public int value;
+    private int value;
 
     /**
-     * Définition d'un jeton
+     * DÃ©finition d'un jeton
      * @param value Nombre de token
-     * @throws IllegalArgumentException si le nombre de tokens est invalide (inférieur à 0 ou supérieur à 8)
+     * @throws IllegalArgumentException si le nombre de tokens 
+     *         est invalide (infÃ©rieur Ã  0 ou supï¿½rieur Ã  8)
      */
     public Token(int value) {
         if (value < 0 || value > 8) {
@@ -28,9 +30,10 @@ public class Token {
     }
 
     /**
-     * Incrémente le nombre de tokens par 1
+     * IncrÃ©mente le nombre de tokens par 1
      * @return La nouvelle valeur du token
-     * @throws IllegalArgumentException si le nombre de tokens est invalide (supérieur à 8)
+     * @throws IllegalArgumentException si le nombre de tokens 
+     *         est invalide (supÃ©rieur Ã  8)
      */
     public int incToken() {
         ++value;
@@ -41,9 +44,10 @@ public class Token {
     }
 
     /**
-     * Décrémente le nombre de tokens par 1
+     * DÃ©crÃ©mente le nombre de tokens par 1
      * @return La nouvelle valeur du token
-     * @throws IllegalArgumentException si le nombre de tokens est invalide (inférieur à 0)
+     * @throws IllegalArgumentException si le nombre de tokens 
+     *         est invalide (infÃ©rieur ï¿½ 0)
      */
     public int decToken() {
         --value;

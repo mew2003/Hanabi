@@ -28,5 +28,13 @@
             <Font size="36.0" />
          </font>
       </Label>
+      <Button layoutX="824.0" layoutY="734.0" mnemonicParsing="false" onAction="#returnMenu" styleClass="menuOption" text="Menu">
+         <font>
+            <Font size="36.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </Pane>
