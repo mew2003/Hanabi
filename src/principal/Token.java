@@ -13,7 +13,7 @@ package principal;
 public class Token {
 
     /** Nombre de token */
-    public int value;
+    private int value;
 
     /**
      * Définition d'un jeton

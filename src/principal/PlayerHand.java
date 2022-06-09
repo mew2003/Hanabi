@@ -64,7 +64,7 @@ public class PlayerHand {
      * @param deck  La pioche dans laquelle est pioché la carte
      * @return rien
      */
-    public Card drawACard(int position, Deck deck) {
+    public void drawACard(int position, Deck deck) {
         if (position < 0 || position > hand.length) {
             throw new IllegalArgumentException("La position de la carte doit "
                                                + "être comprise entre 0 et "
@@ -73,7 +73,7 @@ public class PlayerHand {
         
         hand[position] = deck.getCards();
         
-        return null;
+        return;
     }
 
     /** 
