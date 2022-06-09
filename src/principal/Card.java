@@ -6,8 +6,10 @@
 package principal;
 
 /** 
- * TODO Commenter la responsabilité de cette class
- * @author 
+ * CrÃ©ation d'une carte composÃ©e d'une couleur et d'une valeur
+ * il y a 4 couleurs possibles (rouge, bleu, rose, jaune et blanc)
+ * pour les valeurs 5 sont disponibles (1, 2, 3, 4 et 5)
+ * @author SÃ©bastien, Mewen, Maxime
  *
  */
 public class Card {
@@ -15,14 +17,14 @@ public class Card {
     /** Couleur des cartes */
     private final String color;
 
-    /** Numéro des cartes  */
+    /** Numï¿½ro des cartes  */
     private final int value;
 
     /**
-     * DÃ©finition d'une carte avec couleur et numéro
+     * DÃ©finition d'une carte avec couleur et numÃ©ro
      * @param color Couleur de la carte
-     * @param value Numéro de la carte
-     * @throws IllegalArgumentException si la couleur ou le numéro de la carte
+     * @param value NumÃ©ro de la carte
+     * @throws IllegalArgumentException si la couleur ou le numÃ©ro de la carte
      */
     public Card(String color, int value) {
         boolean isCorrect = false;
@@ -64,7 +66,7 @@ public class Card {
         return color;
     }
 
-    /** @return le numéro de la carte */
+    /** @return le numÃ©ro de la carte */
     public int getValue() {
         return value;
     }
