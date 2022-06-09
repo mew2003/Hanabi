@@ -72,7 +72,9 @@ public class Deck {
                     new Card("white", 5)
             };
 
-    /** Pour éviter l'instanciation inutile */
+    /** Pour éviter l'instanciation inutile, 
+     * est en public uniquement pour les tests avec JUnit 
+     */
     public Deck() {}
 
     /** 

@@ -34,10 +34,10 @@
 }
 
 .textButton {
-	-fx-text-fill: #FFFFFF;
+	-fx-text-fill: #000000;
 	-fx-font-family: Quintessential;
 	-fx-font-size: 96px;
-	-fx-color: #FFFFFF;
+	-fx-color: #000000;
 }
 
 
@@ -60,11 +60,12 @@
 	-fx-opacity: 100%;
 }
 
-.textOptionButton {
-	-fx-text-fill: #FFFFFF;
-	-fx-font-family: Quintessential;
-	-fx-font-size: 40px;
-	-fx-color: #FFFFFF;
+.optionButton .text {
+    -fx-fill: #FFFFFF;
+    -fx-stroke: #000000;
+    -fx-stroke-width: 1px;
+    -fx-font-size: 40px;
+    -fx-font-family: Quintessential;
 }
 
 .PlayersButton {
@@ -82,11 +83,10 @@
 	-fx-opacity: 100%;
 }
 
-.PlayersButtonText {
-	-fx-text-fill: #FFFFFF;
-	-fx-font-family: Quintessential;
-	-fx-font-size: 25px;
-	-fx-color: #FFFFFF;
+.PlayersButton .text {
+    -fx-fill: #000000;
+    -fx-font-size: 25px;
+    -fx-font-family: Quintessential;
 }
 
 .RulesBackground {
@@ -98,7 +98,6 @@
 }
 
 .RulesFonts {
-	-fx-font-family: Quintessential;
 	-fx-font-size: 28px;
 	-fx-color: #FFFFFF;
 }

@@ -590,12 +590,10 @@ public class Controller {
     
     @FXML
     private void openDiscard(ActionEvent e) throws IOException {
-        System.out.println("ouvre toi");
         discardPile.setVisible(true);
     }
     @FXML
     private void closeDiscard(ActionEvent e) throws IOException {
-        System.out.println("ferme toi");
         discardPile.setVisible(false);
     }
     
