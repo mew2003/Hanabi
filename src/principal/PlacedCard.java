@@ -8,9 +8,8 @@ package principal;
 import java.util.Objects;
 
 /** 
- * TODO Commenter la responsabilité de cette class
- * @author 
- *
+ * Créer l'endroit où les cartes seront placé quand un joueur jouera une carte
+ * @author Sébastien, Mewen, Maxime
  */
 public class PlacedCard {
 
@@ -39,7 +38,7 @@ public class PlacedCard {
      * @param token Le jeton bleu 
      * @return true si la carte a été placée, false sinon
      * @throws IllegalArgumentException si la valeur de la carte est incorrect 
-     *                                  (inf�rieur � 0 ou sup�rieur � 5)
+     *                                  (inférieur à 0 ou supérieur à 5)
      */
     public boolean placeACard(Card card, Token token) {
     	

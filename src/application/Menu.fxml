@@ -40,7 +40,7 @@
             <String fx:value="PlayersButtonText" />
          </styleClass>
       </Button>
-      <Button alignment="CENTER" layoutX="78.0" layoutY="955.0" mnemonicParsing="false" onAction="#switchToHanabi" prefHeight="85.0" prefWidth="273.0" text="Retour">
+      <Button alignment="CENTER" layoutX="78.0" layoutY="955.0" mnemonicParsing="false" onAction="#switchToHanabi" prefHeight="85.0" prefWidth="273.0" text="RETOUR">
          <styleClass>
             <String fx:value="optionButton" />
             <String fx:value="textOptionButton" />
@@ -49,7 +49,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" layoutX="1568.0" layoutY="955.0" mnemonicParsing="false" onAction="#switchToRules" prefHeight="85.0" prefWidth="273.0" text="Règles">
+      <Button alignment="CENTER" layoutX="1568.0" layoutY="955.0" mnemonicParsing="false" onAction="#switchToRules" prefHeight="85.0" prefWidth="273.0" text="RÈGLES">
          <styleClass>
             <String fx:value="optionButton" />
             <String fx:value="textOptionButton" />

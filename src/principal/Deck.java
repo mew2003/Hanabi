@@ -8,7 +8,7 @@ package principal;
 import java.util.Random;
 
 /** 
- * TODO Commenter la responsabilité de cette class
+ * CrÃ©er un deck composÃ© de 50 cartes
  * @author 
  *
  */
@@ -72,11 +72,14 @@ public class Deck {
                     new Card("white", 5)
             };
 
-    /** Pour éviter l'instanciation inutile */
+    /** 
+     * Pour éviter l'instanciation inutile, 
+     * est en public uniquement pour les tests avec JUnit 
+     */
     public Deck() {}
 
     /** 
-     * Permet d'obtenir une carte piocher aléatoirement dans le paquet de cartes
+     * Permet d'obtenir une carte piocher alÃ©atoirement dans le paquet de cartes
      * @return  la carte obtenue
      */
     public Card getCards() {

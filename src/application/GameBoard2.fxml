@@ -157,7 +157,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutX="40.0" layoutY="280.0" mnemonicParsing="false" onAction="#optionDraw" prefHeight="110.0" prefWidth="280.0" style="-fx-text-fill: #000000;" text="Défausser une carte">
+            <Button layoutX="40.0" layoutY="280.0" mnemonicParsing="false" onAction="#optionDraw" prefHeight="110.0" prefWidth="280.0" style="-fx-text-fill: #000000;" text="Se défausser">
                <styleClass>
                   <String fx:value="playOptionButton" />
                   <String fx:value="playOptionButtonFont" />
@@ -305,36 +305,36 @@
             <Button fx:id="discard9" layoutX="1390.0" layoutY="15.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
             <Button fx:id="discard10" layoutX="1560.0" layoutY="15.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
             <Button fx:id="discard11" layoutX="30.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard12" layoutX="30.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard13" layoutX="30.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard14" layoutX="30.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard15" layoutX="200.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard16" layoutX="370.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard17" layoutX="540.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard18" layoutX="710.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard19" layoutX="1050.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard20" layoutX="880.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard21" layoutX="1220.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard22" layoutX="1390.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard23" layoutX="1560.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard24" layoutX="200.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard25" layoutX="370.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard26" layoutX="540.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard27" layoutX="710.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard28" layoutX="880.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard29" layoutX="1050.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard30" layoutX="1220.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard31" layoutX="1390.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard32" layoutX="1560.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard33" layoutX="200.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard34" layoutX="370.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard35" layoutX="540.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard36" layoutX="710.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard37" layoutX="880.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard38" layoutX="1050.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard39" layoutX="1220.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard40" layoutX="1390.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button fx:id="discard41" layoutX="1560.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard21" layoutX="30.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard31" layoutX="30.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard41" layoutX="30.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard12" layoutX="200.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard13" layoutX="370.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard14" layoutX="540.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard15" layoutX="710.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard17" layoutX="1050.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard16" layoutX="880.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard18" layoutX="1220.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard19" layoutX="1390.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard20" layoutX="1560.0" layoutY="220.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard22" layoutX="200.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard23" layoutX="370.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard24" layoutX="540.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard25" layoutX="710.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard26" layoutX="880.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard27" layoutX="1050.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard28" layoutX="1220.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard29" layoutX="1390.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard30" layoutX="1560.0" layoutY="425.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard32" layoutX="200.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard33" layoutX="370.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard34" layoutX="540.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard35" layoutX="710.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard36" layoutX="880.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard37" layoutX="1050.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard38" layoutX="1220.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard39" layoutX="1390.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
+            <Button fx:id="discard40" layoutX="1560.0" layoutY="630.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
             <Button fx:id="discard42" layoutX="200.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
             <Button fx:id="discard43" layoutX="370.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
             <Button fx:id="discard44" layoutX="540.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />

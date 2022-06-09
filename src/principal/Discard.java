@@ -6,8 +6,8 @@
 package principal;
 
 /** 
- * TODO Commenter la responsabilit� de cette class
- * @author 
+ * L'endroit où les cartes invalides jouées par les joueurs sont stockés
+ * @author Sébastien, Mewen, Maxime
  *
  */
 public class Discard {
@@ -24,7 +24,7 @@ public class Discard {
         cardList = new Card[NB_CARD_MAX];
     }
 
-    /** @return la liste des cartes pr�sentes dans la d�fausse */
+    /** @return la liste des cartes présentes dans la défausse */
     public Card[] getCardList() {
         return cardList;
     }
