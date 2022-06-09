@@ -3,6 +3,7 @@ package application;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -113,6 +114,14 @@ public class Controller {
     private Pane logs;
     @FXML
     private TextArea logsMessage;
+    @FXML
+    private Pane endGame;
+    @FXML
+    private Label scoreMessage1;
+    @FXML
+    private Label scoreMessage2;
+    @FXML
+    private Label scoreMessage3;
     
 	private Deck deck;
 	private PlayerHand[] players;
@@ -160,6 +169,7 @@ public class Controller {
 	private Button[] placedCardList;
 	private int playerHintSelect;
 	private String[] log;
+	private int score;
 
     public void initialize() {
 
@@ -311,7 +321,6 @@ public class Controller {
         	}
         }
     	
-    	//System.out.println("Log : "); TODO
     	// TODO Créer la défausse
     	
     	selectedPlayOption();
@@ -471,9 +480,16 @@ public class Controller {
     	}
     	
     	//Condition de fin de partie 
+    	score = 0;
+    	for (int i = 0; i < placedCard.getCardList().length; i++) {
+    		score += placedCard.getCardList()[i].getValue();
+    	}
     	if (redToken.getValue() == 3) {
-            System.out.println("C'est la fin");
+    		endGame.setVisible(true);
         }
+    	if (score == 25) {
+    		endGame.setVisible(true);
+    	}
 //    	if (deck.getNbCards() == 0) {
 //            lastTurn++;
 //            if (lastTurn == players[] + 1) {
@@ -482,6 +498,22 @@ public class Controller {
 //        }
     	whoPlay();
     }
+    
+    @FXML
+    private void loadEndScore(ActionEvent e) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(getClass().getResource("Score.fxml"));
+    	root = loader.load();
+    	
+    	// affiche un message sur la nouvelle fenêtre
+    	Controller2 controller2 = loader.getController();
+    	controller2.displayScore(score);
+    	
+		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		scene = new Scene(root);
+		scene.getStylesheets().add(getClass().getResource("Score.css").toExternalForm());
+		stage.setScene(scene);
+		stage.show();
+    } 
     
     private void setCardTheme(Card card, Button button) {
     	
