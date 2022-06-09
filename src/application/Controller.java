@@ -403,11 +403,12 @@ public class Controller {
     
     private void playAndDiscard(int position) {
     	if (playOrDiscard) {
-    		players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
+    		log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
+                    + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
     		endTurn();
     	} else {
-    		System.out.println("Vous avez défausser la carte en position " + position);
-    		players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
+    		log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
+                    + players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
     		endTurn();
     	}
     }
@@ -469,7 +470,16 @@ public class Controller {
     		CurrentPlayer = 0;
     	}
     	
-    	//TODO faire les conditions de fin de partie
+    	//Condition de fin de partie 
+    	if (redToken.getValue() == 3) {
+            System.out.println("C'est la fin");
+        }
+//    	if (deck.getNbCards() == 0) {
+//            lastTurn++;
+//            if (lastTurn == players[] + 1) {
+//            	System.out.println("C'est la fin");
+//            }
+//        }
     	whoPlay();
     }
     

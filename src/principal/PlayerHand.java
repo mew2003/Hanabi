@@ -84,12 +84,13 @@ public class PlayerHand {
      * @param discard
      * @return rien
      */
-    public boolean playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
+    public Card playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
         if (position < 0 || position > hand.length) {
             throw new IllegalArgumentException("La position de la carte doit être comprise entre 0 et " + hand.length);
         }
         boolean isSuccess;
-        isSuccess = placedCard.placeACard(hand[position], blueToken);
+        Card playCard = hand[position];
+        isSuccess = placedCard.placeACard(playCard, blueToken);
         if (isSuccess) {
             if (deck.getNbCards() != 0) {
                 drawACard(position, deck);
@@ -98,7 +99,7 @@ public class PlayerHand {
             discardACard(position, deck, redToken, discard);
         }
 
-        return isSuccess;
+        return playCard;
     }
 
     /** TODO Commenter le rôle (SRP) de cette méthode
@@ -167,15 +168,16 @@ public class PlayerHand {
      * @param discard  la défausse dans laquelle la carte sera placée
      * @return  la nouvelle main du joueur
      */
-    public Card[] discardACard(int position, Deck deck, Token token, Discard discard) {
+    public Card discardACard(int position, Deck deck, Token token, Discard discard) {
 
+    	Card discardCard = hand[position];
 
         if (token.getValue() < 8) {
             token.incToken();
         }
         for (int i = 0; i < discard.getCardList().length; i++ ) {
             if (discard.getCardList()[i] == null) {
-                discard.getCardList()[i] = hand[position];
+                discard.getCardList()[i] = discardCard;
                 break;
             }
         }
@@ -183,8 +185,7 @@ public class PlayerHand {
             drawACard(position, deck);
         }
 
-
-        return null;
+        return discardCard;
     }
 
     @Override
