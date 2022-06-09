@@ -3,7 +3,6 @@ package application;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -423,13 +422,13 @@ public class Controller {
     private void whoPlay() {
     	labelPlayerTurn.setText("Au tour de " + players[CurrentPlayer].getName());
         playerTurn.setVisible(true);
+        returnButton.setVisible(false);
     }
     
     @FXML
     private void closeLogs(ActionEvent e) throws IOException {
     	logs.setVisible(false);
-    	//TODO Corriger bug (affiche de selectedPlayOption, alors que le joueurs n'a pas encore clique
-    	//sur fermé les logs 
+    	selectedPlayOption();
     }
     
     @FXML
@@ -444,7 +443,6 @@ public class Controller {
             }
         }
     	
-    	selectedPlayOption();
     	
     }
     
@@ -488,7 +486,6 @@ public class Controller {
     	playerHinted.setVisible(true);
     	for (int i = 0; i < players.length; i++) {
     		if (i != CurrentPlayer) {
-    			//TODO Refaire cette partie pour pouvoir l'adapter pour des parties avec plus de joueurs
     			labelHintedPlayer1.setText(players[i].getName());
     			playerHintSelect = i;
     			break;
@@ -765,5 +762,4 @@ public class Controller {
     	}
     }
     
-
 }
