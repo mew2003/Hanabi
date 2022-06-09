@@ -6,8 +6,7 @@
 .pane {
     -fx-background-image: url(../../resources/img/mainBackground.jpg);
     -fx-background-repeat: no-repeat;
-    -fx-background-position: center center;
-    
+    -fx-background-position: center center; 
 }
 
 .mainButton {

@@ -22,19 +22,19 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" layoutX="835.0" layoutY="447.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="3 JOUEURS">
+      <Button alignment="CENTER" disable="true" layoutX="835.0" layoutY="447.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="3 JOUEURS">
          <styleClass>
             <String fx:value="PlayersButton" />
             <String fx:value="PlayersButtonText" />
          </styleClass>
       </Button>
-      <Button alignment="CENTER" layoutX="835.0" layoutY="540.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="4 JOUEURS">
+      <Button alignment="CENTER" disable="true" layoutX="835.0" layoutY="540.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="4 JOUEURS">
          <styleClass>
             <String fx:value="PlayersButton" />
             <String fx:value="PlayersButtonText" />
          </styleClass>
       </Button>
-      <Button alignment="CENTER" layoutX="835.0" layoutY="633.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="5 JOUEURS">
+      <Button alignment="CENTER" disable="true" layoutX="835.0" layoutY="633.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="250.0" text="5 JOUEURS">
          <styleClass>
             <String fx:value="PlayersButton" />
             <String fx:value="PlayersButtonText" />
