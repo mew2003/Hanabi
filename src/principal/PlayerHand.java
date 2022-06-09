@@ -86,7 +86,6 @@ public class PlayerHand {
         }
         
         hand[position] = deck.getCards();
-        
     }
 
     /** 

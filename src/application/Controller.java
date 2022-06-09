@@ -444,8 +444,6 @@ public class Controller {
             }
         }
     	
-    	// TODO Créer la défausse
-    	
     	selectedPlayOption();
     	
     }
@@ -603,7 +601,6 @@ public class Controller {
 
     	Card[] temp = placedCard.getCardList();
     	logsMessage.setText(log[1]);
-    	//TODO Actualiser l'affichage de la défausse
     	numberBlueToken.setText(blueToken.toString());
     	numberRedToken.setText(redToken.toString());
     	for (int i = 0; i < temp.length; i++) {
