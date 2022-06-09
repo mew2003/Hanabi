@@ -27,7 +27,7 @@ public class Card {
     public Card(String color, int value) {
         boolean isCorrect = false;
         final String[] POSSIBLE_COLOR = {
-                "red", "blue", "pink", "yellow", "white"
+                "red", "blue", "pink", "yellow", "white", ""
         };
         final int[] POSSIBLE_VALUE = {
                 0, 1, 2, 3, 4, 5

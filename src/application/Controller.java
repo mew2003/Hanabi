@@ -114,6 +114,7 @@ public class Controller {
     @FXML
     private TextArea logsMessage;
     
+    
 	private Deck deck;
 	private PlayerHand[] players;
 	private PlacedCard placedCard;
@@ -147,6 +148,7 @@ public class Controller {
 			"-fx-background-image: url(file:../../resources/img/Cartes/white3.png)",
 			"-fx-background-image: url(file:../../resources/img/Cartes/white4.png)",
 			"-fx-background-image: url(file:../../resources/img/Cartes/white5.png)",
+			"-fx-background-image: url(file:../../resources/img/Cartes/transparent.png)"
 	};
 	private Image[] imageButtonList = {
 			new Image("file:../../resources/img/Button/Button1.png"),
@@ -160,14 +162,15 @@ public class Controller {
 	private Button[] placedCardList;
 	private int playerHintSelect;
 	private String[] log;
+	private int lastTurn = 0;
 
     public void initialize() {
 
     }
     
     public Stage stage;
-	public Scene scene;
-	public Parent root;
+    public Scene scene;
+    public Parent root;
 	
     @FXML
     protected void switchToHanabi(ActionEvent e) throws IOException {
@@ -304,11 +307,11 @@ public class Controller {
     	playerTurn.setVisible(false);
     	logs.setVisible(true);
     	for (int i = 0; i < 5; i++) {
-        	for (int j = 0; j < players.length; j++) {
-        		if (j != CurrentPlayer) {
-        			setCardTheme(players[j].getHand()[i], listeCardPlayers[j][i]);
-        		}
+            for (int j = 0; j < players.length; j++) {
+        	if (j != CurrentPlayer) {
+        	    setCardTheme(players[j].getHand()[i], listeCardPlayers[j][i]);
         	}
+            }
         }
     	
     	//System.out.println("Log : "); TODO
@@ -370,11 +373,11 @@ public class Controller {
     protected void giveHint1(ActionEvent e) throws IOException {
     	playerHinted.setVisible(false);
     	for (int i = 0; i < players.length; i++) {
-    		if (i != CurrentPlayer) {
-    			for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
-    	    		listeCardPlayers[i][j].setDisable(false);
+    	    if (i != CurrentPlayer) {
+    	        for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
+    	    	    listeCardPlayers[i][j].setDisable(false);
     	    	}
-    		}
+    	    }
     	}
     	playOptionHint.setVisible(true);
     	
@@ -450,6 +453,7 @@ public class Controller {
     }
     
     private void endTurn() {
+
     	Card[] temp = placedCard.getCardList();
     	logsMessage.setText(log[1]);
     	//TODO Actualiser l'affichage de la défausse
@@ -460,10 +464,14 @@ public class Controller {
     	}
     	
     	for (int i = 0; i < players.length; i++) {
-    		for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
-        		listeCardPlayers[i][j].setDisable(true);
-        		listeCardPlayers[i][j].setStyle("-fx-background-image: url(file:../../resources/img/DosCarte.png)");
-    		}
+    	    for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
+        	listeCardPlayers[i][j].setDisable(true);
+        	if (players[i].getHand()[j].getColor() != "") {
+                    listeCardPlayers[i][j].setStyle("-fx-background-image: url(file:../../resources/img/DosCarte.png)");
+                } else {
+                    listeCardPlayers[i][j].setStyle("-fx-background-image: url(file:../../resources/img/Cartes/transparent.png)");
+                }
+    	    }
     	}
     	CurrentPlayer++;
     	if (CurrentPlayer == players.length) {
@@ -474,12 +482,12 @@ public class Controller {
     	if (redToken.getValue() == 3) {
             System.out.println("C'est la fin");
         }
-//    	if (deck.getNbCards() == 0) {
-//            lastTurn++;
-//            if (lastTurn == players[] + 1) {
-//            	System.out.println("C'est la fin");
-//            }
-//        }
+    	if (deck.getNbCards() == 0) {
+            lastTurn++;
+            if (lastTurn == players.length + 1) {
+           	System.out.println("C'est la fin");
+            }
+        }
     	whoPlay();
     }
     
@@ -580,6 +588,9 @@ public class Controller {
 			    		button.setStyle(imageList[24]);
 			    	}
     			}
+    		}
+    		default -> {
+    		    button.setStyle(imageList[25]);
     		}
     	}
     }

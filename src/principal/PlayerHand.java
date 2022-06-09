@@ -70,7 +70,9 @@ public class PlayerHand {
                                                + "être comprise entre 0 et "
                                                + hand.length);
         }
+        
         hand[position] = deck.getCards();
+        
         return null;
     }
 
@@ -94,6 +96,8 @@ public class PlayerHand {
         if (isSuccess) {
             if (deck.getNbCards() != 0) {
                 drawACard(position, deck);
+            } else {
+                hand[position] = new Card("", 0);
             }
         } else {
             discardACard(position, deck, redToken, discard);
@@ -183,6 +187,8 @@ public class PlayerHand {
         }
         if (deck.getNbCards() != 0) {
             drawACard(position, deck);
+        } else {
+            hand[position] = new Card("", 0);
         }
 
         return discardCard;

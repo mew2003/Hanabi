@@ -16,7 +16,7 @@ class CardTest {
 	@Test
 	void testCard() {
 		
-		assertThrows(IllegalArgumentException.class, () -> new Card("", 0));
+		assertThrows(IllegalArgumentException.class, () -> new Card("a", 0));
 		assertThrows(IllegalArgumentException.class, () -> new Card("red", 7));
 		assertDoesNotThrow(() -> new Card("red", 3));
 		
