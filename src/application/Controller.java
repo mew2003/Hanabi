@@ -173,6 +173,7 @@ public class Controller {
 	private String[] log;
 	private int lastTurn = 0;
 	private int score;
+	private boolean isHinted;
 
     public void initialize() {
 
@@ -318,9 +319,9 @@ public class Controller {
     	logs.setVisible(true);
     	for (int i = 0; i < 5; i++) {
             for (int j = 0; j < players.length; j++) {
-        	if (j != CurrentPlayer) {
-        	    setCardTheme(players[j].getHand()[i], listeCardPlayers[j][i]);
-        	}
+            	if (j != CurrentPlayer) {
+            		setCardTheme(players[j].getHand()[i], listeCardPlayers[j][i]);
+            	}
             }
         }
     	
@@ -340,7 +341,7 @@ public class Controller {
     	playerHinted.setVisible(false);
     	returnButton.setVisible(false);
     	playOption.setVisible(true);
-    	
+    	isHinted = false;
     }
     
     @FXML
@@ -376,6 +377,7 @@ public class Controller {
     			break;
     		}
     	}
+    	isHinted = true;
     }
     
     @FXML
@@ -414,14 +416,16 @@ public class Controller {
     protected void card24Pressed(ActionEvent e) throws IOException { playAndDiscard(4); }
     
     private void playAndDiscard(int position) {
-    	if (playOrDiscard) {
-    		log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
-                    + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
-    		endTurn();
-    	} else {
-    		log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
-                    + players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
-    		endTurn();
+    	if (!isHinted) {
+    		if (playOrDiscard) {
+        		log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
+                        + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
+        		endTurn();
+        	} else {
+        		log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
+                        + players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
+        		endTurn();
+        	}
     	}
     }
     
