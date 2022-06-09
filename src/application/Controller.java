@@ -122,6 +122,109 @@ public class Controller {
     private Label scoreMessage2;
     @FXML
     private Label scoreMessage3;
+    @FXML
+    private Button discard1;
+    @FXML
+    private Button discard2;
+    @FXML
+    private Button discard3;
+    @FXML
+    private Button discard4;
+    @FXML
+    private Button discard5;
+    @FXML
+    private Button discard6;
+    @FXML
+    private Button discard7;
+    @FXML
+    private Button discard8;
+    @FXML
+    private Button discard9;
+    @FXML
+    private Button discard10;
+    @FXML
+    private Button discard11;
+    @FXML
+    private Button discard12;
+    @FXML
+    private Button discard13;
+    @FXML
+    private Button discard14;
+    @FXML
+    private Button discard15;
+    @FXML
+    private Button discard16;
+    @FXML
+    private Button discard17;
+    @FXML
+    private Button discard18;
+    @FXML
+    private Button discard19;
+    @FXML
+    private Button discard20;
+    @FXML
+    private Button discard21;
+    @FXML
+    private Button discard22;
+    @FXML
+    private Button discard23;
+    @FXML
+    private Button discard24;
+    @FXML
+    private Button discard25;
+    @FXML
+    private Button discard26;
+    @FXML
+    private Button discard27;
+    @FXML
+    private Button discard28;
+    @FXML
+    private Button discard29;
+    @FXML
+    private Button discard30;
+    @FXML
+    private Button discard31;
+    @FXML
+    private Button discard32;
+    @FXML
+    private Button discard33;
+    @FXML
+    private Button discard34;
+    @FXML
+    private Button discard35;
+    @FXML
+    private Button discard36;
+    @FXML
+    private Button discard37;
+    @FXML
+    private Button discard38;
+    @FXML
+    private Button discard39;
+    @FXML
+    private Button discard40;
+    @FXML
+    private Button discard41;
+    @FXML
+    private Button discard42;
+    @FXML
+    private Button discard43;
+    @FXML
+    private Button discard44;
+    @FXML
+    private Button discard45;
+    @FXML
+    private Button discard46;
+    @FXML
+    private Button discard47;
+    @FXML
+    private Button discard48;
+    @FXML
+    private Button discard49;
+    @FXML
+    private Button discard50;
+    @FXML
+    private Pane discardPile;
+    
     
     
 	private Deck deck;
@@ -174,6 +277,8 @@ public class Controller {
 	private int lastTurn = 0;
 	private int score;
 	private boolean isHinted;
+	private Button[] discardCards;
+	private int discardIndex;
 
     public void initialize() {
 
@@ -245,12 +350,26 @@ public class Controller {
     
     @FXML
     protected void enteredNames(ActionEvent e) throws IOException {
+        
+        discardIndex = 0;
+        
     	listeCardPlayers = new Button[][] {
-			{card10, card11, card12, card13, card14},
-			{card20, card21, card22, card23, card24},
+		{card10, card11, card12, card13, card14},
+		{card20, card21, card22, card23, card24}
     	};
     	placedCardList = new Button[] {
-    			placedCard1, placedCard2, placedCard3, placedCard4, placedCard5
+    	    placedCard1, placedCard2, placedCard3, placedCard4, placedCard5
+    	};
+    	discardCards = new Button[] {
+    	    discard1, discard2, discard3, discard4, discard5, discard6, 
+    	    discard7, discard8, discard9, discard10, discard11, discard12,
+    	    discard13, discard14, discard15, discard16, discard17, discard18,
+    	    discard19, discard20, discard21, discard22, discard23, discard24,
+    	    discard25, discard26, discard27, discard28, discard29, discard30,
+    	    discard31, discard32, discard33, discard34, discard35, discard36,
+    	    discard37, discard38, discard39, discard40, discard41, discard42,
+    	    discard43, discard44, discard45, discard46, discard47, discard48,
+    	    discard49, discard50
     	};
     	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
     		listeCardPlayers[0][i].setDisable(true);
@@ -416,14 +535,18 @@ public class Controller {
     protected void card24Pressed(ActionEvent e) throws IOException { playAndDiscard(4); }
     
     private void playAndDiscard(int position) {
+        Card discardCard;
     	if (!isHinted) {
     		if (playOrDiscard) {
         		log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
                         + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
         		endTurn();
         	} else {
+        	    discardCard = players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
         		log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
-                        + players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
+                        + discardCard;
+        		setCardTheme(discardCard, discardCards[discardIndex]);
+        		discardIndex++;
         		endTurn();
         	}
     	}
@@ -463,6 +586,17 @@ public class Controller {
         log[log.length - 1] = players[playerHintSelect].getName() + ", Cartes en position : "
                 + players[CurrentPlayer].giveAHint(players[playerHintSelect], blueToken, valueHint);
     	endTurn();
+    }
+    
+    @FXML
+    private void openDiscard(ActionEvent e) throws IOException {
+        System.out.println("ouvre toi");
+        discardPile.setVisible(true);
+    }
+    @FXML
+    private void closeDiscard(ActionEvent e) throws IOException {
+        System.out.println("ferme toi");
+        discardPile.setVisible(false);
     }
     
     private void endTurn() {
