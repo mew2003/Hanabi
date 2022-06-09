@@ -1,7 +1,15 @@
 package application;
 
+import java.io.IOException;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class Controller2 {
 	
@@ -40,5 +48,16 @@ public class Controller2 {
 				scoreMessage3.setText("(人間とあなたがいます)");
 			}
 		}
+	}
+	
+	@FXML
+	private void returnMenu(ActionEvent e) throws IOException {
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
+    	Object root = loader.load();
+		Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+		Scene scene = new Scene((Parent) root);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		stage.setScene(scene);
+		stage.show();
 	}
 }
