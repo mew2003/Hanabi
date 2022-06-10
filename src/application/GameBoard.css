@@ -97,11 +97,10 @@
 	-fx-opacity: 100%;
 }
 
-.textOptionButton {
-	-fx-text-fill: #FFFFFF;
+.menuOption .text {
+	-fx-fill: #000000;
 	-fx-font-family: Quintessential;
 	-fx-font-size: 40px;
-	-fx-color: #FFFFFF;
 }
 
 .textPlayer {
@@ -128,11 +127,10 @@
 	-fx-opacity: 100%;
 }
 
-.submitButtonFont {
-    -fx-color: #FFFFFF;
+.submitButton .text {
+    -fx-fill: #000000;
     -fx-font-family: Quintessential;
     -fx-font-size: 28px;
-    -fx-color: #000000;	
 }
 
 .okButton {
@@ -150,6 +148,12 @@
 .okButton:hover {
 	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
 	-fx-opacity: 100%;
+}
+
+.okButton .text {
+	    -fx-font-family: Quintessential;
+	    -fx-font-size: 28px;
+    	-fx-fill: #000000;
 }
 
 .playerNameFont {
@@ -175,10 +179,10 @@
 	-fx-opacity: 100%;
 }
 
-.playOptionButtonFont {
+.playOptionButton .text {
     	-fx-font-family: Quintessential;
     	-fx-font-size: 36px;
-    	-fx-color: #000000;	
+    	-fx-fill: #000000;
 }
 
 .returnArrow {

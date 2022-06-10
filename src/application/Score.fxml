@@ -13,17 +13,17 @@
 
 <Pane maxHeight="1080" maxWidth="1920" minHeight="1080" minWidth="1920" prefHeight="1080" prefWidth="1920" style="-fx-pref-height: 1080; -fx-pref-width: 1920;" styleClass="pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller2">
    <children>
-      <Label fx:id="scoreMessage1" alignment="CENTER" layoutX="460.0" layoutY="431.0" prefHeight="50.0" prefWidth="1000.0" text="Votre score est de ">
+      <Label fx:id="scoreMessage1" alignment="CENTER" layoutX="460.0" layoutY="350.0" prefHeight="50.0" prefWidth="1000.0" text="Votre score est de " textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="scoreMessage2" alignment="CENTER" layoutX="460.0" layoutY="484.0" prefHeight="50.0" prefWidth="1000.0">
+      <Label fx:id="scoreMessage2" alignment="CENTER" layoutX="460.0" layoutY="410.0" prefHeight="50.0" prefWidth="1000.0" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>
       </Label>
-      <Label fx:id="scoreMessage3" alignment="CENTER" layoutX="460.0" layoutY="537.0" prefHeight="50.0" prefWidth="1000.0">
+      <Label fx:id="scoreMessage3" alignment="CENTER" layoutX="460.0" layoutY="470.0" prefHeight="50.0" prefWidth="1000.0" textFill="WHITE">
          <font>
             <Font size="36.0" />
          </font>

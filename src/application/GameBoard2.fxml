@@ -111,13 +111,13 @@
             <TextField fx:id="player1" layoutX="233.0" layoutY="138.0" prefHeight="40.0" prefWidth="327.0" />
             <TextField fx:id="player2" layoutX="233.0" layoutY="206.0" prefHeight="40.0" prefWidth="327.0" />
             <Button defaultButton="true" layoutX="510.0" layoutY="300.0" mnemonicParsing="false" onAction="#enteredNames" prefHeight="80.0" prefWidth="217.0" text="Valider" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                <styleClass>
                   <String fx:value="submitButton" />
                   <String fx:value="submitButtonFont" />
-               </styleClass>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </styleClass></Button>
          </children>
       </Pane>
       <Pane fx:id="playerTurn" layoutX="610.0" layoutY="343.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #FFFFFF;" styleClass="escapeMenu" visible="false">
@@ -127,14 +127,10 @@
                   <Font size="64.0" />
                </font>
             </Label>
-            <Button defaultButton="true" layoutX="224.0" layoutY="220.0" mnemonicParsing="false" onAction="#whoPlayOk" prefHeight="62.0" prefWidth="340.0" text="OK">
+            <Button defaultButton="true" layoutX="224.0" layoutY="220.0" mnemonicParsing="false" onAction="#whoPlayOk" prefHeight="62.0" prefWidth="340.0" styleClass="okButton" text="OK">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor>
-               <styleClass>
-                  <String fx:value="submitButtonFont" />
-                  <String fx:value="okButton" />
-               </styleClass></Button>
+               </cursor></Button>
          </children>
       </Pane>
       <Label fx:id="player1Name" alignment="CENTER" layoutX="826.0" layoutY="1005.0" prefHeight="53.0" prefWidth="266.0" styleClass="playerNameFont" textAlignment="CENTER">

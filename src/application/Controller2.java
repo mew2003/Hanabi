@@ -29,7 +29,7 @@ public class Controller2 {
 			}
 			case 6, 7, 8, 9, 10 -> {
 				scoreMessage2.setText("Ceux que l'on ne dit pas sont les fleurs du silence.");
-				scoreMessage3.setText("(言わぬが花)");
+				scoreMessage3.setText("(言われていないのは沈黙の花です)");
 			}
 			case 11, 12, 13, 14, 15 -> {
 				scoreMessage2.setText("On ne peut admirer en même temps la lune, la neige et les fleurs.");

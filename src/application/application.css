@@ -10,7 +10,6 @@
 }
 
 .mainButton {
-	
 	-fx-pref-width: 400px;
 	-fx-pref-height: 130px;
 	-fx-min-width: 400px;
@@ -22,15 +21,11 @@
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: cover;
 	-fx-opacity: 50%;
-	
-	
 }
 
 .mainButton:hover {
-	
 	-fx-background-image: url(../../resources/img/buttonColorHover.jpg);
 	-fx-opacity: 100%;
-	
 }
 
 .textButton {
@@ -90,14 +85,23 @@
 }
 
 .RulesBackground {
-	-fx-font-weight: 400;
 	-fx-background-image: url(../../resources/img/buttonColor.jpg);
 	-fx-background-repeat: no-repeat;
 	-fx-background-size: stretch;
 	-fx-opacity: 100%;
-}
-
-.RulesFonts {
 	-fx-font-size: 28px;
 	-fx-color: #FFFFFF;
+}
+
+.RulesBackground .scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.RulesBackground .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+
+
+.RulesBackground .scroll-pane .content{
+    -fx-background-color: transparent;
 }

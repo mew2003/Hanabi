@@ -536,16 +536,16 @@ public class Controller {
         Card discardCard;
     	if (!isHinted) {
     		if (playOrDiscard) {
-        		log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
-                        + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
-        		endTurn();
+    		    log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
+    		    + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
+    		    endTurn();
         	} else {
         	    discardCard = players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
-        		log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
-                        + discardCard;
-        		setCardTheme(discardCard, discardCards[discardIndex]);
-        		discardIndex++;
-        		endTurn();
+        	    log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
+        	                          + discardCard;
+        	    setCardTheme(discardCard, discardCards[discardIndex]);
+        	    discardIndex++;
+        	    endTurn();
         	}
     	}
     }
