@@ -31,7 +31,10 @@
             <Font size="64.0" />
          </font>
       </Label>
-      <Button layoutX="74.0" layoutY="747.0" mnemonicParsing="false" onAction="#openDiscard" styleClass="defausse" />
+      <Button layoutX="74.0" layoutY="747.0" mnemonicParsing="false" onAction="#openDiscard" styleClass="defausse">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <Button layoutX="1714.0" layoutY="40.0" mnemonicParsing="false" prefHeight="571.0" prefWidth="360.0" styleClass="pioche" />
       <Pane layoutX="614.0" layoutY="770.0" prefHeight="261.57" prefWidth="689.47">
          <children>
@@ -340,7 +343,10 @@
             <Button fx:id="discard48" layoutX="1220.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
             <Button fx:id="discard49" layoutX="1390.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
             <Button fx:id="discard50" layoutX="1560.0" layoutY="835.0" mnemonicParsing="false" styleClass="mainPlayerCard" />
-            <Button layoutX="1730.0" layoutY="15.0" mnemonicParsing="false" onAction="#closeDiscard" prefHeight="50.0" prefWidth="50.0" styleClass="returnArrow" />
+            <Button layoutX="1730.0" layoutY="15.0" mnemonicParsing="false" onAction="#closeDiscard" prefHeight="50.0" prefWidth="50.0" styleClass="returnArrow">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
          </children>
       </Pane>
    </children>
