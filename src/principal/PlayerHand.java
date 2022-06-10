@@ -214,7 +214,7 @@ public class PlayerHand {
     @Override
     public String toString() {
        StringBuilder handString;
-       handString = new StringBuilder("Le joueur " + name + " � la main ");
+       handString = new StringBuilder("Le joueur " + name + " a la main ");
         for (Card card : hand) {
             handString.append(card.toString()).append(" ");
         }

@@ -3,7 +3,6 @@ package application;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -42,6 +41,7 @@ public class Controller {
     private Pane playerTurn;
     @FXML
     private Label labelPlayerTurn;
+    // Cartes des joueurs
     @FXML
     private Button card10;
     @FXML
@@ -62,6 +62,7 @@ public class Controller {
     private Button card23;
     @FXML
     private Button card24;
+    // Listes des indices disponibles
     @FXML
     private Circle hintRed;
     @FXML
@@ -96,6 +97,7 @@ public class Controller {
     private Label numberBlueToken;
     @FXML
     private Label numberRedToken;
+    // Cartes du plateau de jeu
     @FXML
     private Button placedCard1;
     @FXML
@@ -122,6 +124,7 @@ public class Controller {
     private Label scoreMessage2;
     @FXML
     private Label scoreMessage3;
+    // Liste des cartes défaussés
     @FXML
     private Button discard1;
     @FXML
@@ -225,15 +228,17 @@ public class Controller {
     @FXML
     private Pane discardPile;
     
-    
-    
+    // Liste des éléments nécessaires à une partie
 	private Deck deck;
 	private PlayerHand[] players;
 	private PlacedCard placedCard;
 	private Token redToken;
 	private Token blueToken;
 	private Discard discard;
-	private Button[][] listeCardPlayers;
+	//Liste des boutons FXML représentant les cartes des joueurs
+	private Button[][] listeCardPlayers; 
+	// Liste des images PNG pour toutes les cartes du jeu 
+	// (charger et décharger lors de la partie)
 	private String[] imageList = {
 			"-fx-background-image: url(file:../../resources/img/Cartes/red1.png)",
 			"-fx-background-image: url(file:../../resources/img/Cartes/red2.png)",
@@ -262,6 +267,7 @@ public class Controller {
 			"-fx-background-image: url(file:../../resources/img/Cartes/white5.png)",
 			"-fx-background-image: url(file:../../resources/img/Cartes/transparent.png)"
 	};
+	// Liste des images pour la partie give a hint
 	private Image[] imageButtonList = {
 			new Image("file:../../resources/img/Button/Button1.png"),
 			new Image("file:../../resources/img/Button/Button2.png"),
@@ -271,23 +277,25 @@ public class Controller {
 	};
 	private int CurrentPlayer;
 	private boolean playOrDiscard; // true = play, false = discard
-	private Button[] placedCardList;
-	private int playerHintSelect;
-	private String[] log;
-	private int lastTurn = 0;
+	// Boutons FXML représentant la liste des cartes du plateau de jeu
+	private Button[] placedCardList; 
+	private int playerHintSelect; // Joueur sélectionner pour donner un indice
+	// Liste de tous les évènement des (nbJoueur) derniers tours
+	private String[] log; 
+	// Permet de déclencher un dernier tour quand 
+	// il ne reste plus de carte dans la défausse
+	private int lastTurn = 0; 
 	private int score;
-	private boolean isHinted;
+	// Correction bug (Joueur pouvant joué la carte des autres joueurs)
+	private boolean isHinted; 
+	//Liste des boutons FXML représentant les cartes de la défausse
 	private Button[] discardCards;
-	private int discardIndex;
-
-    public void initialize() {
-
-    }
-    
+	private int discardIndex; // Nombre de cartes actuellement défaussé
     public Stage stage;
     public Scene scene;
     public Parent root;
 	
+    // Menu principal
     @FXML
     protected void switchToHanabi(ActionEvent e) throws IOException {
     	root = FXMLLoader.load(getClass().getResource("Hanabi.fxml"));
@@ -298,6 +306,7 @@ public class Controller {
 		stage.show();
     } 
     
+    // Menu d'option (2/3/4/5 joueurs, règles, etc.)
     @FXML
     protected void switchToMenu(ActionEvent e) throws IOException {
     	root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
@@ -308,6 +317,7 @@ public class Controller {
 		stage.show();
     } 
     
+    // Affichage des règles
     @FXML
     protected void switchToRules(ActionEvent e) throws IOException {
     	root = FXMLLoader.load(getClass().getResource("Rules.fxml"));
@@ -318,6 +328,7 @@ public class Controller {
 		stage.show();
     } 
     
+    // Affichage d'une partie pour 2 joueurs
     @FXML
     protected void switchToGameBoard2(ActionEvent e) throws IOException, InterruptedException {
     	root = FXMLLoader.load(getClass().getResource("GameBoard2.fxml"));
@@ -328,6 +339,7 @@ public class Controller {
 		stage.show();
     }
     
+    // Escape Menu
     @FXML
     protected void pressed(KeyEvent e) throws IOException {
     	if (e.getCode() == KeyCode.ESCAPE) {
@@ -339,6 +351,7 @@ public class Controller {
     	}
     }
     
+    // Permet de retourner à la partie en cours
     @FXML
     protected void returnGame(ActionEvent e) throws IOException {
     	if (playerTurn.isVisible()) {
@@ -348,18 +361,21 @@ public class Controller {
 
     }
     
+    // Saisie du nom des joueurs
     @FXML
     protected void enteredNames(ActionEvent e) throws IOException {
         
-        discardIndex = 0;
-        
+    	// Liste des cartes des joueurs 
     	listeCardPlayers = new Button[][] {
-		{card10, card11, card12, card13, card14},
-		{card20, card21, card22, card23, card24}
+    		{card10, card11, card12, card13, card14},
+    		{card20, card21, card22, card23, card24}
     	};
+    	// Liste des cartes du plateau 
     	placedCardList = new Button[] {
     	    placedCard1, placedCard2, placedCard3, placedCard4, placedCard5
     	};
+    	// Liste des cartes de la défausse
+    	discardIndex = 0;
     	discardCards = new Button[] {
     	    discard1, discard2, discard3, discard4, discard5, discard6, 
     	    discard7, discard8, discard9, discard10, discard11, discard12,
@@ -381,37 +397,40 @@ public class Controller {
     	}
     }
     
+    // Construit une partie avec tous les éléments requis pour cette dernière
     @FXML
     private void partyConstruct() throws IOException {
     	
+    	// Permet de faire charger les images des boutons d'indice (Card Value)
     	hint1.setFill(new ImagePattern(imageButtonList[0]));
     	hint2.setFill(new ImagePattern(imageButtonList[1]));
     	hint3.setFill(new ImagePattern(imageButtonList[2]));
     	hint4.setFill(new ImagePattern(imageButtonList[3]));
     	hint5.setFill(new ImagePattern(imageButtonList[4]));
     	
-    	/* Crï¿½ation des outils nï¿½cessaire au bon dï¿½roulement d'une partie */
-		//Crï¿½ation du deck
+    	/* Création des outils nécessaire au bon déroulement d'une partie */
+		//Création du deck
 		deck = new Deck();
 		players = new PlayerHand[2];
 
-		//Crï¿½ation des joueurs
+		//Création des joueurs
         players[0] = new PlayerHand(player1.getText(), 2, deck);
         players[1] = new PlayerHand(player2.getText(), 2, deck);
         
-        //Crï¿½ation du plateau de jeu
+        //Création du plateau de jeu
         placedCard = new PlacedCard();
         
-        // Crï¿½ation des jetons
+        // Création des jetons
         redToken = new Token(0);
         blueToken = new Token(8);
         
-        // Crï¿½ation de la dï¿½fausse
+        // Création de la défausse
         discard = new Discard();
         
         // Création des logs
         log = new String[players.length];
         
+        // Écriture du nom des joueurs
         CurrentPlayer = 0;
         player1Name.setText(players[0].getName());
         player2Name.setText(players[1].getName());
@@ -420,18 +439,21 @@ public class Controller {
         
     }
     
+    // Affiche le joueur actuel (celui qui va joué le nouveau tour)
     private void whoPlay() {
     	labelPlayerTurn.setText("Au tour de " + players[CurrentPlayer].getName());
         playerTurn.setVisible(true);
+        returnButton.setVisible(false);
     }
     
+    // Permet de fermer les logs (lance également l'affichage des options)
     @FXML
     private void closeLogs(ActionEvent e) throws IOException {
     	logs.setVisible(false);
-    	//TODO Corriger bug (affiche de selectedPlayOption, alors que le joueurs n'a pas encore clique
-    	//sur fermé les logs 
+    	selectedPlayOption();
     }
     
+    // Affiche les cartes de tous les autres joueurs
     @FXML
     protected void whoPlayOk(ActionEvent e) throws IOException {
     	playerTurn.setVisible(false);
@@ -444,10 +466,13 @@ public class Controller {
             }
         }
     	
-    	selectedPlayOption();
     	
     }
     
+    // Permet au joueurs de choisir l'option qui souhaite parmi les suivantes :
+    // 1. Jouer une carte
+    // 2. Se défausser
+    // 3. Donner un indice
     @FXML
     private void selectedPlayOption() {
     	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
@@ -461,6 +486,7 @@ public class Controller {
     	isHinted = false;
     }
     
+    // Active la possibilité de clique sur ses cartes (dans le but de jouer une carte)
     @FXML
     protected void optionPlay(ActionEvent e) throws IOException {
     	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
@@ -472,6 +498,7 @@ public class Controller {
     	
     }
     
+    // Active la possibilité de clique sur ses cartes (dans le but de défausser une carte)
     @FXML
     protected void optionDraw(ActionEvent e) throws IOException {
     	for (int i = 0 ; i < listeCardPlayers[0].length; i++) {
@@ -482,13 +509,13 @@ public class Controller {
     	playOrDiscard = false;
     }
     
+    // Permet de choisir à quel joueur on souhaite donnée un indice
     @FXML
     protected void optionHint(ActionEvent e) throws IOException {
     	playOption.setVisible(false);
     	playerHinted.setVisible(true);
     	for (int i = 0; i < players.length; i++) {
     		if (i != CurrentPlayer) {
-    			//TODO Refaire cette partie pour pouvoir l'adapter pour des parties avec plus de joueurs
     			labelHintedPlayer1.setText(players[i].getName());
     			playerHintSelect = i;
     			break;
@@ -497,6 +524,8 @@ public class Controller {
     	isHinted = true;
     }
     
+    // Permet de choisir quel indice on souhaite donnée
+    // au joueur sélectionner précédemment
     @FXML
     protected void giveHint1(ActionEvent e) throws IOException {
     	playerHinted.setVisible(false);
@@ -511,6 +540,11 @@ public class Controller {
     	
     }
     
+    /* Liste des différentes cartes cliquables 
+     * Particularité, le joueur actuel ne peut joué/défaussé que c'est propre cartes
+     * Par conséquent les autres cartes sont temporairement désactivé 
+     * jusqu'au tour de l'autre joueur
+     */
     @FXML
     protected void card10Pressed(ActionEvent e) throws IOException { playAndDiscard(0); }
     @FXML
@@ -532,9 +566,15 @@ public class Controller {
     @FXML
     protected void card24Pressed(ActionEvent e) throws IOException { playAndDiscard(4); }
     
+    /**
+     * Permet de jouer ou défausser et de l'afficher dans les logs
+     * @param position position de la carte avec laquelle intéragir
+     */
     private void playAndDiscard(int position) {
         Card discardCard;
+        // Permet de régler le bug de pouvoir jouer les cartes des autres joueurs
     	if (!isHinted) {
+    		// true: jouer une carte, false: donner un indice
     		if (playOrDiscard) {
     		    log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
     		    + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
@@ -542,14 +582,19 @@ public class Controller {
         	} else {
         	    discardCard = players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
         	    log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
-        	                          + discardCard;
+        	            + discardCard;
+        	    // Permet de rajouter la carte à la défausse
         	    setCardTheme(discardCard, discardCards[discardIndex]);
         	    discardIndex++;
         	    endTurn();
+
         	}
     	}
     }
     
+    /* Permet de donner un indice, c'est dernier sont séparé en deux parties, 
+     * les indices de valeurs et les indices de couleurs.
+     */
     @FXML
     protected void hintRedPressed(MouseEvent e) throws IOException { giveHint("red"); }
     @FXML
@@ -570,7 +615,11 @@ public class Controller {
     protected void hint4Pressed(MouseEvent e) throws IOException { giveHint(4); }
     @FXML
     protected void hint5Pressed(MouseEvent e) throws IOException { giveHint(5); }
-    
+
+    /**
+     * Permet de donner un indice de couleur
+     * @param colorHint l'indice à donner
+     */
     private void giveHint(String colorHint) {
     	playOptionHint.setVisible(false);
     	System.arraycopy(log, 1, log, 0, log.length - 1);
@@ -578,6 +627,10 @@ public class Controller {
                 + players[CurrentPlayer].giveAHint(players[playerHintSelect], blueToken, colorHint);
     	endTurn();
     }
+    /**
+     * Permet de donner un indice de valeur
+     * @param colorHint l'indice à donner
+     */
     private void giveHint(int valueHint) {
     	playOptionHint.setVisible(false);
     	System.arraycopy(log, 1, log, 0, log.length - 1);
@@ -586,6 +639,7 @@ public class Controller {
     	endTurn();
     }
     
+    // Permet d'ouvrir et de fermer la défausse 
     @FXML
     private void openDiscard(ActionEvent e) throws IOException {
         discardPile.setVisible(true);
@@ -595,16 +649,22 @@ public class Controller {
         discardPile.setVisible(false);
     }
     
+    // Permet de gérer les différents aspect de la fin d'un tour (actualisation, vérification)
     private void endTurn() {
 
-    	Card[] temp = placedCard.getCardList();
+    	/* Actualisations */
+    	
+    	// Actualisation des logs
     	logsMessage.setText(log[1]);
+    	// Actualisation du nombre de tokens
     	numberBlueToken.setText(blueToken.toString());
     	numberRedToken.setText(redToken.toString());
+    	// Actualisation des cartes du plateau
+    	Card[] temp = placedCard.getCardList();
     	for (int i = 0; i < temp.length; i++) {
     		setCardTheme(temp[i], placedCardList[i]);
     	}
-    	
+    	// Set le dos de cartes a tous les joueurs
     	for (int i = 0; i < players.length; i++) {
     	    for (int j = 0 ; j < listeCardPlayers[i].length; j++) {
         	listeCardPlayers[i][j].setDisable(true);
@@ -615,12 +675,15 @@ public class Controller {
                 }
     	    }
     	}
+    	// Changement de joueur
     	CurrentPlayer++;
     	if (CurrentPlayer == players.length) {
     		CurrentPlayer = 0;
     	}
     	
-    	//Condition de fin de partie 
+    	/* Condition de fin de partie */
+    	
+    	// Calcul du score
     	score = 0;
     	for (int i = 0; i < placedCard.getCardList().length; i++) {
     		score += placedCard.getCardList()[i].getValue();
@@ -628,7 +691,10 @@ public class Controller {
     	if (redToken.getValue() == 3) {
     		endGame.setVisible(true);
         }
-
+    	if (score == 25) {
+    		endGame.setVisible(true);
+    	}
+    	// Lancement du dernier tour
     	if (deck.getNbCards() == 0) {
             lastTurn++;
             if (lastTurn == players.length + 1) {
@@ -636,13 +702,10 @@ public class Controller {
             }
         }
 
-    	if (score == 25) {
-    		endGame.setVisible(true);
-    	}
-
     	whoPlay();
     }
     
+    // Une fois la partie terminer, charge l'écran de score
     @FXML
     private void loadEndScore(ActionEvent e) throws IOException {
     	FXMLLoader loader = new FXMLLoader(getClass().getResource("Score.fxml"));
@@ -659,8 +722,12 @@ public class Controller {
 		stage.show();
     } 
     
+    /**
+     * Permet d'appliquer un background sur un bouton en correspondance avec une carte
+     * @param card La carte a appliquer
+     * @param button le bouton sur lequel appliquer le background
+     */
     private void setCardTheme(Card card, Button button) {
-    	
     	switch(card.getColor()) {
     		case "red" -> {
     			switch(card.getValue()) {
@@ -762,6 +829,4 @@ public class Controller {
     		}
     	}
     }
-    
-
 }

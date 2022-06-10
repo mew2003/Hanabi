@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 public class Controller2 {
 	
+	// Liste des zones de textes ou afficher le score 
 	@FXML
     private Label scoreMessage1;
 	@FXML
@@ -20,6 +21,10 @@ public class Controller2 {
 	@FXML
     private Label scoreMessage3;
 	
+	/**
+	 * Affiche un message par rapport au score obtenu
+	 * @param score le score obtenu
+	 */
 	public void displayScore(int score) {
 		scoreMessage1.setText("Votre score est de " + score + " :");
 		switch (score) {
@@ -50,6 +55,7 @@ public class Controller2 {
 		}
 	}
 	
+	// Menu d'option (2/3/4/5 joueurs, règles, etc.)
 	@FXML
 	private void returnMenu(ActionEvent e) throws IOException {
 		FXMLLoader loader = new FXMLLoader(getClass().getResource("Menu.fxml"));
