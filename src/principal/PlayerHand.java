@@ -6,20 +6,20 @@
 package principal;
 
 /** 
- * CrÃ©er un "joueur" avec un nom
- * Ce joueur possÃ¨de un main de cartes
- * Sa main est composÃ© de 5 cartes si le nombre de joueurs total est < 4
- * sinon il possÃ¨de 4 cartes
- * Le joueur peut jouer une carte, dÃ©fausser une carte ou donner un indice 
- * Ã  un autre joueur
+ * Créer un "joueur" avec un nom
+ * Ce joueur possède un main de cartes
+ * Sa main est composé de 5 cartes si le nombre de joueurs total est < 4
+ * sinon il possède 4 cartes
+ * Le joueur peut jouer une carte, défausser une carte ou donner un indice 
+ * à un autre joueur
  * Lors de l'utilisation d'un indice, tous les joueurs perdent un jeton bleu,
  * il y en a en tout 8
  * Si un joueur joue une carte incorrecte, tous les joueurs se voit attribuer
  * un jeton rouge, au bout de 3 jetons rouges les joueurs perdent la partie
- * Si un joueur rÃ©ussis Ã  faire un "hanabi", tous les joueurs 
+ * Si un joueur réussis à faire un "hanabi", tous les joueurs 
  * gagne un jeton bleu
  * 
- * @author SÃ©bastien, Mewen, Maxime
+ * @author Sébastien, Mewen, Maxime
  *
  */
 public class PlayerHand {
@@ -31,22 +31,22 @@ public class PlayerHand {
     private final Card[] hand;
 
     /**
-     * DÃ©finition d'une main de joueur,
-     * Un joueur possÃ¨de un nom et une main de cartes
+     * Définition d'une main de joueur,
+     * Un joueur possède un nom et une main de cartes
      * La main du joueur est de 5 cartes si le nombre de joueurs total 
-     * est infÃ©rieur Ã  4 sinon, la main du joueur est de 4 cartes.
+     * est inférieur à 4 sinon, la main du joueur est de 4 cartes.
      * @param name	    Nom du joueur
      * @param nbPlayer	Nombre de joueurs total
-     * @param deck      La pioche qui sert Ã  initialiser la main du joueur
+     * @param deck      La pioche qui sert à initialiser la main du joueur
      * @throws IllegalArgumentException si le nombre de joueurs 
-     *         est invalide (infÃ©rieur Ã  2 ou supÃ©rieur Ã  5)
+     *         est invalide (inférieur à 2 ou supérieur à 5)
      */
     public PlayerHand(String name, int nbPlayer, Deck deck) {
         if (nbPlayer < 2) {
-            throw new IllegalArgumentException("Le nombre de joueur doit ï¿½tre supï¿½rieur ï¿½ 1");
+            throw new IllegalArgumentException("Le nombre de joueur doit être supérieur à 1");
         }
         if (nbPlayer > 5) {
-            throw new IllegalArgumentException("Le nombre de joueur doit ï¿½tre infï¿½rieur ï¿½ 6");
+            throw new IllegalArgumentException("Le nombre de joueur doit être inférieur à 6");
         }
         if (nbPlayer < 4) {
             this.hand = new Card[5];
@@ -73,10 +73,10 @@ public class PlayerHand {
     }
 
     /** 
-     * Choisit une carte alÃ©atoirement dans la pioche et la place dans 
+     * Choisit une carte aléatoirement dans la pioche et la place dans 
      * la main d'un joueur
-     * @param position  La position ï¿½ laquelle placer la carte
-     * @param deck  La pioche dans laquelle est piochÃ© la carte
+     * @param position  La position à laquelle placer la carte
+     * @param deck  La pioche dans laquelle est pioché la carte
      */
     public void drawACard(int position, Deck deck) {
         if (position < 0 || position > hand.length) {
@@ -89,21 +89,21 @@ public class PlayerHand {
     }
 
     /** 
-     * Joue la carte sÃ©lectionnÃ©e
+     * Joue la carte sélectionnée
      * @param position la position de la carte dans la main du joueur
      * @param deck le deck dans lequel il pioche une carte 
-     *        aprÃ¨s en avoir jouer une
-     * @param redToken un jeton rouge est ajoutÃ© 
-     *                 si la carte jouÃ©e n'Ã©tait pas correcte
-     * @param blueToken un jeton bleu est ajoutÃ© si le joueur 
-     *                  complÃ¨te un "hanabi" (une suite de cartes dans une couleur) 
-     * @param placedCard l'endroit oÃ¹ est placÃ© la carte jouÃ©e
-     * @param discard l'endroit oÃ¹ la carte invalide est envoyÃ©
-     * @return la carte que le joueur a jouÃ©
+     *        après en avoir jouer une
+     * @param redToken un jeton rouge est ajouté 
+     *                 si la carte jouée n'était pas correcte
+     * @param blueToken un jeton bleu est ajouté si le joueur 
+     *                  complète un "hanabi" (une suite de cartes dans une couleur) 
+     * @param placedCard l'endroit où est placé la carte jouée
+     * @param discard l'endroit où la carte invalide est envoyé
+     * @return la carte que le joueur a joué
      */
     public Boolean playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
         if (position < 0 || position > hand.length) {
-            throw new IllegalArgumentException("La position de la carte doit ï¿½tre comprise entre 0 et " + hand.length);
+            throw new IllegalArgumentException("La position de la carte doit être comprise entre 0 et " + hand.length);
         }
         boolean isSuccess;
         Card playCard = hand[position];
@@ -121,18 +121,18 @@ public class PlayerHand {
         return isSuccess;
     }
 
-    /** Donne un indice Ã  un joueur sur la couleur de ses cartes
-     * @param user le joueur Ã  qui on donne un indice
-     * @param token le jeton bleu utilisÃ© pour donnÃ© un indice
+    /** Donne un indice à un joueur sur la couleur de ses cartes
+     * @param user le joueur à qui on donne un indice
+     * @param token le jeton bleu utilisé pour donné un indice
      * @param color la couleur donnÃ©e comme indice
-     * @return la couleur et la position Ã  laquelle est la couleur 
-     *         dans la main du joueur Ã  qui on donne l'indice
+     * @return la couleur et la position à laquelle est la couleur 
+     *         dans la main du joueur à qui on donne l'indice
      */
     public String giveAHint(PlayerHand user, Token token, String color) {
 
 
         if (!color.equals("red") && !color.equals("blue") && !color.equals("pink") && !color.equals("yellow") && !color.equals("white")) {
-            throw new IllegalArgumentException("La couleur doit ï¿½tre red / blue / pink / yellow / white");
+            throw new IllegalArgumentException("La couleur doit être red / blue / pink / yellow / white");
         }
 
         StringBuilder hintList = new StringBuilder();
@@ -151,17 +151,17 @@ public class PlayerHand {
         return hintList.toString();
     }
 
-    /** Donne un indice Ã  un joueur sur la valeur de ses cartes
-     * @param user le joueur Ã  qui on donne un indice
-     * @param token token le jeton bleu utilisÃ© pour donnÃ© un indice
-     * @param value la valeur donnÃ©e comme indice
-     * @return la valeur et la position Ã  laquelle est la valeur 
-     *         dans la main du joueur Ã  qui on donne l'indice
+    /** Donne un indice à un joueur sur la valeur de ses cartes
+     * @param user le joueur à qui on donne un indice
+     * @param token token le jeton bleu utilisé pour donné un indice
+     * @param value la valeur donnée comme indice
+     * @return la valeur et la position à laquelle est la valeur 
+     *         dans la main du joueur à qui on donne l'indice
      */
     public String giveAHint(PlayerHand user, Token token, int value) {
 
         if (value < 0 || value > 5) {
-            throw new IllegalArgumentException("La valeur doit ï¿½tre comprise entre 0 et 5");
+            throw new IllegalArgumentException("La valeur doit être comprise entre 0 et 5");
         }
 
         StringBuilder hintList = new StringBuilder();
@@ -181,13 +181,13 @@ public class PlayerHand {
     }
 
     /**
-     * DÃ©fausse d'une carte et pioche d'une nouvelle carte Ã  la place
-     * @param position  la position de la carte Ã  dÃ©fausser
+     * Défausse d'une carte et pioche d'une nouvelle carte à la place
+     * @param position  la position de la carte à défausser
      * @param deck  la pioche dans laquelle piocher une carte
-     * @param token  le jeton qu'il faudra incrÃ©menter (bleu s'il se dÃ©fausse
-     *               volontairement, rouge s'il se dÃ©fausse Ã  cause d'une erreur)
-     * @param discard  la dÃ©fausse dans laquelle la carte sera placÃ©e
-     * @return le nouvel Ã©tat de la main du joueur
+     * @param token  le jeton qu'il faudra incrémenter (bleu s'il se défausse
+     *               volontairement, rouge s'il se défausse à cause d'une erreur)
+     * @param discard  la défausse dans laquelle la carte sera placée
+     * @return le nouvel état de la main du joueur
      */
     public Card discardACard(int position, Deck deck, Token token, Discard discard) {
 

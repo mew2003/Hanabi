@@ -6,25 +6,25 @@
 package principal;
 
 /** 
- * L'endroit oÃ¹ les cartes invalides jouÃ©es par les joueurs sont stockÃ©s
- * @author SÃ©bastien, Mewen, Maxime
+ * L'endroit où les cartes invalides jouées par les joueurs sont stockés
+ * @author Sébastien, Mewen, Maxime
  *
  */
 public class Discard {
 
-    /** Liste des cartes de la dÃ©fausse */
+    /** Liste des cartes de la défausse */
     private final Card[] cardList;
 
     /**
-     * DÃ©finition de Discard
+     * Définition de Discard
      */
     public Discard() {
-        /* Nombre de cartes prÃ©sente dans Hanabi */
+        /* Nombre de cartes présente dans Hanabi */
         final int NB_CARD_MAX = 50;
         cardList = new Card[NB_CARD_MAX];
     }
 
-    /** @return la liste des cartes prÃ©sentes dans la dÃ©fausse */
+    /** @return la liste des cartes prÃ©sentes dans la défausse */
     public Card[] getCardList() {
         return cardList;
     }

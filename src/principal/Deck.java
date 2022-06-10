@@ -8,7 +8,7 @@ package principal;
 import java.util.Random;
 
 /** 
- * Créer un deck composé de 50 cartes
+ * Cr�er un deck composé de 50 cartes
  * @author 
  *
  */
@@ -79,7 +79,7 @@ public class Deck {
     public Deck() {}
 
     /** 
-     * Permet d'obtenir une carte piocher aléatoirement dans le paquet de cartes
+     * Permet d'obtenir une carte piocher al�atoirement dans le paquet de cartes
      * @return  la carte obtenue
      */
     public Card getCards() {
