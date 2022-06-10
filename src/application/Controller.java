@@ -572,16 +572,22 @@ public class Controller {
      */
     private void playAndDiscard(int position) {
         Card discardCard;
+        Card playCard;
         // Permet de régler le bug de pouvoir jouer les cartes des autres joueurs
     	if (!isHinted) {
     		// true: jouer une carte, false: donner un indice
     		if (playOrDiscard) {
-    		    log[log.length - 1] = players[CurrentPlayer].getName() + ", A joué la carte : "
-    		    + players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard);
+    		    playCard = players[CurrentPlayer].getHand()[position];
+    		    log[log.length - 1] = players[CurrentPlayer].getName() + ", a joué la carte : "
+    		    + playCard;
+    		    if (!(players[CurrentPlayer].playACard(position, deck, redToken, blueToken, placedCard, discard))) {
+    		        setCardTheme(playCard, discardCards[discardIndex]);
+    		        discardIndex++;
+    		    }
     		    endTurn();
         	} else {
         	    discardCard = players[CurrentPlayer].discardACard(position, deck, blueToken, discard);
-        	    log[log.length - 1] = players[CurrentPlayer].getName() + ", A défaussé la carte : "
+        	    log[log.length - 1] = players[CurrentPlayer].getName() + ", a défaussé la carte : "
         	            + discardCard;
         	    // Permet de rajouter la carte à la défausse
         	    setCardTheme(discardCard, discardCards[discardIndex]);
@@ -623,7 +629,7 @@ public class Controller {
     private void giveHint(String colorHint) {
     	playOptionHint.setVisible(false);
     	System.arraycopy(log, 1, log, 0, log.length - 1);
-        log[log.length - 1] = players[playerHintSelect].getName() + ", Cartes en position : "
+        log[log.length - 1] = "Pour le joueur " + players[playerHintSelect].getName() + " : "
                 + players[CurrentPlayer].giveAHint(players[playerHintSelect], blueToken, colorHint);
     	endTurn();
     }
@@ -634,7 +640,7 @@ public class Controller {
     private void giveHint(int valueHint) {
     	playOptionHint.setVisible(false);
     	System.arraycopy(log, 1, log, 0, log.length - 1);
-        log[log.length - 1] = players[playerHintSelect].getName() + ", Cartes en position : "
+        log[log.length - 1] = "Pour le joueur " + players[playerHintSelect].getName() + " : "
                 + players[CurrentPlayer].giveAHint(players[playerHintSelect], blueToken, valueHint);
     	endTurn();
     }

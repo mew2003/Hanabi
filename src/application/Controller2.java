@@ -30,7 +30,7 @@ public class Controller2 {
 		switch (score) {
 			case 0, 1, 2, 3, 4, 5 -> {
 				scoreMessage2.setText("Sur un cerisier mort, on ne trouve pas de fleurs.");
-				scoreMessage3.setText("(枯れた桜には花がありません。)");
+				scoreMessage3.setText("(枯れた桜には花がありません)");
 			}
 			case 6, 7, 8, 9, 10 -> {
 				scoreMessage2.setText("Ceux que l'on ne dit pas sont les fleurs du silence.");

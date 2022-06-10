@@ -101,7 +101,7 @@ public class PlayerHand {
      * @param discard l'endroit où la carte invalide est envoyé
      * @return la carte que le joueur a joué
      */
-    public Card playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
+    public Boolean playACard(int position, Deck deck, Token redToken, Token blueToken, PlacedCard placedCard, Discard discard) {
         if (position < 0 || position > hand.length) {
             throw new IllegalArgumentException("La position de la carte doit �tre comprise entre 0 et " + hand.length);
         }
@@ -118,7 +118,7 @@ public class PlayerHand {
             discardACard(position, deck, redToken, discard);
         }
 
-        return playCard;
+        return isSuccess;
     }
 
     /** Donne un indice à un joueur sur la couleur de ses cartes
