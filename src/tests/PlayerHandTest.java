@@ -60,7 +60,7 @@ class PlayerHandTest {
 	}
 
 	@Test
-	void testGiveAHintPlayerHandTokenString() {
+	void testGiveAHintString() {
 	    Deck deck = new Deck();
 	    PlayerHand playerHand = new PlayerHand("joueur1", 5, deck);
 	    Token blueToken = new Token(8);
@@ -74,7 +74,7 @@ class PlayerHandTest {
 	}
 
 	@Test
-	void testGiveAHintPlayerHandTokenInt() {
+	void testGiveAHintInt() {
 	    Deck deck = new Deck();
             PlayerHand playerHand = new PlayerHand("joueur1", 5, deck);
             Token blueToken = new Token(8);
@@ -104,7 +104,7 @@ class PlayerHandTest {
 	    for (int i = 0; i < 4; i++) {
                 playerHand.getHand()[i] = new Card("blue", 3);
             }
-	    assertEquals("Le joueur joueur1 à la main [blue, 3] [blue, 3] [blue, 3] [blue, 3] " , playerHand.toString());
+	    assertEquals("Le joueur joueur1 a la main [blue, 3] [blue, 3] [blue, 3] [blue, 3] " , playerHand.toString());
 	}
 
 }
